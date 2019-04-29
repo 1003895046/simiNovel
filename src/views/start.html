@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				width:375px;
+				height:812px;
+				background:linear-gradient(36deg,rgba(70,229,242,1) 0%,rgba(158,102,255,1) 100%);
+				}
+			.start_flashScreen{
+				display: flex;
+				justify-content: center;
+				height: 100%;
+			}
+			.start{
+				height: 100%;
+			}
+			
+			.start_flashScreen_one img{
+				width: 140px;
+				height: 140px;
+			}
+			.allP{
+				color: #FFFFFF;
+				font-size: 26px;
+				margin-top: 40px;
+				text-align: center;
+			}
+			
+			
+			.mui-slider-indicator .mui-indicator{
+				width: 15px;
+				height: 15px;
+				background:white;
+				opacity: 0.2;
+			}
+			.mui-slider-indicator{
+				bottom: -100px;
+				position: relative;
+			}
+			.mui-slider-indicator .mui-active.mui-indicator{
+				opacity: 1;
+			}
+			.tiaozhuan{
+				position: relative;
+				bottom: 500px;
+				left: 300px;
+				color: white;
+				font-size: 20px;
+				width: 60px;
+				text-align: center;
+				line-height: 30px;
+				height: 30px;
+				border: 1px solid white;
+				display: inline-block;
+				border-radius: 10px;
+			}
+			
+			.start_choose{
+				width: 100%;
+				justify-content: space-around;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.start_chooseGender{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.start_chooseGender h3{
+				width:235px;
+				height:32px;
+				font-size:32px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(255,255,255,1);
+				line-height:32px;
+			}
+			.start_Gender{
+				margin-top: 30px;
+				display: flex;
+				align-items: center;
+			}
+			.start_Gender p{
+				flex: 1;
+				width:157px;
+				height:32px;
+				font-size:24px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(255,255,255,1);
+				line-height:32px;
+			}
+			.start_Gender img{
+				flex: 2;
+				width: 90px;
+				height: 90px;
+			}
+			.start_Gender label{
+				flex: 1;
+			}
+			.complete{
+				
+			}
+			.skip{
+				
+			}
+			.start_chooseType{
+				display: none;
+			}
+			.start_flashScreen_one{
+				padding-top: 160px;
+				width: 140px;
+				height: 140px;
+				display: none;
+			}
+			.mui-slider{
+				padding-top: 100px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="height: 100%;">
+			<div class="start">
+				<div class="start_flashScreen">
+					<div class="start_flashScreen_one">
+						<img src="../../assets/img/logo.webp" alt="">
+						<p class="allP">私觅少说</p>
+					</div>
+					<div  class="mui-slider" >
+						<div class="mui-slider-group ">
+							<div class="mui-slider-item">
+								 <img src="../../assets/img/Illustration1.png" alt="">
+								<p class="allP">海量书籍，线上阅读</p>
+							</div>
+							<div class="mui-slider-item">
+							   <img src="../../assets/img/Illustration2.png" alt="">
+							   <p class="allP">分类丰富，资源分享</p>
+							</div>
+							<div class="mui-slider-item">
+							   <img src="../../assets/img/Illustration3.png" alt="">
+							   <p class="allP">分享互动，约上好友</p>
+							   <span class="tiaozhuan">跳过</span>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+					<div class="start_choose">
+						<div class="start_chooseGender">
+							<h3>选择我的性别</h3>
+							<div class="start_Gender">
+								<img src="../../assets/img/I_am_a_boy_icon_001_01.png" alt="">
+								<p>我是男生</p>
+								<label></label>
+							</div>
+							<div class="start_Gender">
+								<img src="../../assets/img/I_am_a_girl_icon_001_1.png" alt="">
+								<p>我是女生</p>
+								<label></label>
+							</div>
+						</div>
+						<div class="start_chooseType">
+							
+						</div>
+						<div class="start_chooseBtn">
+							<button type="button" class="mui-btn complete">完成</button>
+							<button type="button" class="mui-btn skip">跳过</button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<script src="../../assets/js/mui.min.js"></script>
+		<script src="../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+// 			var timer = setTimeout(function(){
+// 				$(".start_flashScreen_one").hide(1000)
+// 				$(".mui-slider").show(1000)
+// 			},3000)
+			$(".tiaozhuan").click(function(){
+				$(".mui-slider").hide(1000)
+				$(".start_chooseGender").show(1000)
+			})
+			mui.plusReady(function(){
+			//获得slider插件对象
+				var gallery = mui('.mui-slider');
+					gallery.slider({
+					interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+				});
+			});
+			
+		</script>
+	</body>
+</html>

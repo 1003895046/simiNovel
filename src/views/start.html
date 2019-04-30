@@ -9,8 +9,6 @@
 		<link rel="stylesheet" href="../../assets/css/public.css">
 		<style type="text/css">
 			body{
-				width:375px;
-				height:812px;
 				background:linear-gradient(36deg,rgba(70,229,242,1) 0%,rgba(158,102,255,1) 100%);
 				}
 			.start_flashScreen{
@@ -68,14 +66,20 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				height: 100%;
 			}
 			.start_chooseGender{
 				display: flex;
 				flex-direction: column;
-				align-items: center;
+				width: 100%;
+				padding: 30px;
 				justify-content: space-between;
 			}
-			.start_chooseGender h3{
+			.start_chooseType{
+				width: 100%;
+				padding: 30px;
+			}
+			 h3{
 				width:235px;
 				height:32px;
 				font-size:32px;
@@ -88,9 +92,16 @@
 				margin-top: 30px;
 				display: flex;
 				align-items: center;
+				justify-content: space-between;
+			}
+			.start_Type{
+				margin-top: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
 			}
 			.start_Gender p{
-				flex: 1;
+				
 				width:157px;
 				height:32px;
 				font-size:24px;
@@ -99,32 +110,91 @@
 				color:rgba(255,255,255,1);
 				line-height:32px;
 			}
-			.start_Gender img{
-				flex: 2;
+			.start_Gender .start_Gender_img img{
+				
 				width: 90px;
 				height: 90px;
 			}
-			.start_Gender label{
-				flex: 1;
+			.start_Type_img img{
+				
+				width: 90px;
+				height: 90px;
+			}
+			.start_chooseType_p p{
+				width:157px;
+				height:32px;
+				font-size:24px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(255,255,255,1);
+				line-height:32px;
+			}
+			.start_chooseType_p span{
+				width:157px;
+				height:32px;
+				font-size:16px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(255,255,255,1);
+				line-height:32px;
+			}
+			.start_chooseBtn{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 			}
 			.complete{
-				
+				width:347px;
+				height:50px;
+				background:rgba(255,255,255,1);
+				box-shadow:0px 0px 10px 0px rgba(151,113,254,0.2);
+				border-radius:25px;
+				font-size:20px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(148,116,254,1);
+				line-height: 50px;
+				text-align: center;
+				letter-spacing:2px;
 			}
 			.skip{
-				
+				height:28px;
+				font-size:20px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				line-height: 28px;
+				text-align: center;
+				color:rgba(255,255,255,1);
+				line-height:28px;
+				letter-spacing:2px;
 			}
-			.start_chooseType{
-				display: none;
+			
+			.start_quan_img img{
+				width: 32px;
+				height: 32px;
+			}
+			.start_Type_quan_img img{
+				width: 32px;
+				height: 32px;
 			}
 			.start_flashScreen_one{
 				padding-top: 160px;
 				width: 140px;
 				height: 140px;
-				display: none;
 			}
 			.mui-slider{
 				padding-top: 100px;
 				display: none;
+			}
+			.start_chooseType{
+				display: none;
+			}
+			.start_chooseBtn2{
+				display: none;
+			}
+			.start_choose_all{
+				display: none;
+				    width: 100%;
 			}
 		</style>
 	</head>
@@ -139,7 +209,7 @@
 					<div  class="mui-slider" >
 						<div class="mui-slider-group ">
 							<div class="mui-slider-item">
-								 <img src="../../assets/img/Illustration1.png" alt="">
+								<img src="../../assets/img/Illustration1.png" alt="">
 								<p class="allP">海量书籍，线上阅读</p>
 							</div>
 							<div class="mui-slider-item">
@@ -158,42 +228,131 @@
 							<div class="mui-indicator"></div>
 						</div>
 					</div>
-					<div class="start_choose">
-						<div class="start_chooseGender">
-							<h3>选择我的性别</h3>
-							<div class="start_Gender">
-								<img src="../../assets/img/I_am_a_boy_icon_001_01.png" alt="">
-								<p>我是男生</p>
-								<label></label>
+					<div class="start_choose_all">
+						<div class="start_choose">
+							<div class="start_chooseGender">
+								<h3>选择我的性别</h3>
+								<div class="start_Gender" data-gendet="boy" onclick="chooseGender(this)">
+									<div class="start_Gender_img">
+										<img src="../../assets/img/I_am_a_boy_icon_001_01.png" data-img="../../assets/img/I_am_a_boy_icon_001_02.png"  alt="">
+									</div>	
+										<p>我是男生</p>
+									<div class="start_quan_img">
+										<img src="../../assets/img/gender_icon_001_01.png" data-img="../../assets/img/gender_icon_good_001_01.png" alt="">
+									</div>		
+								</div>
+								<div class="start_Gender" data-gendet="girl" onclick="chooseGender(this)">
+									<div class="start_Gender_img">
+										<img src="../../assets/img/I_am_a_girl_icon_001_1.png" data-img="../../assets/img/I_am_a_girl_icon_001_02.png" alt="">
+									</div>		
+										<p>我是女生</p>
+									<div class="start_quan_img">	
+										<img src="../../assets/img/gender_icon_001_01.png" data-img="../../assets/img/gender_icon_good_001_01.png" alt="">
+									</div>		
+								</div>
 							</div>
-							<div class="start_Gender">
-								<img src="../../assets/img/I_am_a_girl_icon_001_1.png" alt="">
-								<p>我是女生</p>
-								<label></label>
+							<div class="start_chooseType">
+								<h3>选择我偏好</h3>
+								<div class="start_Type" onclick="chooseType(this)" data-id="1">
+									<div class="start_Type_img">
+										<img src="../../assets/img/矩形复制%203.png"   alt="">
+									</div>	
+									<div class="start_chooseType_p">
+										<p>激情岁月</p>
+										<span>激情岁月</span>
+									</div>	
+									<div class="start_Type_quan_img">
+										<img src="../../assets/img/gender_icon_001_01.png" data-img="../../assets/img/gender_icon_good_001_01.png" alt="">
+									</div>		
+								</div>
+							</div>
+							<div class="start_chooseBtn">
+								<p type="button" class=" complete">完成</p>
+								<p type="button" class=" skip">跳过</p>
+							</div>
+							<div class="start_chooseBtn2">
+								<p type="button" class=" complete" onclick="complete()">完成</p>
+								<p type="button" class=" skip" onclick="skip()">跳过</p>
 							</div>
 						</div>
-						<div class="start_chooseType">
-							
-						</div>
-						<div class="start_chooseBtn">
-							<button type="button" class="mui-btn complete">完成</button>
-							<button type="button" class="mui-btn skip">跳过</button>
-						</div>
-					</div>
+					</div>	
 				</div>
 				
 			</div>
 		</div>
+		<script src="../../assets/js/public.js"></script>
 		<script src="../../assets/js/mui.min.js"></script>
 		<script src="../../assets/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
-// 			var timer = setTimeout(function(){
-// 				$(".start_flashScreen_one").hide(1000)
-// 				$(".mui-slider").show(1000)
-// 			},3000)
+			var gender = "";
+			var typeId = "";
+			// 获取终端宽高
+			const height = window.screen.height;
+			const width =window.screen.width;
+			$("body").css({"height":height,"width":width})
+			var timer = setTimeout(function(){
+				$(".start_flashScreen_one").hide(1000)
+				$(".mui-slider").show(1000)
+			},3000)
+			
+			// 选择性别
+			function chooseGender(self){
+				if(gender != $(self).attr("data-gendet")){
+					var img =$(self).children(".start_Gender_img").children();
+					var quan =$(self).children(".start_quan_img").children();
+					// 恢复默认
+					$(".start_Gender_img img").attr("src",$(img).attr("src"))
+					$(".start_quan_img img").attr("src",$(quan).attr("src"))
+					
+					$(img).attr("src",$(img)[0].dataset.img)
+					$(quan).attr("src",$(quan)[0].dataset.img)
+					
+					return gender = $(self).attr("data-gendet")
+				}else{
+					console.log("已经选择")
+				}
+			};
+			// 选择性别完成
+			$(".start_chooseBtn .complete").click(function(){
+				$(".start_chooseGender").hide(1000)
+				$(".start_chooseType").show(1000)
+				$(".start_chooseBtn").hide(1000)
+				$(".start_chooseBtn2").show(1000)
+			})
+			$(".start_chooseBtn .skip").click(function(){
+				$(".start_chooseGender").hide(1000)
+				$(".start_chooseType").show(1000)
+				$(".start_chooseBtn").hide(1000)
+				$(".start_chooseBtn2").show(1000)
+			})
+			// 选择偏好完成
+			function chooseType(self){
+				if(typeId != $(self).attr("data-id")){
+						var img =$(self).children(".start_Type_img").children();
+					var quan =$(self).children(".start_Type_quan_img").children();
+					// 恢复默认
+					$("start_Type_img img").attr("src",$(img).attr("src"))
+					$(".start_Type_quan_img img").attr("src",$(quan).attr("src"))
+					
+					$(img).attr("src",$(img)[0].dataset.img)
+					$(quan).attr("src",$(quan)[0].dataset.img)
+					
+					return typeId = $(self).attr("data-id")
+				}else{
+					console.log("已经选择")
+				}
+			};
+			// 选择偏好完成
+			 function complete(){
+				 
+			};
+			function skip(){
+				
+			};
+			// 引导页完成
 			$(".tiaozhuan").click(function(){
 				$(".mui-slider").hide(1000)
-				$(".start_chooseGender").show(1000)
+				$(".start_choose_all").show(1000)
 			})
 			mui.plusReady(function(){
 			//获得slider插件对象

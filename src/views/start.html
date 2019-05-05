@@ -9,12 +9,13 @@
 		<link rel="stylesheet" href="../../assets/css/public.css">
 		<style type="text/css">
 			body{
-				background:linear-gradient(36deg,rgba(70,229,242,1) 0%,rgba(158,102,255,1) 100%);
+				
 				}
 			.start_flashScreen{
-				display: flex;
-				justify-content: center;
-				height: 100%;
+				    display: flex;
+				    height: 100%;
+				    flex-direction: column;
+				    align-items: center;
 			}
 			.start{
 				height: 100%;
@@ -68,7 +69,8 @@
 				align-items: center;
 				height: 100%;
 			}
-			.start_chooseGender{
+			
+			h3{
 				display: flex;
 				flex-direction: column;
 				width: 100%;
@@ -80,7 +82,6 @@
 				padding: 30px;
 			}
 			 h3{
-				width:235px;
 				height:32px;
 				font-size:32px;
 				font-family:PingFangSC-Medium;
@@ -93,6 +94,9 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+				width: 100%
+			}
+			.start_Gender p{
 			}
 			.start_Type{
 				margin-top: 30px;
@@ -110,6 +114,12 @@
 				color:rgba(255,255,255,1);
 				line-height:32px;
 			}
+
+			.start_Gender .start_chooseTypeimg img{
+				width: 90px;
+				height: 90px;
+			}
+
 			.start_Gender .start_Gender_img img{
 				
 				width: 90px;
@@ -142,6 +152,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				width: 100%
 			}
 			.complete{
 				width:347px;
@@ -153,6 +164,11 @@
 				font-family:PingFangSC-Regular;
 				font-weight:400;
 				color:rgba(148,116,254,1);
+				line-height:50px;
+				letter-spacing:2px;
+				text-align: center
+			}
+			.skip{
 				line-height: 50px;
 				text-align: center;
 				letter-spacing:2px;
@@ -162,6 +178,11 @@
 				font-size:20px;
 				font-family:PingFangSC-Regular;
 				font-weight:400;
+				color:rgba(255,255,255,1);
+				line-height:28px;
+				letter-spacing:2px;
+				text-align: center;
+  				margin-top: 20px;
 				line-height: 28px;
 				text-align: center;
 				color:rgba(255,255,255,1);
@@ -185,7 +206,17 @@
 			.mui-slider{
 				padding-top: 100px;
 				display: none;
+				height: 100%;
 			}
+			.start_chooseGender{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				width: 100%;
+				padding: 20px;
+				display: none
+			}
+			
 			.start_chooseType{
 				display: none;
 			}
@@ -194,6 +225,7 @@
 			}
 			.start_choose_all{
 				display: none;
+				height: 100%;
 				    width: 100%;
 			}
 		</style>
@@ -204,7 +236,7 @@
 				<div class="start_flashScreen">
 					<div class="start_flashScreen_one">
 						<img src="../../assets/img/logo.webp" alt="">
-						<p class="allP">私觅少说</p>
+						<p class="allP">私觅小说</p>
 					</div>
 					<div  class="mui-slider" >
 						<div class="mui-slider-group ">
@@ -284,12 +316,23 @@
 		<script src="../../assets/js/mui.min.js"></script>
 		<script src="../../assets/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
+			
+			// 选择完性别点击完成或者跳过
+			$(".start_chooseBtn .skip").click(function(){
+				$(".start_chooseGender").hide(1000)
+				$(".start_chooseType").show(1000)
+			})
+			$(".start_chooseBtn .complete").click(function(){
+				$(".start_chooseGender").hide(1000)
+				$(".start_chooseType").show(1000)
+			})
+			// 引导完点击跳过
 			var gender = "";
 			var typeId = "";
 			// 获取终端宽高
 			const height = window.screen.height;
 			const width =window.screen.width;
-			$("body").css({"height":height,"width":width})
+			$("body").css({"height":height,"width":width,"background":"linear-gradient(36deg,rgba(70,229,242,1) 0%,rgba(158,102,255,1) 100%)"})
 			var timer = setTimeout(function(){
 				$(".start_flashScreen_one").hide(1000)
 				$(".mui-slider").show(1000)
@@ -344,16 +387,18 @@
 			};
 			// 选择偏好完成
 			 function complete(){
-				 location.href ="./login.html"
+				 location.href ="./aboutLogin/login.html"
 			};
 			function skip(){
-				location.href ="./login.html"
+				location.href ="./aboutLogin/login.html"
 			};
 			// 引导页完成
 			$(".tiaozhuan").click(function(){
 				$(".mui-slider").hide(1000)
-				$(".start_choose_all").show(1000)
+				$(".start_choose_all").css("display","block")
+				$(".start_chooseGender").show(1000)
 			})
+
 			mui.plusReady(function(){
 			//获得slider插件对象
 				var gallery = mui('.mui-slider');

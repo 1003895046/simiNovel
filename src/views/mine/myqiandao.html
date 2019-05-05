@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all{
+				padding: 15px;
+			}
+			.now_money{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				margin-top: 50px;
+				height: 244px;
+				background: url("../../../assets/img/sign_in_img_001_01.png");
+			}
+			.now_money span{
+				font-size: 14px;
+				color: white;
+			}
+			.now_money h2{
+				font-size: 30px;
+				color: white;
+				margin-top: 20px;
+			}
+			.now_money p{
+				width: 170px;
+				height: 40px;
+				background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(255,190,188,1) 100%);
+				box-shadow:0px 0px 4px 0px rgba(202,31,29,0.5);
+				text-align: center;
+				line-height: 40px;
+				color: #C81F1C;
+				margin-top: 20px;
+			}
+			.now_money label{
+				font-size: 12px;
+				color: white;
+				margin-top: 20px;
+			}
+
+			/*tab*/
+			.tab{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 50px;
+			}
+			.tab_left{
+				color: #000;
+				font-size: 20px;
+				align-items: center;
+   				 display: flex;
+			}
+			.tab_right{
+				color: #FA6400;
+				font-size: 14px;
+				display: flex;
+				align-items: center
+			}
+			.qiandao_p{
+				font-size: 13px;
+				color: #ccc
+			}
+
+
+			.list_a{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 18px;
+				height: 50px;
+				width: 100%;
+				margin-bottom:15px;
+			}
+			.list_a_img{
+
+			}
+			.list_a .zuorenwu{
+				display: inline-block;
+				width:60px;
+				height:24px;
+				border-radius:13px;
+				background: #FA6400;
+				font-size: 14px;
+				color: white;
+				text-align: center;
+				line-height: 22px;
+			}
+			.list_a .lingqu{
+				display: inline-block;
+				width:60px;
+				height:24px;
+				border-radius:13px;
+				background: #6D7278;
+				font-size: 14px;
+				color: white;
+				text-align: center;
+				line-height: 22px;
+				opacity:0.5;
+			}
+			.jiangli{
+				width: 60%
+			}
+			.jiangli span{
+				font-size: 12px;
+				color: #ccc
+			}
+			.jiangli p{
+				margin-bottom: 0;
+				font-size: 15px;
+				color: #000
+			}
+			.jiangli .red{
+				color: #F92A56
+			}
+
+
+
+
+
+			.choose_All{
+				width: 100%;
+				margin-top: 10px;
+				display: flex;
+				justify-content: space-around;
+			}
+			.choose{
+
+			}
+			.choose label{
+
+			}
+			.choose_i{
+				    position: absolute;
+				    top: -23px;
+				    left: -1px;
+				    z-index: 1000;
+				    color: #DF2D2A;
+				    display: none
+			}
+			.choose_gou{
+				position: relative;
+			}
+
+
+
+
+			.choose1{
+				width: 100%;
+				position: fixed;
+				bottom: -1px;
+				height:230px;
+				background:rgba(255,255,255,1);
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px 10px 0px 0px;
+				z-index: 1000;
+				padding: 20px;
+				display: none
+			}
+			.choose1_img{
+				display: flex;
+				flex-direction: column;
+				width: 60px;
+				height: 100px;
+			}
+			.choose1_img span{
+				text-align: center;
+				color: #ccc
+			}
+			.choose_iphone{
+				display: flex;
+				justify-content: space-around;
+				z-index: 100
+			}
+			.choose_iphoneimg{
+				width: auto;
+			}
+			h2{
+				font-size: 20px;
+				margin-bottom: 25px
+
+			}
+			.bg{
+				display: none;
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;background: #000;
+				opacity: 0.6;
+			}
+
+
+			.free_end_qiandao,.free_end_comment,.free_ready,.free_end_fenxiang{
+				z-index: 110;
+				position: fixed;
+				top: 80px;
+				display: none
+			}
+
+
+			.free_end{
+				z-index: 110;
+				position: fixed;
+				top: 80px;
+				display: none
+			}
+			.free_end_vip_All{
+				z-index: 110;
+				position: fixed;
+				left: 50%;
+   				margin-left: -174px;
+			}
+			.free_end_vip{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				width: 347px;
+				height: 402px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.free_end_vip div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.free_end_vip div span{
+				color: #E0153B;
+				margin-top: 25px;
+				font-size: 56px;
+
+			}
+			.free_end_vip div label{
+				font-size: 20px;
+				font-weight: 600
+
+			}
+			.free_end_vip p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			.free_end_ready{
+				width:347px;
+				height:50px;
+				background:rgba(255,255,255,0.9);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				border:2px solid rgba(255,255,255,1);
+				margin-top: 20px;
+				text-align: center;
+				color: #FA6400;
+				font-size: 20px;
+				line-height: 50px;
+			}
+			.free_end_readymoney{
+				width:347px;
+				height:50px;
+				background:rgba(255,255,255,0.9);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				border:2px solid rgba(255,255,255,1);
+				margin-top: 20px;
+				color: #FA6400;
+				text-align: center;
+				font-size: 20px;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">签到</h1>
+	　　</header>
+			 <div class="now_money">
+			 	 <span>当前读书币</span>
+			 	 <h2>2391</h2>
+			 	 <!-- <p onclick="qiandao(this)">立即签到</p> -->
+			 	 <div class="choose_All">
+			 	 	<div class="choose">
+						<label class="">1天</label>
+						<span class="choose_gou"><div class="choose_img"><img src="../../../assets/img/Rectangle复制.png"></div><i class="mui-icon mui-icon-checkmarkempty choose_i"></i></span>
+					</div>
+					<div class="choose">
+						<label class="">2天</label>
+						<span class="choose_gou"><div class="choose_img"><img src="../../../assets/img/Rectangle复制.png"></div><i class="mui-icon mui-icon-checkmarkempty choose_i"></i></span>
+					</div>
+					<div class="choose">
+						<label class="">3天</label>
+						<span class="choose_gou"><div class="choose_img"><img src="../../../assets/img/Rectangle复制.png"></div><i class="mui-icon mui-icon-checkmarkempty choose_i"></i></span>
+					</div>
+					<div class="choose">
+						<label class="">4天</label>
+						<span class="choose_gou"><div class="choose_img"><img src="../../../assets/img/Rectangle.png"></div><i class="mui-icon mui-icon-checkmarkempty choose_i"></i></span>
+					</div>
+					<div class="choose">
+						<label class="">5天</label>
+						<span class="choose_gou"><div class="choose_img"><img src="../../../assets/img/Rectangle.png"></div><i class="mui-icon mui-icon-checkmarkempty choose_i"></i></span>
+					</div>
+					<div class="choose">
+						<label class="">6天</label>
+						<span class="choose_gou"><div class="choose_img"><img src="../../../assets/img/Rectangle.png"></div><i class="mui-icon mui-icon-checkmarkempty choose_i"></i></span>
+					</div>
+					<div class="choose">
+						<label class="">7天</label>
+						<span class="choose_gou"><div class="choose_img"><img src="../../../assets/img/Rectangle.png"></div><i class="mui-icon mui-icon-checkmarkempty choose_i"></i></span>
+					</div>
+			 	 </div>
+			 	 <label>凑够整500数读书币即可多看1个章节，500读书币可读1章节</label>
+			 </div>
+
+		<div class="all">
+			<div>
+				<img src="../../../assets/img/more_share_img_001_01.png">
+			</div>
+					<div class="tab">
+	               		<div class="tab_left">
+	               			<span >任务集市</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span>金币明细</span>
+	               		</div>
+	               	</div>
+	               	<p class="qiandao_p">做任务赢取更多奖励，还可以额外获取读书币</p>
+	               	<div class="list_a">
+	        			<div class="list_a_img">
+	        				<img src="../../../assets/img/share_the_rewards_icon_002_01.png">
+	        			</div>
+	        			<div class="jiangli">
+	        				<p>分享奖励</p>
+	        				<span class="red">+5读书币</span>
+	        			</div>
+        				<span class="zuorenwu" data-btn="share" onclick="task(this)">做任务</span>
+        				<!-- <span class="lingqu" data_btn="share" onclick="Receive(this)">领取</span> -->
+
+
+        			</div>
+        			<div class="list_a">
+	        			<div class="list_a_img">
+	        				<img src="../../../assets/img/share_the_rewards_icon_002_01 (1).png">
+	        			</div>
+	        			<div class="jiangli">
+	        				<p>阅读奖励</p>
+	        				<span >+5读书币</span>
+	        			</div>
+        				<!-- <span class="zuorenwu" data_btn="Read" onclick="task(this)">做任务</span> -->
+        				<span class="lingqu" onclick="Receive(this)"  data-btn="Read">领取</span>
+        			</div>
+        			<div class="list_a">
+	        			<div class="list_a_img">
+	        				<img src="../../../assets/img/commentary_reward_002_01.png">
+	        			</div>
+	        			<div class="jiangli">
+	        				<p>评论奖励</p>
+	        				<span>+5读书币</span>
+	        			</div>
+        				<span class="zuorenwu" onclick="task(this)" data-btn="comment">做任务</span>
+        				<!-- <span class="lingqu" onclick="Receive(this)" data_btn="comment">领取</span> -->
+
+
+        			</div>
+        			<div class="list_a">
+	        			<div class="list_a_img">
+	        				<img src="../../../assets/img/advertising_awards_icon_002_01.png">
+	        			</div>
+	        			<div class="jiangli">
+	        				<p>广告奖励</p>
+	        				<span>+5读书币</span>
+	        			</div>
+        				<span class="zuorenwu" onclick="task(this)" data-btn="Advertisement">做任务</span>
+        				<!-- <span class="lingqu" onclick="Receive(this)" data_btn="Advertisement">领取</span> -->
+
+        			</div>
+		</div>
+  		
+		<div class="free_end">
+  			<div class="bg"></div>
+  			<div class="free_end_vip_All">
+	  			<div class="free_end_vip">
+	  				<div>
+	  					<label class="all_title">评论奖励</label>
+	  					<div>
+	  						<img src="../../../assets/img/gold_coins_icon_001_01.png">
+	  					</div>
+		  				<span >x5</span>
+	  				</div>
+	  				<p class="success">完成</p>
+	  			</div>
+	  			<div class="free_end_ready">
+	  				分享领取更多读书
+	  			</div>
+	  		</div>	
+  		</div>
+  		
+  		
+  	
+
+
+  	
+
+
+  		<div class="bg"></div>
+  		<div class="choose1">
+			<h2>分享至</h2>
+			<div class="choose_iphone">
+				<div class="choose1_img">
+					<img src="../../../assets/img/wechat_logo_001_01复制.png" alt="">	
+					<span>QQ</span>
+				</div>
+				<div class="choose1_img">
+					<img src="../../../assets/img/wechat_logo_001_01.png" alt="">
+					<span>微信</span>
+				</div>
+				<div class="choose1_img">
+					<img src="../../../assets/img/wechat_logo_001_01复制%202.png" alt="">
+					<span>朋友圈</span>
+				</div>
+				<div class="choose1_img">
+					<img src="../../../assets/img/circle_of_friends_logo_001_01.png" alt="">
+					<span>微博</span>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+	 $(".back").click(function(){
+			window.history.go(-1)
+		})
+	 	$(".bg").click(()=>{
+	 		$(".choose1").hide(500)
+	 		$(".bg").hide(500)
+	 		$(".free_end").hide(500)
+	 	})
+
+	 	$(".success").click(()=>{
+	 		$(".choose1").hide(500)
+	 		$(".bg").hide(500)
+	 		$(".free_end").hide(500)
+	 	})
+	 	$(".choose_iphone").click(()=>{
+	 		$(".choose1").hide(500)
+	 		$(".bg").hide(500)
+	 	})
+	 		function task(self){
+				if($(self).attr("data-btn")=="share"){
+					$(".bg").show(500);
+					$(".choose1").show(500);
+				}else if($(self).attr("data-btn")=="Read"){
+					$(".free_end").show(500)
+					$(".all_title").text("阅读奖励");
+						$(".bg").show(500);
+				}else if($(self).attr("data-btn")=="Advertisement"){
+						$(".free_end").show(500);
+						$(".all_title").text("广告奖励");
+						$(".bg").show(500);
+				}else if($(self).attr("data-btn")=="comment"){
+					$(".free_end").show(500);
+					$(".all_title").text("评论奖励");
+						$(".bg").show(500);
+				}
+			}	
+
+			function qiandao(sefl){
+				$(".bg").show(500);
+				$(".free_end_qiandao").show(500);
+			}
+		</script>
+	</body>
+</html>

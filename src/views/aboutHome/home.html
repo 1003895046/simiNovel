@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: 25%;
+
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.home_bottom_img{
+				margin-bottom: 50px;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(26,37,51,1);
+				border-bottom: 3px solid black !important;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+				font-size:14px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:#666;
+				margin-right: 20px
+			}
+			.mui-segmented-control .mui-control-item{
+				display: inline-block;
+				width: auto;
+			}
+			.mui-slider-indicator{
+				text-align: left;
+			}
+			.mui-bar .mui-active{
+				color: #F72204
+			}
+			/*tab*/
+			.tab{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 50px;
+			}
+			.tab_left{
+				color: #000;
+				font-size: 14px;
+				align-items: center;
+   				 display: flex;
+			}
+			.line{
+				background: #F92A56;
+				width: 4px;
+				height: 16px;
+				margin-right:5px;
+			}
+			.tab_right{
+				color: #3391FF;
+				font-size: 14px;
+				display: flex;
+				align-items: center
+			}
+			.tab_right div{
+				width: 22px;
+				height: 22px;
+			}
+			.tab_right div img{
+				width: auto;
+			}
+			/*hot*/
+			.end{
+				border:1px solid #3391FF;
+				color: #3391FF;
+			}
+			.vip{
+				border:1px solid #FA6400;
+				color: #FA6400;
+			}
+			.Serialization{
+				border:1px solid green;
+				color: green;
+			}
+			.free{
+				border:1px solid #F92A56;
+				color: #F92A56;
+			}
+			.Rectangle{
+				border:1px solid violet;
+				color:violet;
+			}
+			.hotbtn{
+				height: 20px;
+				width: 60px;
+				display: inline-block;
+				font-size: 12px;
+				text-align: center;
+				line-height: 20px;
+				border-radius:2px;
+				margin-right: 10px;
+			}
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_tro{
+				height: 36px;
+				 overflow : hidden;
+				  text-overflow: ellipsis;
+				  display: -webkit-box;
+				  -webkit-line-clamp: 2;      /* 可以显示的行数，超出部分用...表示*/
+				  -webkit-box-orient: vertical;
+				  margin-top: 10px
+			}
+			.hot_content_score{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px
+			}
+			.name{
+				color: #ccc;
+				font-size:13px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+			}
+			.fen{
+				color: #F92A56;
+				font-size:20px;
+				font-weight:600;
+			}
+			.fen label{
+				color: #F92A56;
+				font-size: 12px
+
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px
+			}
+			.hot_left{
+				width: 106px;
+				height: 134px;
+				position: relative;
+				margin-right: 10px;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_mask{
+				width: 106px;
+				height: 134px;
+			}
+			.hot_vip{
+				position: absolute;
+				width: 42px;
+				height: 30px;
+				right: 0;
+    			top: 0;
+    		}
+			/*排行*/
+
+			.paih_content_all{
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 10px;
+			}
+			.paih_content{
+				display: flex;
+				flex-direction: column;
+				margin-right: 9px;
+				width: 106px;
+			}
+			.free_content{
+				display: flex;
+				flex-direction: column;
+				margin-right: 9px;
+				width: 106px;
+			}
+			.paih_content p{
+				font-size: 15px;
+				color: #000;
+				margin-bottom: 0
+			}
+			.paih_content span{
+				font-size: 12px;
+				color: #ccc
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">私觅小说</h1>
+	　　</header>
+		<div class="mui-slider" style="margin-top: 44px">
+		  <div class="mui-slider-group mui-slider-loop">
+		    <!--支持循环，需要重复图片节点-->
+		    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="4.jpg" /></a></div>
+		    <div class="mui-slider-item"><a href="#"><img src="../../../assets/img/微医UED 活动banner.png" /></a></div>
+		    <div class="mui-slider-item"><a href="#"><img src="2.jpg" /></a></div>
+		    <div class="mui-slider-item"><a href="#"><img src="3.jpg" /></a></div>
+		    <div class="mui-slider-item"><a href="#"><img src="4.jpg" /></a></div>
+		    <!--支持循环，需要重复图片节点-->
+		    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../../../assets/img/微医UED 活动banner.png" /></a></div>
+		  </div>
+		</div>
+	<div class="mui-content"> 
+            <ul class="mui-table-view mui-grid-view mui-grid-9">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="./newproducts.html">  
+                         <img src="../../../assets/img/New_product_icon_001_01.png">  
+                         <div class="mui-media-body">新品</div>
+                    </a>
+                 </li>  
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="./FreeAdmission.html">  
+                        <img src="../../../assets/img/free_icon_001_01.png">  
+                         <div class="mui-media-body">免费</div>
+                    </a>
+                </li>  
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="./Ranking.html">  
+                         <img src="../../../assets/img/ranking_icon_001_01的副本.png">  
+                         <div class="mui-media-body">排行</div>
+                    </a>
+                </li>  
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="./classification.html">  
+                        <img src="../../../assets/img/classification_icon_001_01.png">  
+                         <div class="mui-media-body">分类</div>
+                    </a>
+                </li>  
+            </ul>
+        </div>
+
+ <div style="padding:15px">	
+	<div id="slider" class="">
+        <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <a class="mui-control-item mui-active" onclick="linewidth(this)" href="#item1mobile">热门推荐</a>
+            <a class="mui-control-item" onclick="linewidth(this)" href="#item2mobile">男频</a>
+            <a class="mui-control-item" onclick="linewidth(this)" href="#item3mobile">女频</a>
+            <a class="mui-control-item" onclick="linewidth(this)" href="#item4mobile">漫画</a>
+        </div>
+        <div class="mui-control-padded">
+        	<!-- 热门推荐 -->
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+               	<div class="tab">
+               		<div class="tab_left">
+               			<i class="line"></i>
+               			<span>新书推荐</span>
+               		</div>
+               		<div class="tab_right">
+               			<span>更多</span>
+               			<div>
+               				<img src="../../../assets/img/more_icon_001_01.png">
+               			</div>
+               		</div>
+               	</div>
+               	<div class="hot_content_All">
+	               	<div class="hot_content">
+	               		<div class="hot_left">
+	               			<!-- 新品 -->
+	               		<img class="hot_title" src="../../../assets/img/title_icon_001_01.png">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               			<!-- vip -->
+	               			<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
+	               			<!-- 免费 -->
+	               			<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
+
+	               		</div>
+	               		<div class="hot_right">
+	               			<div class="hot_content_title">
+	               				<h5>一世倾城：冷宫弃妃</h5>
+	               			</div>
+	               			<div class="hot_content_score">
+	               				<span class="name">冷青衫 著</span>
+	               				<span class="fen">9.6 <label>分</label></span>
+	               			</div>
+	               			<div class="hot_content_tro">
+	               				《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的
+	               			</div>
+	               			<div class="hot_content_state">
+	               				<span class="end hotbtn">已完结</span>
+	               				<span class="Rectangle hotbtn">签约</span>
+	               				<!-- <span class="free hotbtn">限时免费</span>
+	               				<span class="Serialization hotbtn">连载中</span>
+	               				<span class="vip hotbtn">VIP</span> -->
+	               			</div>
+	               		</div>
+	               	</div>	
+               	</div>
+
+			<!-- 本周排行 -->	
+               	<div class="tab">
+               		<div class="tab_left">
+               			<i class="line"></i>
+               			<span>本周排行</span>
+               		</div>
+               		<div class="tab_right">
+               			<span class="more">更多</span>
+               			<div >
+	               			<img src="../../../assets/img/more_icon_001_01.png">
+               			</div>
+               		</div>
+               	</div>
+               	<div class="paih_content_all">
+	               	<div class="paih_content">
+	               		<div class="hot_left">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               				<!-- vip -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
+		               			<!-- 免费 -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
+	               		</div>
+	               		<p>等你的星光</p>
+	               		<span>科幻空间</span>
+	               	</div>
+	               		<div class="paih_content">
+	               		<div class="hot_left">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               				<!-- vip -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
+		               			<!-- 免费 -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
+	               		</div>
+	               		<p>等你的星光</p>
+	               		<span>科幻空间</span>
+	               	</div>
+	               		<div class="paih_content">
+	               		<div class="hot_left">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               				<!-- vip -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
+		               			<!-- 免费 -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
+	               		</div>
+	               		<p>等你的星光</p>
+	               		<span>科幻空间</span>
+	               	</div>
+	               	<div class="paih_content">
+	               		<div class="hot_left">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               				<!-- vip -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
+		               			<!-- 免费 -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
+	               		</div>
+	               		<p>等你的星光</p>
+	               		<span>科幻空间</span>
+	               	</div>
+	            </div>
+<!-- 限时免费 -->
+	            	<div class="tab">
+	               		<div class="tab_left">
+	               			<i class="line"></i>
+	               			<span>限时免费</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span class="free_more">更多</span>
+	               			<div >
+		               			<img src="../../../assets/img/more_icon_001_01.png">
+	               			</div>
+	               		</div>
+               		</div>
+               	<div class="paih_content_all">
+	               	<div class="free_content">
+	               		<div class="hot_left">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               				<!-- vip -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
+		               			<!-- 免费 -->
+		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
+	               		</div>
+	               		<p>等你的星光</p>
+	               		<span>科幻空间</span>
+	               	</div>
+	            </div>   	
+            </div>
+            <!-- 男频 -->
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+            	n男频
+            </div>
+            <!-- 女频 -->
+            <div id="item3mobile" class="mui-slider-item mui-control-content">
+               女频
+            </div>
+            <!-- 漫画 -->
+            <div id="item4mobile" class="mui-slider-item mui-control-content">
+               漫画
+            </div>
+        </div>
+    </div>
+    <div class="home_bottom_img">
+    	<img src="../../../assets/img/customer_service_img_icon_001_01.png">
+    </div>
+</div>   
+
+    <nav class="mui-bar mui-bar-tab">
+        <a class="tab-item mui-active" href="./home.html">
+				<img src="../../../assets/img/Home_icon_001_01.png">
+				<span class="mui-tab-label">首页</span>
+		</a>
+        <a class="tab-item" href="./search.html">
+				<img src="../../../assets/img/search_icon_001_01
+.png">
+				<span class="mui-tab-label">搜索</span>
+		</a>
+		<a class="tab-item" href="./Recharge.html">
+				<img src="../../../assets/img/top_up_icon_001_01.png">
+				<span class="mui-tab-label">充值</span>
+		</a>
+        <a class="tab-item" href="./mine.html">
+				<img src="../../../assets/img/personal_center_icon_001_01
+.png">
+				<span class="mui-tab-label">我的</span>
+		</a>
+    </nav>
+
+
+
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			var gallery = mui('.mui-slider');
+				gallery.slider({
+			    interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+			});
+
+			function linewidth(self){
+				console.log(self)
+				let width = $(self).width()
+				console.log(width)
+				$("#sliderProgressBar").css("width",width)
+			}
+
+			$(".hot_content").click(()=>{
+				location.href ="../details/details.html"
+			})
+
+			$(".paih_content").click(()=>{
+				location.href ="../details/details.html"
+			})
+			$(".free_content").click(()=>{
+				location.href ="../details/details.html"
+			})
+
+			// 点击更多
+			$(".free_more").click(()=>{
+				location.href="./Ranking.html"
+			})
+			$(".more").click(()=>{
+				location.href="./newproducts.html"
+			})
+		</script>
+	</body>
+</html>

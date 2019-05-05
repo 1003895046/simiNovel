@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+		body{
+				background: #fff;
+			}
+
+			.all{
+				margin-top: 44px;
+				padding: 15px;
+			}
+			/*tab*/
+			.tab{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 50px;
+			}
+			.tab_left{
+				color: #000;
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+   				display: flex;
+   				flex-direction: column;
+			}
+			.tab_left p{
+				color: #ccc;
+				margin-top: 10px;
+				font-size: 13px;
+			}
+			.tab_right{
+				color: #F92A56;
+				font-size: 14px;
+				display: flex;
+				align-items: center
+			}
+
+
+			.comment{
+				display: flex;
+				flex-direction: column;
+			}
+			.comment_neme_time{
+				margin-bottom: 10px;
+				font-size: 14px;
+				display: flex;
+				justify-content: space-between;
+			}
+			.comment_name{
+				font-style: 14px;
+				color: #555
+			}
+			.comment_time{
+				color: #999
+			}
+			.comment_content{
+				color: #ccc
+			}
+
+
+
+	.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+			}
+			.mui-bar .mui-active{
+				color: #F72204
+			}
+			.mui-content{
+				position: fixed;
+				bottom: 0;
+				height: 60px;
+				background: #efeff4;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				display: flex;
+				align-items: center;
+				padding:0 15px;
+				width: 100%;
+			}
+			
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.input-row{
+				width: 85%	
+			}
+			.search{
+				position: absolute;
+				top: 13px;
+    			right: 15px;
+    			width:40px;
+				height:32px;
+				font-size:18px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(51,145,255,1);
+				line-height:32px;
+			}
+			#searchInput{
+				text-align: left;
+				background: #fff
+			}
+
+			.input-row i{
+				position: absolute;
+			    top: 50%;
+			    margin-top: -12px;
+			    margin-left: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">搜索</h1>
+	　　</header>
+			<div class="all">
+				<div class="tab">
+	               		<div class="tab_left">
+	               			<span class="tab_left_commtent">评论</span>
+	               		</div>
+              	 	</div>
+              	 	<div class="all_comment">
+              	 		<div class="comment">
+              	 			<div class="comment_neme_time">
+              	 				<span class="comment_neme">岁月静好</span>
+              	 				<span class="comment_time">2019-01-21日</span>
+              	 			</div>
+              	 			<div class="comment_content">
+              	 				<p>此书不错，故事情节曲折跌宕，但最后的结局还是很圆满的，很不错，喜欢！</p>
+              	 			</div>
+              	 		</div>
+              	 		<div class="comment">
+              	 			<div class="comment_neme_time">
+              	 				<span class="comment_neme">岁月静好</span>
+              	 				<span class="comment_time">2019-01-21日</span>
+              	 			</div>
+              	 			<div class="comment_content">
+              	 				<p>此书不错，故事情节曲折跌宕，但最后的结局还是很圆满的，很不错，喜欢！</p>
+              	 			</div>
+              	 		</div>
+              	 	</div>
+              	</div>	
+        
+    	</div>
+    <div class="mui-content">
+	        <!-- MUI 搜索框 -->
+		        <div class="input-row mui-search" id="searchForm">
+		            <input type="search" style="margin-bottom: 0" id="searchInput" onkeyup="enterSearch(event)" class="mui-input-clear" placeholder="请输入">
+		        </div>
+		        <img src="../../../assets/img/icon.png" class="search">
+	    </div>
+ 
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+		 $(".back").click(function(){
+			window.history.go(-1)
+		})
+		</script>
+	</body>
+</html>

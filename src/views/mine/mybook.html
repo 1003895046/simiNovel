@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all{
+				padding: 15px;
+				margin-top: 44px;
+			}
+			.hotbtn{
+				width:90px;
+				height:26px;
+				background:rgba(250,100,0,1);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:15px;
+				line-height: 26px;
+				font-size: 12px;
+				color: white;
+				text-align: center;
+				margin-top: 15px;
+				display: inline-block;
+			}
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_tro{
+				width: 200px;
+				 overflow:hidden;
+			    text-overflow:ellipsis;
+			    white-space:nowrap;
+				  margin-top: 10px
+			}
+			.hot_content_score{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px
+			}
+			.name{
+				color: #ccc;
+				font-size:13px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+			}
+			.fen{
+				color: #F92A56;
+				font-size:20px;
+				font-weight:600;
+			}
+			.fen label{
+				color: #F92A56;
+				font-size: 12px
+
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px;
+				padding: 15px;
+    			background: #F0F2F5;
+			}
+			.hot_left{
+				width: 106px;
+				height: 134px;
+				position: relative;
+				margin-right: 10px;
+			}
+			.hot_left1{
+				width: 106px;
+				height: 134px;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_mask{
+				width: 106px;
+				height: 134px;
+			}
+			.hot_vip{
+				position: absolute;
+				width: 42px;
+				height: 30px;
+				right: 0;
+    			top: 0;
+    		}
+
+    		.paih_content_all{
+    			display: flex;
+    			flex-wrap: wrap;
+    		}
+    		.paih_content{
+    			margin-top:30px;
+    			position: relative;
+    		}
+    		.paih_content span{
+    			width: 100%;
+    			height: 30px;
+    			line-height: 30px;
+   				display: inline-block;
+   				padding-left: 10px;
+    		}
+
+
+    		.hot_leftfix{
+    			position: absolute;
+    			top: 0;
+    			width: 108px;
+    			background: #000;
+    			opacity: 0.6;
+    			height: 134px;
+    			display: none
+    		}
+    		.hot_fix{
+    			width: 46px;
+    			position: absolute;
+    			top: 50%;
+    			left: 50%;
+    			margin-left: -23px;
+    			display: none;
+    			margin-top: -40px;
+    		}
+
+
+    		.choose{
+				width: 100%;
+				position: fixed;
+				bottom: -1px;
+				height:406px;
+				background:rgba(255,255,255,1);
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px 10px 0px 0px;
+				z-index: 1000;
+				padding: 20px;
+				display: none;
+			}
+			.choose_img{
+				display: flex;
+				flex-direction: column;
+				width: 160px;
+				height: 202px;
+			}
+			.choose_iphone span{
+				text-align: center;
+				color:#F92A56;
+				font-size: 20px;
+				margin-top: 20px
+			}
+			.choose_iphone{
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center
+			}
+			h2{
+				font-size: 20px;
+				margin-bottom: 25px;
+			}
+			.choose_bottom{
+				position: fixed;
+    			bottom: -1px;
+    			right: 0;
+    			left: 0;
+    			height: 50px;
+    			box-shadow:0px 1px 0px 0px rgba(0,0,0,0.1);
+			}
+			.choose_bottom p{
+				margin-bottom: 0;
+			}
+			.choose_bottom .del{
+				color: white;
+				background: #FA6400;
+				width: 50%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			.choose_bottom .close{
+				color: #FA6400;
+				width: 50%;
+				text-align: center;
+				line-height: 50px;
+			}
+			.choose_typpe{
+				display: flex;
+			}
+
+
+
+
+			.nobook{
+				display: none
+			}
+			.fail{
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				color: #ccc;
+				font-size: 13px;
+				margin-top: 30px;
+			}
+			.chooseBook{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.chooseBook p{
+				width:134px;
+				height:32px;
+				background:rgba(51,145,255,1);
+				box-shadow:0px 0px 10px 0px rgba(51,145,255,0.2);
+				border-radius:15px;
+				font-size:16px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				line-height: 32px;
+				text-align: center;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">我的书架</h1>
+	　　</header>
+		<div class="all">
+				<div class="hot_content_All">
+	            	<div class="hot_content">
+	               		<div class="hot_left">
+	               			<!-- 新品 -->
+	               		<img class="hot_title" src="../../../assets/img/title_icon_001_01.png">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+
+	               		</div>
+	               		<div class="hot_right">
+	               			<div class="hot_content_title">
+	               				<h5>一世倾城：冷宫弃妃</h5>
+	               			</div>
+	               			<div class="hot_content_tro">
+	               				《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的
+	               			</div>
+	               			<div class="hot_content_score">
+	               				<span class="name">已阅读至 <label>第五章</label> </span>
+	               			</div>
+	               			<div class="hot_content_state">
+	               				<span class=" hotbtn">继续阅读</span>
+	               			</div>
+	               		</div>
+	               	</div>	
+               	</div>
+
+               	<div class="paih_content_all">
+	               	<div class="paih_content"  onclick="deleteBookshow(this)">
+	               		<div class="hot_left1">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               		</div>
+	               		<div class="hot_leftfix">
+	               		</div>
+	               		<div class="hot_fix" onclick="deleteBook(this)">
+	               			<img  src="../../../assets/img/delete_ss_icon_001_01.png">
+	               		</div>
+	               		<span>科幻空间</span>
+	               	</div>
+	            </div>
+		</div>
+  			
+
+  		<div class="choose">
+			<h2>从选择</h2>
+			<div class="choose_iphone">
+				<div class="choose_img">
+					<img src="../../../assets/img/Mask.png">
+				</div>
+				<span>《末日乐园》</span>
+			</div>
+			<div class="choose_bottom">
+				<div class="choose_typpe">
+					<p class="close">取消</p>
+					<p class="del">删除</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="nobook">
+			<div class="chooseBook">
+				<div class="fail">抱歉！您的书架暂时还没有书籍</div>
+				<p>去选书</p>
+			</div>
+		</div>
+		
+
+
+
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+				var removeBook = ""
+
+				$(".back").click(function(){
+					window.history.go(-1)
+				})
+
+				function deleteBookshow(self){
+					$(self).find(".hot_leftfix").show(100)
+					$(self).find(".hot_fix").show(100)
+				}
+
+				function deleteBook(self){
+					$(".choose").show(500);
+					removeBook = $(self).parent(".paih_content")
+				}
+				// 取消
+				$(".close").click(()=>{
+					$(".choose").hide(500);
+				})
+				// 删除/
+				$(".del").click(()=>{
+					$(".choose").hide(500);
+					$(removeBook[0]).remove()
+				})
+		</script>
+	</body>
+</html>

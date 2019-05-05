@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.regis_success{
+				margin-top: 30px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			 .regis_success p{
+				font-size:19px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(247,33,4,1);
+				line-height:26px;
+			 }
+			 .register_su{
+			 	display: flex;
+			 	flex-direction: column;
+			 	align-items: center;
+			 }
+			 .register_su img{
+			 	width: 224px;
+			 	height: 146px;
+			 	margin-top: 150px
+			 }
+			 .regsiter_btn p{
+				width: 350px;
+				height: 50px;
+				background:rgba(250,100,0,1);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				font-size:20px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				line-height:50px;
+				letter-spacing:2px;
+				text-align: center;
+				margin-bottom: 30px;
+				margin-top: 100px
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="register">
+			<div class="register_su">
+				<img src="../../assets/img/medium／mailbox.png">
+				<div class="regis_success">
+					<p>恭喜您!找回密码成功!</p>
+				</div>
+				<div class="regsiter_btn">
+						<p>去登录</p>
+				</div>
+			</div>
+		</div>
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			
+				$(".regsiter_btn p").click(() => {
+					location.href ="./login.html"
+				})
+
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: 25%;
+
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.home_bottom_img{
+				margin-bottom: 50px;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(26,37,51,1);
+				border-bottom: 3px solid black !important;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+				font-size:14px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:#666;
+				margin-right: 20px
+			}
+			.mui-segmented-control .mui-control-item{
+				display: inline-block;
+				width: auto;
+			}
+			.mui-slider-indicator{
+				text-align: left;
+			}
+			.mui-bar .mui-active{
+				color: #F72204
+			}
+   			
+			/*hot*/
+			.end{
+				border:1px solid #3391FF;
+				color: #3391FF;
+			}
+			.vip{
+				border:1px solid #FA6400;
+				color: #FA6400;
+			}
+			.Serialization{
+				border:1px solid green;
+				color: green;
+			}
+			.free{
+				border:1px solid #F92A56;
+				color: #F92A56;
+			}
+			.Rectangle{
+				border:1px solid violet;
+				color:violet;
+			}
+			.hotbtn{
+				height: 20px;
+				width: 60px;
+				display: inline-block;
+				font-size: 12px;
+				text-align: center;
+				line-height: 20px;
+				border-radius:2px;
+				margin-right: 10px;
+			}
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_tro{
+				height: 36px;
+				 overflow : hidden;
+				  text-overflow: ellipsis;
+				  display: -webkit-box;
+				  -webkit-line-clamp: 2;      /* 可以显示的行数，超出部分用...表示*/
+				  -webkit-box-orient: vertical;
+				  margin-top: 10px
+			}
+			.hot_content_score{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px
+			}
+			.name{
+				color: #ccc;
+				font-size:13px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+			}
+			.fen{
+				color: #F92A56;
+				font-size:20px;
+				font-weight:600;
+			}
+			.fen label{
+				color: #F92A56;
+				font-size: 12px
+
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px
+			}
+			.hot_left{
+				width: 106px;
+				height: 134px;
+				position: relative;
+				margin-right: 10px;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_mask{
+				width: 106px;
+				height: 134px;
+			}
+			.hot_vip{
+				position: absolute;
+				width: 42px;
+				height: 30px;
+				right: 0;
+    			top: 0;
+    		}
+    		.mui-popover .mui-popover-arrow:after{
+    			position: static;
+    		}
+    		.cation_oli{
+    			font-size: 15px;
+    			height: 50px;
+    			line-height: 50px;
+    		}
+    		.cation_oul{
+    			display: flex;
+   				justify-content: space-between;
+    		}
+    		.allclass .hidden_oli{
+			    line-height: 40px;
+			    height: 40px;
+			    text-align: center;
+			    font-size: 15px;
+    		}
+    		.allclass{
+    			    position: absolute;
+				    top: 100px;
+				    width: 100%;
+				    display: none;
+				     background: white;
+			    padding: 15px 0;
+				    z-index: 100;
+				    box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25),0px -1px 0px 0px rgba(232,232,232,1),0px 1px 0px 0px rgba(232,232,232,1);
+    		}
+    		.allsort {
+				    position: absolute;
+				    top: 100px;
+				    width: 100%;
+				    display: none;
+				    padding: 15px 0;
+				    z-index: 100;
+				    background: white;
+				    box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25),0px -1px 0px 0px rgba(232,232,232,1),0px 1px 0px 0px rgba(232,232,232,1);
+    		}
+    		.allsort .hidden_oli{
+    			line-height: 40px;
+			    height: 40px;
+			    text-align: center;
+			   font-size: 15px;
+			 }
+			 .allcondition {
+				    position: absolute;
+				    top: 100px;
+				    width: 100%;
+				    display: none;
+				    height: auto;
+				    padding: 15px 0;
+				    background: white;
+				    z-index: 100;
+				    box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25),0px -1px 0px 0px rgba(232,232,232,1),0px 1px 0px 0px rgba(232,232,232,1);
+    		}
+    		.allcondition{
+    			padding: 15px;
+    			font-size: 15px;
+    		}
+    		.hidden_oul span{
+    			color: #ccc;
+    		}
+    		.allcondition .hidden_oli{
+    			line-height: 40px;
+    			display: inline-block;
+			    height: 40px;
+			    margin-right: 30px;
+			 }
+    		.hidden_oul_ul{
+    			display: flex;
+    			flex-wrap: wrap;
+    		}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">奇幻玄幻</h1>
+	　　</header>
+	<div class="allclass">
+			<ul class="hidden_oul">
+				<li class="hidden_oli" onclick="Selection(this)" data-oli="allclass">全部分类1</li>
+				<li class="hidden_oli" onclick="Selection(this)" data-oli="allclass">全部分类2</li>
+			</ul>
+		</div>
+		<div class="allsort">
+			<ul class="hidden_oul">
+				<li class="hidden_oli" onclick="Selection(this)" data-oli="allsort">热度排序1</li>
+				<li class="hidden_oli" onclick="Selection(this)" data-oli="allsort"> 热度排序2</li>
+			</ul>
+		</div>
+		<div class="allcondition">
+			<div class="hidden_oul">
+				<span>进度选择</span>
+				<ul class="hidden_oul_ul">
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">完结</li>
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">连载中</li>
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">更新</li>
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">未更新</li>
+				</ul>
+			</div>
+			<div class="hidden_oul">
+				<span>属性</span>
+				<ul class="hidden_oul_ul">
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">不限</li>
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">付费</li>
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">免费</li>
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">完结</li>
+					<li class="hidden_oli" onclick="Selection(this)" data-oli="allcondition">vip</li>
+				</ul>
+			</div>
+		</div>
+	
+ <div style="padding:15px;margin-top: 50px;margin-bottom: 50px;padding-top: 0">	
+	<div>
+		<ul class="cation_oul">
+			<li class="cation_oli" onclick="cationli(this)" data-oli="allclass">
+				<span class="allclassspan">全部分类</span>
+				<label class="mui-icon mui-icon-arrowdown"></label>
+			</li>
+			<li class="cation_oli" onclick="cationli(this)" data-oli="allsort">
+				<span class="allsortspan">热度排序</span>
+				<label class="mui-icon mui-icon-arrowdown"></label>
+			</li>
+			<li class="cation_oli" onclick="cationli(this)" data-oli="allcondition">
+				<span class="allconditionspan">条件筛选</span>
+				<label class="mui-icon mui-icon-arrowdown"></label>
+			</li>
+		</ul>
+		
+	</div>
+	<div id="slider" class="">
+        <div class="mui-control-padded">
+               	<div class="hot_content_All">
+	               	<div class="hot_content">
+	               		<div class="hot_left">
+	               			<!-- 新品 -->
+	               		<img class="hot_title" src="../../../assets/img/title_icon_001_01.png">
+
+	               		<img class="hot_mask" src="../../../assets/img/Mask.png">
+
+	               		</div>
+	               		<div class="hot_right">
+	               			<div class="hot_content_title">
+	               				<h5>一世倾城：冷宫弃妃</h5>
+	               			</div>
+	               			<div class="hot_content_score">
+	               				<span class="name">冷青衫 著</span>
+	               				<span class="fen">9.6 <label>分</label></span>
+	               			</div>
+	               			<div class="hot_content_tro">
+	               				《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的
+	               			</div>
+	               			<div class="hot_content_state">
+	               				<span class="end hotbtn">已完结</span>
+	               				<span class="Rectangle hotbtn">签约</span>
+	               				<!-- <span class="free hotbtn">限时免费</span>
+	               				<span class="Serialization hotbtn">连载中</span>
+	               				<span class="vip hotbtn">VIP</span> -->
+	               			</div>
+	               		</div>
+	               	</div>	
+	               
+               	</div>
+           
+        </div>
+    </div>
+</div>   
+
+    <nav class="mui-bar mui-bar-tab">
+        <a class="tab-item mui-active" href="./home.html">
+				<img src="../../../assets/img/Home_icon_001_01.png">
+				<span class="mui-tab-label">首页</span>
+		</a>
+        <a class="tab-item" href="./search.html">
+				<img src="../../../assets/img/search_icon_001_01
+.png">
+				<span class="mui-tab-label">搜索</span>
+		</a>
+		<a class="tab-item" href="./Recharge.html">
+				<img src="../../../assets/img/top_up_icon_001_01.png">
+				<span class="mui-tab-label">充值</span>
+		</a>
+        <a class="tab-item" href="./mine.html">
+				<img src="../../../assets/img/personal_center_icon_001_01
+.png">
+				<span class="mui-tab-label">我的</span>
+		</a>
+    </nav>
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			$(".back").click(function(){
+				window.history.go(-1)
+			})
+			function cationli(self) {
+				if($(self).attr("data-oli")=="allclass"){
+					$(".allclass").show(500)
+					$(".allsort").hide(100)
+					$(".allcondition").hide(100)
+				}else if($(self).attr("data-oli")=="allsort"){
+					$(".allclass").hide(100)
+					$(".allcondition").hide(100)
+					$(".allsort").show(500)
+				}else{
+					$(".allsort").hide(100)
+					$(".allclass").hide(100)
+					$(".allcondition").show(500)
+				}
+				
+			}
+			
+			function Selection(self) {
+				if($(self).attr("data-oli")=="allclass"){
+					$(".allclassspan").text($(self).text())
+					$(".allclass").hide(100)
+					$(".allsort").hide(100)
+					$(".allcondition").hide(100)
+				}else if($(self).attr("data-oli")=="allsort"){
+					$(".allsortspan").text($(self).text())
+					$(".allclass").hide(100)
+					$(".allsort").hide(100)
+					$(".allcondition").hide(100)
+				}else if($(self).attr("data-oli")=="allcondition"){
+					$(".allconditionspan").text($(self).text())
+					$(".allclass").hide(100)
+					$(".allsort").hide(100)
+					$(".allcondition").hide(100)
+				}
+			}
+
+			function linewidth(self){
+				console.log(self)
+				let width = $(self).width()
+				console.log(width)
+				$("#sliderProgressBar").css("width",width)
+			}
+
+			$(".hot_content").click(()=>{
+				location.href ="../details/details.html"
+			})
+		</script>
+	</body>
+</html>

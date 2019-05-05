@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			/*tab*/
+			.tab{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 50px;
+			}
+			.tab_left{
+				color: #000;
+				font-size: 18px;
+				align-items: center;
+   				 display: flex;
+			}
+			.tab_right{
+				color: #999;
+				font-size: 14px;
+				display: flex;
+				align-items: center
+			}
+
+
+
+			.all{
+				padding: 15px;
+				margin-top: 44px;
+			}
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_tro{
+				color: #ccc;
+				height: 36px;
+				 overflow : hidden;
+				  text-overflow: ellipsis;
+				  display: -webkit-box;
+				  -webkit-line-clamp: 2;      /* 可以显示的行数，超出部分用...表示*/
+				  -webkit-box-orient: vertical;
+				  margin-top: 10px
+			}
+			.hot_content_score{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px
+			}
+			.name{
+				color: #ccc;
+				font-size:13px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+			}
+			.fen{
+				color: #F92A56;
+				font-size:20px;
+				font-weight:600;
+			}
+			.fen label{
+				color: #F92A56;
+				font-size: 12px
+
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 10px;
+    			background: white;
+    			margin-top: 10px
+			}
+			.hot_left{
+				width: 58px;
+				height: 78px;
+				position: relative;
+				margin-right: 10px;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_mask{
+				width: 58px;
+				height: 78px;
+			}
+			.hot_vip{
+				position: absolute;
+				width: 42px;
+				height: 30px;
+				right: 0;
+    			top: 0;
+    		}
+    		.comment{
+    			width: 100%;
+    			font-size: 13px;
+    			color: #555
+    		}
+
+
+
+    		.img_all{
+    			display: flex;
+    			align-items: center;
+    			justify-content: space-between;
+    		}
+    		.img_dian{
+    			margin-right: 5px;
+    		}
+    		.img_num span{
+    			color: #ccc;
+    			font-size: 13px;
+    			margin-top: 1px
+    		}
+    		.img_ping{
+    			margin-right: 5px;
+    		}
+    		.comment_img{
+    			
+    		}
+    		.img_num{
+    			display: flex;
+    			margin-right: 40px;
+    		}
+    		.dianzen{
+
+    		}
+    		.more{
+    		
+    		}
+    		.img_left{
+    			display: flex
+    		}
+    		.img_all_photo{
+    			display: flex;
+    			flex-wrap: wrap;	
+    			margin-top: 10px;
+    		}
+    		.img_all_photo div{ 
+    			margin-right: 10px;
+    		}
+
+    		.moer_click{
+    			display: none;
+    		}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">评论帖子</h1>
+	　　</header>
+		<div class="all">
+		
+				<div class="comment_content">
+					<div class="tab">
+	               		<div class="tab_left">
+	               			<span >青春不抱歉</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span>2019-01-21日</span>
+	               		</div>
+	               	</div>
+	               	<div class="comment">
+	               		此书不错，故事情节曲折跌宕，但最后的结局还是很圆满的，很不错，喜欢！
+	               	</div>
+		            	<div class="hot_content">
+		               		<div class="hot_left">
+		               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+
+		               		</div>
+		               		<div class="hot_right">
+		               			<div class="hot_content_title">
+		               				<h5>一世倾城：冷宫弃妃</h5>
+		               			</div>
+		               			<div class="hot_content_tro">
+		               				《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的
+		               			</div>
+		               		</div>
+		               	</div>	
+	               	<div class="img_all">
+	               		<div class="img_left">
+	               			<div class="img_num">
+		               			<div class="img_dian">
+			               			<!-- <img src="../../../assets/img/give_a_like_icon_001_01 (1).png" class="dianzan"> -->
+			               			<img src="../../../assets/img/give_a_like_icon_001_01.png" class="dianzan">
+			               		</div>
+			               		<span>10</span>
+			               	</div>	
+			               	<div  class="img_num">
+			               		<div class="img_ping">
+			               			<!-- <img src="../../../assets/img/comments_icon_001_01复制 (1).png" class="comment_img"> -->
+			               			<img src="../../../assets/img/comments_icon_001_01复制.png" class="comment">
+			               		</div>
+			               		<span>20</span>
+		               		</div>
+	               		</div>
+	               		<div>
+	               			<!-- <img src="../../../assets/img/an_a_icon_002_01复制.png" class="more"> -->
+	               			<img src="../../../assets/img/an_a_icon_002_01的副本.png" class="more">
+	               		<!-- <img src="../../../assets/img/an_a_icon_002_01的副本.png" class="more"> -->
+	               		</div>
+	               	</div>
+				</div>
+				<div class="img_all_photo">
+					<div>
+						<img src="../../../assets/img/椭圆形.png">
+					</div>
+					<div>
+						<img src="../../../assets/img/椭圆形.png">
+					</div>
+					<div>
+						<img src="../../../assets/img/椭圆形.png">
+					</div>
+					<div>
+						<img src="../../../assets/img/椭圆形.png">
+					</div>
+					<div>
+						<img src="../../../assets/img/椭圆形.png">
+					</div>
+					
+				</div>
+			<div class="tab_left" style="margin-top: 20px">
+	            <span >共四条回复</span>
+	       	</div>	
+	       	<div class="other_comment_All">
+	       		<div class="other_comment">
+	       			<div class="tab">
+	               		<div class="tab_left">
+	               			<span style="font-size: 14px">青春不抱歉</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span>2019-01-21日</span>
+	               		</div>
+	               	</div>
+	               	<div style="color: #ccc">
+	               		确实不错，看了一半了，加油！
+	               	</div>
+	               	<div class="img_all">
+	               		<div class="img_left">
+	               			<div class="img_num">
+		               			<div class="img_dian">
+			               			<!-- <img src="../../../assets/img/give_a_like_icon_001_01 (1).png" class="dianzan"> -->
+			               			<img src="../../../assets/img/give_a_like_icon_001_01.png" class="dianzan">
+			               		</div>
+			               		<span>10</span>
+			               	</div>	
+			               	<div  class="img_num">
+			               		<div class="img_ping">
+			               			<!-- <img src="../../../assets/img/comments_icon_001_01复制 (1).png" class="comment_img"> -->
+			               			<img src="../../../assets/img/comments_icon_001_01复制.png" class="comment">
+			               		</div>
+			               		<span>20</span>
+		               		</div>
+	               		</div>
+	               		<div onclick="more(this)">
+	               			<img src="../../../assets/img/an_a_icon_002_01复制.png"  class="more">
+	               			<!-- <img src="../../../assets/img/an_a_icon_002_01的副本.png" class="more"> -->
+	               		<!-- <img src="../../../assets/img/an_a_icon_002_01的副本.png" class="more"> -->
+	               		</div>
+	               	</div>
+	             	  	<div class="moer_click">
+	               				<div class="img_all_photo">
+									<div>
+										<img src="../../../assets/img/椭圆形.png">
+									</div>
+									<div>
+										<img src="../../../assets/img/椭圆形.png">
+									</div>
+									<div>
+										<img src="../../../assets/img/椭圆形.png">
+									</div>
+									<div>
+										<img src="../../../assets/img/椭圆形.png">
+									</div>
+									<div>
+										<img src="../../../assets/img/椭圆形.png">
+									</div>
+								</div>
+							<div class="tab_left" style="margin-top: 20px">
+					            <span >共四条回复</span>
+					       	</div>	
+			               	<div class="tab">
+			               		<div class="tab_left">
+			               			<span style="font-size: 14px">青春不抱歉</span>
+			               		</div>
+			               		<div class="tab_right">
+			               			<span>2019-01-21日</span>
+			               		</div>
+			               	</div>
+			               	<div style="color: #ccc">
+			               		确实不错，看了一半了，加油！
+			               	</div>
+	               		</div>
+	       		</div>
+	       	</div>
+		</div>
+					
+		
+					
+
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+		 $(".back").click(function(){
+			window.history.go(-1)
+		})
+		 function more(self){
+		 	if($(self).find("img").attr("src")=="../../../assets/img/an_a_icon_002_01复制.png"){
+		 		$(self).parent(".img_all").next(".moer_click").show(500)
+		 		$(self).find("img").attr("src","../../../assets/img/an_a_icon_002_01的副本.png")
+		 	}else{
+		 		$(self).find("img").attr("src","../../../assets/img/an_a_icon_002_01复制.png")
+		 		$(self).parent(".img_all").next(".moer_click").hide(500)
+		 	}
+		 }
+
+		</script>
+	</body>
+</html>

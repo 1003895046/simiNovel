@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			/*hot*/
+			.end{
+				border:1px solid #3391FF;
+				color: #3391FF;
+			}
+			.vip{
+				border:1px solid #FA6400;
+				color: #FA6400;
+			}
+			.Serialization{
+				border:1px solid green;
+				color: green;
+			}
+			.free{
+				border:1px solid #F92A56;
+				color: #F92A56;
+			}
+			.Rectangle{
+				border:1px solid violet;
+				color:violet;
+			}
+				.hotbtn{
+				height: 20px;
+				width: 60px;
+				display: inline-block;
+				font-size: 12px;
+				text-align: center;
+				line-height: 20px;
+				border-radius:2px;
+				margin-right: 10px;
+			}
+			.hot_content_state{
+			}
+			.hot_content_tro{
+			}
+			.hot_content_score{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.name{
+				color: #ccc;
+				font-size:13px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+			}
+			.fen{
+				color: #F92A56;
+				font-size:20px;
+				font-weight:600;
+			}
+			.fen label{
+				color: #F92A56;
+				font-size: 12px
+
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px
+			}
+			.hot_left{
+				width: 120px;
+				height: 150px;
+				position: relative;
+				margin-right: 10px;
+			}
+			.hot_right{
+				display: flex;
+			    flex-direction: column;
+			    justify-content: space-around;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_mask{
+				width:100%;
+			}
+			.hot_vip{
+				position: absolute;
+				width: 42px;
+				height: 30px;
+				right: 0;
+    			top: 0;
+    		}
+
+    		.all_details{
+    			margin-top: 50px;
+    			padding: 15px;
+    			margin-bottom: 50px;
+    		}
+			.hot_score{
+				margin-right: 20px;
+			}
+			.hot_score img{
+				width: 20px;
+				height: 20px;
+			}
+			.hot_score_num{
+				display: flex;
+			}
+
+
+			/*tab*/
+			.tab{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 50px;
+			}
+			.tab_left{
+				color: #000;
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+   				display: flex;
+   				flex-direction: column;
+			}
+			.tab_left p{
+				color: #ccc;
+				margin-top: 10px;
+				font-size: 13px;
+			}
+			.tab_right{
+				color: #F92A56;
+				font-size: 14px;
+				display: flex;
+				align-items: center
+			}
+
+
+/*会员抢先看*/
+			.history_search{
+				margin-top: 30px
+			}
+			.all_history{
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			.all_history span{
+				padding: 10px;
+				background:rgba(245,245,245,1);
+				border-radius:4px;
+				color: #555;
+				font-size: 13px;
+				margin-top: 15px;
+				margin-right: 15px;
+			}
+
+			.paih_content_all{
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 10px
+			}
+			.paih_content{
+				display: flex;
+				flex-direction: column;
+				margin-right: 9px;
+				width: 106px;
+			}
+			.paih_content p{
+				font-size: 15px;
+				color: #000;
+				margin-bottom: 0;
+				    margin-top: 10px;
+			}
+			.paih_content span{
+				font-size: 12px;
+				color: #ccc
+			}
+			
+
+			.nav_bottom{
+				width: 100%;
+				height: 50px;
+				background: white;
+				position: fixed;
+				bottom: 0;
+				box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
+				z-index: 100;
+			}
+			.nav_oul{
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				height: 100%;
+			}
+			.nav_oli{
+				color: #F92A56;
+				width: 30%;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+			}
+			.nav_oli:hover{
+				color: #fff;
+				background: #FA6400;
+				border-radius:4px;
+			}
+
+
+			.comment{
+				display: flex;
+				flex-direction: column;
+			}
+			.comment_neme_time{
+				margin-bottom: 10px;
+				display: flex;
+				justify-content: space-between;
+			}
+			.comment_name{
+				font-style: 14px;
+				color: #555
+			}
+			.comment_time{
+				color: #999
+			}
+			.comment_content{
+				color: #ccc
+			}
+			
+
+
+			.log_list{
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				height: 30px;
+			}
+			.log_num{
+				width: 20%;
+				line-height: 30px;
+				font-size: 14px
+			}
+			.log_content{
+				width: 60%;
+				color:#ccc;
+				line-height: 30px;
+				font-size: 14px
+			}
+			.log_type{
+				width: 20%;
+				font-size: 14px;
+				line-height: 30px;
+				color: #F9712A;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">一世倾城</h1>
+	　　</header>
+				<div class="all_details">
+	               	<div class="hot_content">
+	               		<div class="hot_left">
+	               			<!-- 新品 -->
+	               			<img class="hot_title" src="../../../assets/img/title_icon_001_01.png">
+	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	               			<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png"> -->
+	               			<!-- 免费 -->
+	               			<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png"> -->
+
+	               		</div>
+	               		<div class="hot_right">
+	               			<div class="hot_content_title">
+	               				<h5>一世倾城：冷宫弃妃</h5>
+	               			</div>
+	               			<div class="hot_content_score">
+	               				<span class="name">冷青衫 著</span>
+	               			</div>
+	               			<div class="hot_score_num">
+	               				<div class="hot_score">
+	               					<img src="../../../assets/img/star_icon_001_01.png">
+	               					<img src="../../../assets/img/star_icon_001_01.png">
+	               					<img src="../../../assets/img/star_icon_001_01.png">
+	               					<img src="../../../assets/img/star_icon_001_01复制 3.png">
+	               					<img src="../../../assets/img/star_icon_001_02.png">
+	               				</div>
+	               				<span class="fen">9.6 <label>分</label></span>
+	               			</div>
+	               			<div class="hot_content_tro">
+	               				评论: 21条
+	               			</div>
+	               			<div class="hot_content_state">
+	               				<span class="end hotbtn">已完结</span>
+	               				<span class="Rectangle hotbtn">签约</span>
+	               				<!-- <span class="free hotbtn">限时免费</span>
+	               				<span class="Serialization hotbtn">连载中</span>
+	               				<span class="vip hotbtn">VIP</span> -->
+	               			</div>
+	               		</div>
+	               	</div>		
+	               	<!-- 简介 -->
+               		<div class="tab_left">
+               			<span>简介</span>
+               			<p>
+               				明朝绝对是华夏历史上最有意思的一个朝代，在这个朝代发生了许多有趣的事儿，出现了许多有趣的人儿，而且都是狠人，寂寞一刀带你一起去到这个狠人辈出的朝代，让你了解不一样的历史，体会不一样的人生，一刀出品，必属精品！寂寞一刀继他的官场三部曲后推出的历史官场大作，不可错过哦！
+               			</p>
+               		</div>
+<!-- 目录 -->
+               		<div class="tab">
+	               		<div class="tab_left">
+	               			<span>目录</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span class="tab_right_all">查看全部</span>
+	               		</div>
+              	 	</div>
+              	 	<div class="log_all">
+              	 			<div class="log_list">
+              	 				<span class="log_num">第一章</span>
+              	 				<span class="log_content">我自己的白日梦</span>
+              	 				<span class="log_type">免费</span>
+              	 			</div>
+              	 			<div class="log_list">
+              	 				<span class="log_num">第二章</span>
+              	 				<span class="log_content">我自己的白日梦</span>
+              	 				<span class="log_type">免费</span>
+              	 			</div>
+              	 	</div>
+
+<!-- 评论 -->
+              	 	<div class="tab">
+	               		<div class="tab_left">
+	               			<span >评论</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span class="tab_left_commtent">查看全部</span>
+	               		</div>
+              	 	</div>
+              	 	<div class="all_comment">
+              	 		<div class="comment">
+              	 			<div class="comment_neme_time">
+              	 				<span class="comment_neme">岁月静好</span>
+              	 				<span class="comment_time">2019-01-21日</span>
+              	 			</div>
+              	 			<div class="comment_content">
+              	 				<p>此书不错，故事情节曲折跌宕，但最后的结局还是很圆满的，很不错，喜欢！</p>
+              	 			</div>
+              	 		</div>
+              	 		<div class="comment">
+              	 			<div class="comment_neme_time">
+              	 				<span class="comment_neme">岁月静好</span>
+              	 				<span class="comment_time">2019-01-21日</span>
+              	 			</div>
+              	 			<div class="comment_content">
+              	 				<p>此书不错，故事情节曲折跌宕，但最后的结局还是很圆满的，很不错，喜欢！</p>
+              	 			</div>
+              	 		</div>
+              	 	</div>
+
+<!-- 会员抢先看 -->
+              	 	<div class="tab">
+	               		<div class="tab_left">
+	               			<span style="font-size: 18px">会员抢先看</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span>换一批</span>
+	               		</div>
+              	 	</div>
+
+
+	               	<div class="paih_content_all">
+			            <div class="paih_content">
+			               	<div class="hot_left">
+			               		<img class="hot_mask" src="../../../assets/img/Mask.png">
+			               	</div>
+			               	<p>等你的星光</p>
+			               	<span>科幻空间</span>
+			            </div>
+		            </div> 
+			</div>
+  		
+  		<div class="nav_bottom">
+  			<ul class="nav_oul">
+  				<li class="nav_oli">分享</li>
+  				<li class="nav_oli">加入书架</li>
+  				<li class="nav_oli">开始阅读</li>
+  			</ul>
+  		</div>
+
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+	
+        $(".back").click(function(){
+			window.history.go(-1)
+		})
+		$(".paih_content").click(()=>{
+				location.href ="../details/details.html"
+		})
+		$(".log_list").click(()=>{
+				location.href ="./dletailsready.html"
+		})
+
+        $(".tab_right_all").click(()=>{
+        	location.href ="./log.html"
+        })
+        $(".tab_left_commtent").click(()=>{
+        	location.href ="./comment.html"
+        })
+      	$(".nav_oli").click(()=>{
+      		location.href="./dletailsready.html"
+      	})
+		</script>
+	</body>
+</html>

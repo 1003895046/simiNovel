@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}	
+			.all{
+				padding: 15px;
+				margin-top: 60px;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: 25%;
+
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.home_bottom_img{
+				margin-bottom: 50px;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(26,37,51,1);
+				border-bottom: 3px solid black !important;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+				font-size:14px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:#666;
+				margin-right: 20px
+			}
+			.mui-segmented-control .mui-control-item{
+				display: inline-block;
+				width: auto;
+			}
+			.mui-slider-indicator{
+				text-align: left;
+			}
+			.mui-bar .mui-active{
+				color: #F72204
+			}
+
+			.choose_Type{
+				height: 30px;
+				width: 68px;
+				color: #8C9199;
+				border:1px solid #8C9199;
+				text-align: center;
+				line-height: 30px;
+				margin-right: 15px;
+				border-radius: 15px;
+				margin-top: 10px;
+			}
+			.all_type{
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.mui-control-padded{
+				margin-top: 20px;
+			}
+			.type{
+				margin-top: 30px;
+			}
+			.color_choose{
+				background: #FA6400;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">我的卡券</h1>
+	　　</header>
+<div class="all">
+	<div id="slider" class="">
+		        <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+		            <a class="mui-control-item mui-active" onclick="linewidth(this)" href="#item1mobile">男频</a>
+		            <a class="mui-control-item" onclick="linewidth(this)" href="#item2mobile">女频</a>
+		            <a class="mui-control-item" onclick="linewidth(this)" href="#item3mobile">漫画</a>
+		        </div>
+        <div class="mui-control-padded">
+        <!-- 男频 -->
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+            	<div class="type">
+            		<h3 style="font-size: 15px;">奇幻科幻</h3>
+	            	<div class="all_type">
+	            		<span class="choose_Type" data-id="1" onclick="choose_Type(this)">热血</span>
+	            		<span class="choose_Type color_choose" data-id="2" onclick="choose_Type(this)">斗气</span>
+	            		<span class="choose_Type" data-id="3" onclick="choose_Type(this)">争霸</span>
+	            		<span class="choose_Type" data-id="4" onclick="choose_Type(this)">修真</span>
+	            	</div>
+            	</div>
+
+            	
+            </div>
+            <!-- 女频 -->
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+               女频
+            </div>
+            <!-- 漫画 -->
+            <div id="item3mobile" class="mui-slider-item mui-control-content">
+              <div class="type">
+            		<h3 style="font-size: 15px;">全部类型</h3>
+	            	<div class="all_type">
+	            		<span class="choose_Type" data-id="1" onclick="choose_Type_hua(this)">热血</span>
+	            		<span class="choose_Type color_choose" data-id="2" onclick="choose_Type_hua(this)">斗气</span>
+	            		<span class="choose_Type" data-id="3" onclick="choose_Type_hua(this)">争霸</span>
+	            		<span class="choose_Type" data-id="4" onclick="choose_Type_hua(this)">修真</span>
+	            	</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>   
+  
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			 $(".back").click(function(){
+			window.history.go(-1)
+		})
+
+			 function linewidth(self){
+				let width = $(self).width()
+				$("#sliderProgressBar").css("width",width)
+			}
+
+
+			Array.prototype.remove = function(val) { 
+				var index = this.indexOf(val); 
+				if (index > -1) { 
+				this.splice(index, 1); 
+				} 
+			};
+			function choose_Type_hua(self){
+				console.log(all_id)
+					all_id.forEach((choose)=>{
+						console.log(all_id)
+						if(choose == $(self).attr("data-id")){
+							$(self).removeClass("color_choose")
+							all_id.remove(choose)
+							console.log(all_id)
+							return all_id
+						}else{
+							$(self).addClass("color_choose")
+							all_id.push($(self).attr("data-id"))
+						}
+					})
+				
+			}
+			function choose_Type(self){
+				$(self).addClass("color_choose").siblings().removeClass("color_choose")
+			}
+		</script>
+	</body>
+</html>

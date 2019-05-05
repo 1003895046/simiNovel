@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}	
+			.all{
+				padding: 15px;
+				margin-top: 60px;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: 25%;
+
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.home_bottom_img{
+				margin-bottom: 50px;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(26,37,51,1);
+				border-bottom: 3px solid black !important;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+				font-size:14px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:#666;
+				margin-right: 20px
+			}
+			.mui-segmented-control .mui-control-item{
+				display: inline-block;
+				width: auto;
+			}
+			.mui-slider-indicator{
+				text-align: left;
+			}
+			.mui-bar .mui-active{
+				color: #F72204
+			}
+			/*hot*/
+			
+			.Rectangle{
+				border:1px solid violet;
+				color:violet;
+			}
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px;
+				background: url("../../../assets/img/securities_car_img_001_01 (1).png");
+				width: 100%;
+				height: 114px;
+				margin-top: 10px;
+			}
+			.hot_contentuse{
+				display: flex;
+				margin-bottom: 20px;
+				background: url("../../../assets/img/securities_car_img_001_01.png");
+				width: 100%;
+				height: 114px;
+				margin-top: 10px;
+			}
+			.hot_left{
+				width: 133px;
+				margin-right: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_left span{
+				font-size:12px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color: white;
+				margin-right: 5px;
+			}
+			.hot_left p{
+				font-size: 30px;
+				color: white
+			}
+			.hot_right{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			.hot_content_score{
+				border-bottom: 1px solid #ccc;
+				padding-bottom: 10px;
+			}
+			.hot_content_tro{
+				color: #999
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">我的卡券</h1>
+	　　</header>
+<div class="all">
+	<div id="slider" class="">
+		        <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+		            <a class="mui-control-item mui-active" onclick="linewidth(this)" href="#item1mobile">未使用(2)</a>
+		            <a class="mui-control-item" onclick="linewidth(this)" href="#item2mobile">使用记录(2)</a>
+		            <a class="mui-control-item" onclick="linewidth(this)" href="#item3mobile">已过期(2)</a>
+		        </div>
+        <div class="mui-control-padded">
+        	<!-- 热门推荐 -->
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+               	<div class="hot_content_All">
+	               	<div class="hot_content">
+	               		<div class="hot_left">
+	               			<span>¥</span>
+	               			<p>9.9</p>
+	               		</div>
+	               		<div class="hot_right">
+	               			<div class="hot_content_title">
+	               				<h5>分享红包</h5>
+	               			</div>
+	               			<div class="hot_content_score">
+	               				<span class="name">充值专用（仅限年会员）</span>
+	               			</div>
+	               			<div class="hot_content_tro">
+	               				有效期：2019-03-03—2019-05-05
+	               			</div>
+	               		</div>
+	               	</div>	
+               	</div>
+            </div>
+            <!-- 使用记录 -->
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+            		<div class="hot_content_All">
+	               	<div class="hot_contentuse">
+	               		<div class="hot_left">
+	               			<span>¥</span>
+	               			<p>9.9</p>
+	               		</div>
+	               		<div class="hot_right">
+	               			<div class="hot_content_title">
+	               				<h5 style="color: #999">成功邀请好友奖励</h5>
+	               			</div>
+	               			<div class="hot_content_score">
+	               				<span class="name">充值专用（仅限年会员）</span>
+	               			</div>
+	               			<div class="hot_content_tro">
+	               				有效期：2019-03-03—2019-05-05
+	               			</div>
+	               		</div>
+	               	</div>	
+               	</div>
+            </div>
+            <!-- 已过期 -->
+            <div id="item3mobile" class="mui-slider-item mui-control-content">
+              	<div class="hot_content_All">
+	               	<div class="hot_contentuse">
+	               		<div class="hot_left">
+	               			<span>¥</span>
+	               			<p>9.9</p>
+	               		</div>
+	               		<div class="hot_right">
+	               			<div class="hot_content_title">
+	               				<h5 style="color: #999">新用户注册奖励</h5>
+	               			</div>
+	               			<div class="hot_content_score">
+	               				<span class="name">充值专用（仅限年会员）</span>
+	               			</div>
+	               			<div class="hot_content_tro">
+	               				有效期：2019-03-03—2019-05-05
+	               			</div>
+	               		</div>
+	               	</div>	
+               	</div>
+            </div>
+        </div>
+    </div>
+</div>   
+  
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			 $(".back").click(function(){
+			window.history.go(-1)
+		})
+
+			 	function linewidth(self){
+				console.log(self)
+				let width = $(self).width()
+				console.log(width)
+				$("#sliderProgressBar").css("width",width)
+			}
+		</script>
+	</body>
+</html>

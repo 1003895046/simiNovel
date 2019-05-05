@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 15px;
+				margin-top: 60px;
+			}
+			.all_img{
+				width: 88px;
+				height: 88px;
+				margin-top: 15px
+			}
+			p{
+				color: #999;
+				font-size: 15px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;				
+			}
+			input{
+				text-indent:7rem;
+				font-size: 18px;
+				border-left: none !important;
+				border-right: none !important;
+				border-top: none !important;
+			}
+			.confirm{
+				position: fixed;
+				bottom: 100px;
+				width: 330px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				color: white;
+				background: #FA6400;
+				left: 50%;
+				margin-left: -165px;
+				border-radius: 25px;
+			}
+
+
+			.choose{
+				width: 100%;
+				position: fixed;
+				bottom: -1px;
+				height:230px;
+				background:rgba(255,255,255,1);
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px 10px 0px 0px;
+				z-index: 1000;
+				padding: 20px;
+				display: none
+			}
+			.choose_img{
+				display: flex;
+				flex-direction: column;
+				width: 60px;
+				height: 100px;
+			}
+			.choose_img span{
+				text-align: center;
+				color: #ccc
+			}
+			.choose_iphone{
+				display: flex;
+				justify-content: space-around;
+			}
+			h2{
+				font-size: 20px;
+				margin-bottom: 25px
+
+			}
+
+
+			
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">修改昵称</h1>
+	　　</header>
+		<div class="all">
+			<div class="all_img">
+				<img src="../../../assets/img/head_portrait_icon_001_01的副本.png">
+			</div>
+			<p>修改昵称</p>
+			<input type="text" name="" value="青春不迷茫">
+		</div>
+		<div class="choose">
+			<h2>从选择</h2>
+			<div class="choose_iphone">
+				<div class="choose_img paizhao">
+					<img src="../../../assets/img/taking_pictures_icon_001_01.png">
+					<span>拍照</span>
+				</div>
+				<div class="choose_img photo">
+					<img src="../../../assets/img/photo_album_icon_001_01.png">
+					<span>相册</span>
+				</div>
+			</div>
+		</div>
+  		<p class="confirm">确认修改</p>
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+				$(".all_img").click((event)=>{
+					 event.stopPropagation();
+					$(".choose").show(500)
+				})
+				$("body").click((event)=>{
+					 event.stopPropagation();
+					$(".choose").hide(500)
+				})
+
+			$(".back").click(function(){
+					window.history.go(-1)
+			})
+
+		</script>
+	</body>
+</html>

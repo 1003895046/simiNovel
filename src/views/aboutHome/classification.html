@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: auto;
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.home_bottom_img{
+				margin-bottom: 50px;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(26,37,51,1);
+				border-bottom: 3px solid black !important;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+				font-size:14px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:#666;
+				margin-right: 20px
+			}
+			.mui-segmented-control .mui-control-item{
+				display: inline-block;
+				width: auto;
+			}
+			.mui-slider-indicator{
+				text-align: left;
+			}
+			.mui-bar .mui-active{
+				color: #F72204
+			}
+			.classifcation_all{
+				margin-top: 10px;
+			}
+			.classifcation{
+				margin-top: 10px;
+				display: flex;
+			}
+			.cation{
+				margin-right: 10px;
+			}
+			.hot_mask{
+				height: 80px;
+				width: 60px;
+			}
+			.cation_right{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+			}
+			h3{
+
+			}
+			.cation_type{
+				margin-top: 15px
+			}
+			.cation_type span{
+				color: #ccc;
+			}
+			.cation_type label{
+				color: #ccc;
+				margin-left: 10px;
+				font-size: 13px;
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">分类</h1>
+	　　</header>
+	
+	
+ <div style="padding:15px;margin-top: 50px;margin-bottom: 50px">	
+	<div id="slider" class="">
+        <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <a class="mui-control-item mui-active" onclick="linewidth(this)" href="#item2mobile">男频</a>
+            <a class="mui-control-item" onclick="linewidth(this)" href="#item3mobile">女频</a>
+        </div>
+            <!-- 男频 -->
+            <div id="item2mobile" class="mui-slider-item mui-control-content mui-active">
+            	<a href="./allclassification.html" class="classifcation_all">
+            		<div class="classifcation">
+	            		<div class="cation">
+	            			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	            		</div>
+	            		<div class="cation_right">
+	            			<h3>奇幻玄幻</h3>
+	            			<div class="cation_type">
+	            				<span>热血<label>|</label></span>
+	            				<span>斗气<label>|</label></span>
+	            				<span>争霸<label>|</label></span>
+	            				<span>修真</span>
+	            			</div>
+	            		</div>
+	            	</div>	
+            	</a> 
+            </div>
+            <!-- 女频 -->
+            <div id="item3mobile" class="mui-slider-item mui-control-content">
+               <a href="./allclassification.html" class="classifcation_all">
+            		<div class="classifcation">
+	            		<div class="cation">
+	            			<img class="hot_mask" src="../../../assets/img/Mask.png">
+	            		</div>
+	            		<div class="cation_right">
+	            			<h3>霸道总裁</h3>
+	            			<div class="cation_type">
+	            				<span>明星<label>|</label></span>
+	            				<span>高干<label>|</label></span>
+	            				<span>禁欲<label>|</label></span>
+	            				<span>复仇</span>
+	            			</div>
+	            		</div>
+	            	</div>	
+            	</a>
+            </div>
+         
+        </div>
+    </div>
+</div>   
+   
+    <nav class="mui-bar mui-bar-tab">
+        <a class="tab-item mui-active" href="./home.html">
+				<img src="../../../assets/img/Home_icon_001_01.png">
+				<span class="mui-tab-label">首页</span>
+		</a>
+        <a class="tab-item" href="./search.html">
+				<img src="../../../assets/img/search_icon_001_01
+.png">
+				<span class="mui-tab-label">搜索</span>
+		</a>
+		<a class="tab-item" href="./Recharge.html">
+				<img src="../../../assets/img/top_up_icon_001_01.png">
+				<span class="mui-tab-label">充值</span>
+		</a>
+        <a class="tab-item" href="./mine.html">
+				<img src="../../../assets/img/personal_center_icon_001_01
+.png">
+				<span class="mui-tab-label">我的</span>
+		</a>
+    </nav>
+
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			$(".back").click(function(){
+				window.history.go(-1)
+			})
+			function linewidth(self){
+				console.log(self)
+				let width = $(self).width()
+				console.log(width)
+				$("#sliderProgressBar").css("width",width)
+			}
+		</script>
+	</body>
+</html>

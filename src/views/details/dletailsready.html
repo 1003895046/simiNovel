@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all{
+				margin-top: 44px;
+				padding:20px 15px;
+			}
+			.ready_content{
+				z-index:100;
+			}
+			.ready_content p{
+				font-size:14px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(26,37,51,1);
+				line-height:24px;
+				text-indent: 2rem
+			}
+			.ready_color{
+				position: fixed;
+				bottom: -1px;
+				width: 100%;
+				height: 50px;
+				background: white;
+				z-index: 100;
+				display: flex;
+			}
+			.ready_color img{
+				margin-right: 10px;
+				width: 50px;
+				height: 25px;
+			}
+			.ready_color span{
+				margin-right: 10px;
+				width: 50px;
+				height: 25px;
+				background:rgba(140,145,153,1);
+				border-radius:4px;
+				text-align: center;
+				line-height: 25px;
+				color: white
+			}
+			.ready_color_all{
+				display: none;
+				z-index:100;
+			}
+
+
+
+
+			.ready_free{
+				z-index: 110;
+				position: fixed;
+				top: 80px;
+				display: none;
+			}
+			.ready_free .free_end_vip div img{
+				width: 168px;
+				height: 168px;
+				margin-bottom: 25px
+			}
+
+
+
+
+			.free_end{
+				z-index: 110;
+				position: fixed;
+				top: 80px;
+				display: none
+			}
+
+			.bg{
+				position: fixed;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				background: black;
+				opacity: 0.6;
+				z-index: 100;
+			}
+			.free_end_vip_All{
+				z-index: 110;
+				position: fixed;
+				left: 50%;
+   				margin-left: -174px;
+			}
+			.free_end_vip{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				width: 347px;
+				height: 402px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.free_end_vip div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+		
+			.free_end_vip div span{
+				color: #E0153B;
+				margin-top: 5px;
+				font-size: 20px;
+			}
+			.free_end_vip p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			.free_end_ready{
+				width:347px;
+				height:50px;
+				background:rgba(255,255,255,0.9);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				border:2px solid rgba(255,255,255,1);
+				margin-top: 20px;
+				text-align: center;
+				color: #FA6400;
+				font-size: 20px;
+				line-height: 50px;
+			}
+			.free_end_readymoney{
+				width:347px;
+				height:50px;
+				background:rgba(255,255,255,0.9);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				border:2px solid rgba(255,255,255,1);
+				margin-top: 20px;
+				color: #FA6400;
+				text-align: center;
+				font-size: 20px;
+				line-height: 50px;
+			}
+
+			.nohave{
+				display: flex;
+				justify-content: space-between;
+				margin-top: 30px;
+			}
+			.nohave p{
+				width: 167px;
+				height: 40px;
+				background:rgba(250,100,0,1);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:20px;
+				color: white;
+				font-size: 16px;
+				text-align: center;
+				line-height: 40px;
+			}
+
+
+
+
+					/*tab*/
+			.tab{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 50px;
+			}
+			.tab_left{
+				color: #000;
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+   				display: flex;
+   				flex-direction: column;
+			}
+			.tab_left p{
+				color: #ccc;
+				margin-top: 10px;
+				font-size: 13px;
+			}
+			.tab_right{
+				color: #F92A56;
+				font-size: 14px;
+				display: flex;
+				align-items: center
+			}
+
+
+/*会员抢先看*/
+			.history_search{
+				margin-top: 30px
+			}
+			.all_history{
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			.all_history span{
+				padding: 10px;
+				background:rgba(245,245,245,1);
+				border-radius:4px;
+				color: #555;
+				font-size: 13px;
+				margin-top: 15px;
+				margin-right: 15px;
+			}
+
+			.paih_content_all{
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 10px
+			}
+			.paih_content{
+				display: flex;
+				flex-direction: column;
+				margin-right: 9px;
+				width: 106px;
+			}
+			.paih_content p{
+				font-size: 15px;
+				color: #000;
+				margin-bottom: 0;
+				    margin-top: 10px;
+			}
+			.paih_content span{
+				font-size: 12px;
+				color: #ccc
+			}
+
+			.color{
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">一世倾城</h1>
+	　　</header>
+		
+  		<div class="all">
+  				<div class="ready_content">
+	  				<p>
+	  					郭致远暗骂一声，他娘的，别人穿越，虎躯一震，名臣名将排着队过来投靠，恨不得给主角捏脚捶腿；自己倒好，办法想尽，却是热脸贴冷屁股！老天爷呦，你这是玩我不成？要么你就别让徐光启出现在我面前倒好，既然让他出现在我面前，却不肯接受我的招揽，这不是好比将一碗油光闪闪的红烧肉放在一个饿了几天的人面前，却挂得高高的，让他看得到吃不到一样残忍吗？
+	  				</p>
+  					<p>
+  						 郭致远强压失落之心，面色不变地笑道：“倒是小子孟浪了，先生大才，多年寒窗苦读，只为金榜题名，我自然不能阻了徐先生的大好前程……不过我与先生相见恨晚，不知先生在何处落脚，能否告之于我，我也好上门拜访……”。
+  					</p>
+  					<p>
+  						 接受我的招揽，这不是好比将一碗油光闪闪的红烧肉放在一个饿了几天的人面前，却挂得高高的，让他看得到吃不到一样残忍吗？ 徐光启拒绝了郭致远也有些尴尬，更怕他继续纠缠自己，见天色已晚，就起身告辞道：“在下就住在松江会馆内，离此处步行半个时辰即到，天色已晚，在下就先告辞了，公子勿送……”。
+  					</p>
+  					<p>
+  						  送走徐光启，郭致远就抓住自己的头发在房内哀嚎起来，不是吧，已经错过了赵士祯，难道又要错过徐光启？！不行！无论如何要把徐光启拿下，当年刘备混得那么惨，不也把诸葛亮拿下了吗？自己就效仿刘备，来个三顾茅庐，三顾茅庐不行，老子就十顾茅庐，就算这徐光启心是石头做的，老子也要让他化开了！
+  					</p>
+  				</div>
+  				<div class="nohave">
+  					<p class="no_ready">没有了</p>
+  					<p class="next_book">下一篇</p>
+  				</div>
+
+
+  				<div class="tab">
+	               		<div class="tab_left">
+	               			<span style="font-size: 18px">同类书单</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span>换一批</span>
+	               		</div>
+              	 	</div>
+
+
+	               	<div class="paih_content_all">
+			            <div class="paih_content">
+			               	<div class="hot_left">
+			               		<img class="hot_mask" src="../../../assets/img/Mask.png">
+			               	</div>
+			               	<p>等你的星光</p>
+			               	<span>科幻空间</span>
+			            </div>
+		            </div> 
+
+
+					<div class="tab">
+	               		<div class="tab_left">
+	               			<span style="font-size: 18px">推荐书单</span>
+	               		</div>
+	               		<div class="tab_right">
+	               			<span>换一批</span>
+	               		</div>
+              	 	</div>
+
+
+	               	<div class="paih_content_all" style="margin-bottom: 50px;">
+			            <div class="paih_content">
+			               	<div class="hot_left">
+			               		<img class="hot_mask" src="../../../assets/img/Mask.png">
+			               	</div>
+			               	<p>等你的星光</p>
+			               	<span>科幻空间</span>
+			            </div>
+		            </div> 
+
+
+  				<div class="ready_color_all">
+	  				<div class="ready_color">
+	  					<img class="color" onclick="color(this)" data-color="white" src="../../../assets/img/矩形.png">
+	  					<img class="color" onclick="color(this)" data-color="green" src="../../../assets/img/矩形@2x.png">
+	  					<img class="color" onclick="color(this)" data-color="yellow" src="../../../assets/img/矩形 (2).png">
+	  					<img class="color" onclick="color(this)" data-color="black" src="../../../assets/img/night_icon_001.png">
+	  					<span class="color" >A+</span>
+	  					<span class="color" >A-</span>
+	  				</div>
+	  			</div>	
+  		</div>
+
+
+<!-- 请付费 -->
+  		<div class="free_end">
+  			<div class="bg"></div>
+  			<div class="free_end_vip_All">
+	  			<div class="free_end_vip">
+	  				<div>
+	  					<div>
+	  						<img src="../../../assets/img/bannianhuiyuan_icon_001_01.png">
+	  					</div>
+		  				<span>抱歉!</span>
+		  				<span>您今天的免费阅读章节已到。</span>
+	  				</div>
+	  				<p>我要开通会员</p>
+	  			</div>
+	  			<div class="free_end_ready">
+	  				分享阅读下一章节
+	  			</div>
+	  			<div class="free_end_readymoney">
+	  				使用读书币阅读
+	  			</div>
+	  		</div>	
+  		</div>
+
+
+  		<div class="ready_free">
+  			<div class="bg"></div>
+  			<div class="free_end_vip_All">
+	  			<div class="free_end_vip">
+	  				<div>
+	  					<div>
+	  						<img src="../../../assets/img/gold_coins_icon_001_01.png">
+	  					</div>
+		  				<span>是否使用100读书币 </span>
+		  				<span>阅读下一章节</span>
+	  				</div>
+	  				<p>确定使用</p>
+	  			</div>
+	  			<div class="free_end_ready">
+	  				分享阅读下一章节
+	  			</div>
+	  		</div>	
+  		</div>
+
+
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			var colse = false;
+			$(".ready_content p").click(()=>{
+				if(colse){
+					colse=false;
+					$(".ready_color_all").hide(500);
+				}else{
+					colse=true;
+					$(".ready_color_all").show(500);
+				}
+				
+			})
+			// 改变背景颜色
+			function color(self){
+				$(".ready_color_all").hide(500);
+				colse=false;
+				if($(self).attr("data-color")=="white"){
+					$("body").css("background","white")
+					$(".ready_color").css("background","white")
+				}else if($(self).attr("data-color")=="green"){
+					$("body").css("background","#E3ECD1")
+					$(".ready_color").css("background","#E3ECD1")
+				}else if($(self).attr("data-color")=="yellow"){
+					$("body").css("background","#EECE9D")
+					$(".ready_color").css("background","#EECE9D")
+				}else if($(self).attr("data-color")=="black"){
+					$("body").css("background","#040608")
+					$(".ready_content p").css("color","#4C6280")
+					$(".ready_color").css("background","#4C6280")
+				}
+
+			}
+
+			// 使用阅读币
+			$(".free_end_readymoney").click(()=>{
+				$(".ready_free").show(500)
+			})
+
+			$(".paih_content").click(()=>{
+				location.href ="../details/details.html"
+			})
+
+
+			
+		</script>
+	</body>
+</html>

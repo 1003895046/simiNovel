@@ -10,8 +10,191 @@
 		<style type="text/css">
 			body{
 				background: #fff;
+			}	
+			.all{
+				padding: 15px;
+				margin-top: 70px;
+			}
+			/*hot*/
+			.hotbtn{
+				height: 28px;
+				width: 80px;
+				display: inline-block;
+				font-size: 13px;
+				text-align: center;
+				line-height: 20px;
+				border-radius:14px;
+				background: #FA6400;
+				color: white;
+				line-height: 28px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+			}
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_tro{
+				height: 36px;
+				 overflow : hidden;
+				  text-overflow: ellipsis;
+				  display: -webkit-box;
+				  -webkit-line-clamp: 2;      /* 可以显示的行数，超出部分用...表示*/
+				  -webkit-box-orient: vertical;
+				  margin-top: 10px
+			}
+			.hot_content_score{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px
+			}
+			.name{
+				color: #ccc;
+				font-size:13px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+			}
+			.fen{
+				color: #F92A56;
+				font-size:20px;
+				font-weight:600;
+			}
+			.fen label{
+				color: #F92A56;
+				font-size: 12px
+			
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px;
 			}
 			
+			.hot_left{
+				width: 106px;
+				height: 134px;
+				position: relative;
+				margin-right: 10px;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_mask{
+				width: 106px;
+				height: 134px;
+			}
+			.hot_vip{
+				position: absolute;
+				width: 42px;
+				height: 30px;
+				right: 0;
+				top: 0;
+			}
+			
+			
+			.Tips{
+				position: fixed;
+				top: 44px;
+				left: 0;
+				right: 0;
+				height: 32px;
+				background: #000;
+				opacity:0.5;
+				z-index: 100;
+			}
+			.Tips_wai{
+				position: fixed;
+				top: 44px;
+				left: 0;
+				right: 0;
+				height: 32px;
+				z-index: 100;
+			}
+			.Tips_content{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 15px;
+				height: 100%;
+			}
+			.Tips_content p{
+				margin-bottom: 0;
+				color: white;
+				font-size: 13px;
+			}
+			.Tips_content img{
+				
+			}
+			.block{
+				height: 28px;
+				width: 80px;
+				display: inline-block;
+				font-size: 13px;
+				text-align: center;
+				line-height: 20px;
+				border-radius:14px;
+				color: white;
+				line-height: 28px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				background:rgba(140,145,153,1);
+				opacity:0.5;
+			}
+			
+			
+			.freebook{
+				position: fixed;	
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				background: #FFFFFF;
+				margin-top: 70px;
+				display: none;
+			}
+			.freebook_content{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-top: 40px;
+			}
+			.freebook_title{
+				    display: flex;
+					align-items: center;
+					flex-direction: column;
+					margin-top: 20px;
+			}
+			.freebook_title p{
+				font-size:20px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color: #000;
+			}
+			.freebook_title span{
+				font-size:16px;
+				color: #ccc;
+			}
+			.freebook_img{
+				width: 260px;
+				height: 346px;
+			}
+			.free_weixin{
+				 display: flex;
+				align-items: center;
+				flex-direction: column;
+				margin-top: 70px;
+			}
+			.free_weixin span{
+				
+			}
 		</style>
 	</head>
 	<body>
@@ -19,7 +202,96 @@
 			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
 			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">免费送书</h1>
 	　　</header>
-	
+<div class="all">
+				<div class="hot_content_All">
+				   	<div class="hot_content">
+				   		<div class="hot_left">
+				   			<!-- 新品 -->
+							<!-- <img class="hot_title" src="../../../assets/img/title_icon_001_01.png"> -->
+				   			<img class="hot_mask" src="../../../assets/img/Mask.png">
+				   			<!-- vip -->
+				   			<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png"> -->
+				   			<!-- 免费 -->
+				   			<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png"> -->
+				   		</div>
+				   		<div class="hot_right">
+				   			<div class="hot_content_title">
+				   				<h5>一世倾城：冷宫弃妃</h5>
+				   			</div>
+				   			<div class="hot_content_score">
+				   				<span class="name">冷青衫 著</span>
+				   			</div>
+				   			<div class="hot_content_tro">
+				   				《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的
+				   			</div>
+				   			<div class="hot_content_state">
+				   				<span class="hotbtn">送给好友</span>
+								<!-- <span class="block">送给好友</span> -->
+				   			</div>
+				   		</div>
+				   	</div>	
+					
+					<div class="hot_content">
+						<div class="hot_left">
+							<!-- 新品 -->
+							<!-- <img class="hot_title" src="../../../assets/img/title_icon_001_01.png"> -->
+							<img class="hot_mask" src="../../../assets/img/Mask.png">
+							<!-- vip -->
+							<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png"> -->
+							<!-- 免费 -->
+							<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png"> -->
+						</div>
+						<div class="hot_right">
+							<div class="hot_content_title">
+								<h5>一世倾城：冷宫弃妃</h5>
+							</div>
+							<div class="hot_content_score">
+								<span class="name">冷青衫 著</span>
+							</div>
+							<div class="hot_content_tro">
+								《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的《凡人修仙传》仙界篇，一个韩立叱咤仙界的故事，一个凡人小子修仙的，一个凡人小子修仙的
+							</div>
+							<div class="hot_content_state">
+								<span class="block">送给好友</span>
+								<!-- <span class="hotbtn">送给好友</span> -->
+							</div>
+						</div>
+					</div>	
+				</div>
+</div>   
+
+				<div class="Tips">
+				</div>
+				<div class="Tips_wai">
+					<div class="Tips_content">
+						<p>
+							本月您还能送出一本书，给您的朋友！
+						</p>
+						<div> 
+							<img class="close" src="../../../assets/img/shut_down_s_icon_001_01.png" alt="">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="freebook">
+					<div class="freebook_content">
+						<div class="freebook_img">
+							<img src="../../../assets/img/Mask.png" alt="">
+						</div>
+						<div class="freebook_title">
+							<p>凡人修仙之仙界篇</p>
+							<span>忘语 著</span>
+						</div>
+						<div class="free_weixin">
+							<div>
+								<img src="../../../assets/img/wechat_logo_001_01.png" alt="">
+							</div>
+							<span>微信好友</span>
+						</div>
+					</div>
+				</div>
   
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
@@ -28,7 +300,22 @@
 			 $(".back").click(function(){
 			window.history.go(-1)
 		})
-
+		$(".close").click(()=>{
+			$(".Tips_wai").hide(500)
+			$(".Tips").hide(500)
+			$(".Tips_content p").text("恭喜您！分享成功！")
+		})
+		$(".hotbtn").click(()=>{
+			$(".freebook").show(500)
+			$(".Tips").hide()
+			$(".Tips_wai").hide()
+		})
+		$(".free_weixin").click(()=>{
+			$(".Tips").show(500)
+			$(".Tips_wai").show(500)
+			$(".Tips_content p").text("恭喜您！分享成功！")
+		})
+		
 		</script>
 	</body>
 </html>

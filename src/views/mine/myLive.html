@@ -15,37 +15,7 @@
 				padding: 15px;
 				margin-top: 60px;
 			}
-			.mui-grid-view.mui-grid-9{
-				background: white;
-				border: none
-			}
-			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
-				border: none
-			}
-			.mui-bar-nav~.mui-content{
-				padding-top: 0
-			}
-			.mui-bar img{
-				width: 24px;
-				height: 24px	
-			}
 			*{touch-action: none;}
-			.tab-item{
-				    display: flex;
-				    align-items: center;
-				    flex-direction: column;
-   					 justify-content: center;
-   					 width: 25%;
-
-			}
-			.mui-bar-tab{
-				display: flex;
-   				 justify-content: space-around;
-   				 bottom: -1px;
-			}
-			.home_bottom_img{
-				margin-bottom: 50px;
-			}
 			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
 				font-size:18px;
 				font-family:PingFangSC-Medium;
@@ -95,6 +65,7 @@
 			.color_choose{
 				background: #FA6400;
 				color: white;
+				border: none;
 			}
 		</style>
 	</head>
@@ -116,10 +87,10 @@
             	<div class="type">
             		<h3 style="font-size: 15px;">奇幻科幻</h3>
 	            	<div class="all_type">
-	            		<span class="choose_Type" data-id="1" onclick="choose_Type(this)">热血</span>
-	            		<span class="choose_Type color_choose" data-id="2" onclick="choose_Type(this)">斗气</span>
-	            		<span class="choose_Type" data-id="3" onclick="choose_Type(this)">争霸</span>
-	            		<span class="choose_Type" data-id="4" onclick="choose_Type(this)">修真</span>
+	            		<span class="choose_Type" data-id="1" data-type="close" onclick="choose_Type(this)">热血</span>
+	            		<span class="choose_Type color_choose" data-type="open" data-id="2" onclick="choose_Type(this)">斗气</span>
+	            		<span class="choose_Type" data-id="3" data-type="close" onclick="choose_Type(this)">争霸</span>
+	            		<span class="choose_Type" data-id="4" data-type="close" onclick="choose_Type(this)">修真</span>
 	            	</div>
             	</div>
 
@@ -134,10 +105,10 @@
               <div class="type">
             		<h3 style="font-size: 15px;">全部类型</h3>
 	            	<div class="all_type">
-	            		<span class="choose_Type" data-id="1" onclick="choose_Type_hua(this)">热血</span>
-	            		<span class="choose_Type color_choose" data-id="2" onclick="choose_Type_hua(this)">斗气</span>
-	            		<span class="choose_Type" data-id="3" onclick="choose_Type_hua(this)">争霸</span>
-	            		<span class="choose_Type" data-id="4" onclick="choose_Type_hua(this)">修真</span>
+	            		<span class="choose_Type" data-id="1" data-type="close" onclick="choose_Type(this)">热血</span>
+	            		<span class="choose_Type color_choose" data-type="open" data-id="2" onclick="choose_Type(this)">斗气</span>
+	            		<span class="choose_Type" data-id="3" data-type="close" onclick="choose_Type(this)">争霸</span>
+	            		<span class="choose_Type" data-id="4" data-type="close" onclick="choose_Type(this)">修真</span>
 	            	</div>
             	</div>
             </div>
@@ -165,24 +136,14 @@
 				this.splice(index, 1); 
 				} 
 			};
-			function choose_Type_hua(self){
-				console.log(all_id)
-					all_id.forEach((choose)=>{
-						console.log(all_id)
-						if(choose == $(self).attr("data-id")){
-							$(self).removeClass("color_choose")
-							all_id.remove(choose)
-							console.log(all_id)
-							return all_id
-						}else{
-							$(self).addClass("color_choose")
-							all_id.push($(self).attr("data-id"))
-						}
-					})
-				
-			}
 			function choose_Type(self){
-				$(self).addClass("color_choose").siblings().removeClass("color_choose")
+				if($(self).attr("data-type")=="open"){
+					$(self).removeClass("color_choose")
+					$(self).attr("data-type","close")
+				}else{
+					$(self).addClass("color_choose")
+					$(self).attr("data-type","open")
+				}
 			}
 		</script>
 	</body>

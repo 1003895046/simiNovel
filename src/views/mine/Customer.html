@@ -11,7 +11,115 @@
 			body{
 				background: #fff;
 			}
+			.all{
+				margin-top: 44px;
+				padding: 15px;
+				margin-bottom: 80px;
+			}
+			input::-webkit-input-placeholder {
+			  color:#ccc;
+			    font-size:14px;
+			}
+			input:-moz-placeholder {
+			  color:#ccc;
+			    font-size:14px;
+			}
+			input::-moz-placeholder {
+			  color:#ccc;
+			    font-size:14px;
+			}
+			input::-ms-input-placeholder {
+			  color: #ccc;
+			  font-size:14px;
+			}
+					.mui-bar-tab{
+						display: flex;
+						 justify-content: space-around;
+					}
+					.mui-bar .mui-active{
+						color: #F72204
+					}
+					.mui-content{
+						position: fixed;
+						bottom: 0;
+						height: 60px;
+						background: #FAFAFA;
+						box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+						display: flex;
+						align-items: center;
+						padding:0 15px;
+						width: 100%;
+					}
+					
+					.mui-bar-nav~.mui-content{
+						padding-top: 0
+					}
+					.input-row{
+						width: 85%	
+					}
+					.search{
+						position: absolute;
+						top: 20px;
+						right: 20px;
+						width: 24px;
+						height: 20px;
+						font-size:18px;
+						font-family:PingFangSC-Regular;
+						font-weight:400;
+						color:rgba(51,145,255,1);
+						line-height:32px;
+					}
+					#searchInput{
+						text-align: left;
+						background: #fff;
+						padding-left: 10px;
+						border-radius:7px;
+					}
 			
+					.input-row i{
+						position: absolute;
+					    top: 50%;
+					    margin-top: -12px;
+					    margin-left: 5px;
+					}
+				
+				.time{
+					width: 100%;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					font-size: 13px;
+				}
+				.customer{
+					background:rgba(239,239,239,1);
+					color:rgba(140,145,153,1);
+				}
+				.kuang{
+					padding: 15px 10px;
+					text-align: center;
+					font-size:17px;
+					font-family:PingFangSC-Medium;
+					font-weight:500;
+					margin-bottom: 20px;
+					border-radius: 15px;
+				}
+				.mine{
+					background:linear-gradient(225deg,rgba(255,137,96,1) 0%,rgba(255,98,165,1) 100%);
+					color:white;
+				}
+				.mine_big{
+					display: flex;
+					width: 100%;
+					justify-content: flex-end;
+				}
+				.customer_big{
+					display: flex;
+					width: 100%;
+					justify-content: flex-start;
+				}
+				.angin{
+					text-align: center;
+				}
 		</style>
 	</head>
 	<body>
@@ -19,15 +127,62 @@
 			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
 			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">客服中心</h1>
 	　　</header>
-	
-  
+			<div class="all">
+				<div class="speaker">
+					<p class="angin">您现在可开始聊天了~</p>
+				</div>
+			</div>
+			<div class="mui-content">
+		        <div class="input-row mui-search" id="searchForm">
+		            <input type="text" style="margin-bottom: 0" id="searchInput"  class="mui-input-clear" placeholder="请输入">
+		        </div>
+		        <div>
+		        	<img src="../../../assets/img/icon.png" class="search">
+		        </div>
+			</div>
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
 		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
-	 $(".back").click(function(){
-			window.history.go(-1)
-		})
+		 $(".back").click(function(){
+				window.history.go(-1)
+			})	
+			var olddata = Number(new Date())
+			var data = ""
+			function p(s) {
+				return s < 10 ? '0' + s : s;
+			}
+			function time(){
+				let myDate = new Date();
+				let  h = myDate.getHours(); 
+				let m = myDate.getMinutes();
+				let now = ""
+				if(h*1>12){
+					h = h*1-12;
+					 now =  p(h) + ":" + p(m)  +" PM";   
+				}else{
+					 now =  p(h) + ":" + p(m) +" AM";    
+				}
+				return now
+			}
+			var timer =""
+			$(".search").click(function(){
+				clearTimeout(timer)
+				var content = $("#searchInput").val()
+				if($(".speaker").children().length>1){
+					if(data*1>=180000){
+						$(".speaker").append('<div class="time"><span>'+time()+'</span></div><div class="mine_big"><p class="mine kuang">'+content+'</p></div>')
+					}else{
+						$(".speaker").append('<div class="mine_big"><p class="mine kuang">'+content+'</p></div>')
+					}
+				}else{
+					$(".speaker").append('<div class="time"><span>'+time()+'</span></div><div class="mine_big"><p class="mine kuang">'+content+'</p></div>')
+				}
+				$("#searchInput").val("")
+				 timer = setTimeout(()=>{
+					data = Number(new Date()) - olddata*1
+				},180000)
+			})
 
 		</script>
 	</body>

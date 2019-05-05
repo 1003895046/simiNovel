@@ -94,10 +94,10 @@
 			}
 			.search{
 				position: absolute;
-				top: 13px;
-    			right: 15px;
-    			width:40px;
-				height:32px;
+				top: 20px;
+				right: 20px;
+				width: 24px;
+				height: 20px;
 				font-size:18px;
 				font-family:PingFangSC-Regular;
 				font-weight:400;
@@ -106,9 +106,26 @@
 			}
 			#searchInput{
 				text-align: left;
-				background: #fff
+				background: #fff;
+				padding-left: 10px;
+				border-radius:7px;
 			}
-
+				input::-webkit-input-placeholder {
+			  color:#C1C0C9;
+			    font-size:14px;
+			}
+			input:-moz-placeholder {
+			  color:#C1C0C9;
+			    font-size:14px;
+			}
+			input::-moz-placeholder {
+			  color:#C1C0C9;
+			    font-size:14px;
+			}
+			input::-ms-input-placeholder {
+			  color: #C1C0C9;
+			  font-size:14px;
+			}
 			.input-row i{
 				position: absolute;
 			    top: 50%;
@@ -149,14 +166,14 @@
               	 		</div>
               	 	</div>
               	</div>	
-        
     	</div>
     <div class="mui-content">
-	        <!-- MUI 搜索框 -->
 		        <div class="input-row mui-search" id="searchForm">
-		            <input type="search" style="margin-bottom: 0" id="searchInput" onkeyup="enterSearch(event)" class="mui-input-clear" placeholder="请输入">
+		            <input type="text" style="margin-bottom: 0" id="searchInput" onkeyup="enterSearch(event)" class="mui-input-clear" placeholder="请输入">
 		        </div>
-		        <img src="../../../assets/img/icon.png" class="search">
+				<div>
+					<img src="../../../assets/img/icon.png" class="search">
+				</div>
 	    </div>
  
 		<script src="../../../assets/js/public.js"></script>

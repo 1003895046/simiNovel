@@ -11,24 +11,171 @@
 			body{
 				background: #fff;
 			}
-			
+			.all{
+				padding: 15px;
+				margin-bottom: 50px;
+				margin-top: 44px;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: auto;
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.mui-active{
+				color: #F72204
+			}
+
+
+			.list_a{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 18px;
+				height: 50px;
+				width: 100%
+			}
+			.list_a_img{
+			}
+			.list_a p{
+				width: 60%;
+				margin-bottom: 0;
+			}
+			.list_a i{
+				width: 80px;
+			    height: 24px;
+			    text-align: right;
+			}
+			.list_a span{
+				display: inline-block;
+				width:80px;
+				height:26px;
+				border-radius:13px;
+				opacity:0.3;
+				font-size: 16px;
+				border:2px solid rgba(26,37,51,1);
+				color: rgba(26,37,51,1);
+				text-align: center;
+				line-height: 22px;
+			}
 		</style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav" style="color:;">
 			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
-			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">系统设置</h1>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">我的</h1>
 	　　</header>
-	
+        	
+		<div class="all">
+        	<div class="list_oul">
+        		<a href="../mine/accout_set.html" class="list_a">
+        			<div class="list_a_img">
+        				<img src="../../../assets/img/account_security_icon_001_01.png">
+        			</div>
+        			<p>账户安全</p>
+        			<i class="mui-icon mui-icon-arrowright"></i>
+        		</a>
+        		<a href="../mine/myCard.html" class="list_a">
+        			<div class="list_a_img">
+        				<img src="../../../assets/img/personal_data_icon_001_01.png">
+        			</div>
+        			<p>个人资料</p>
+        			<i class="mui-icon mui-icon-arrowright"></i>
+        		</a>
+        		<a href="../mine/myLive.html" class="list_a">
+        			<div class="list_a_img">
+        				<img src="../../../assets/img/notification_settings_icon_001_01.png">
+        			</div>
+        			<p>通知设置</p>
+        			<i class="mui-icon mui-icon-arrowright"></i>
+        		</a>
+        		<a href="../mine/history.html" class="list_a">
+        			<div class="list_a_img">
+        				<img src="../../../assets/img/reading_set_icon_001_01.png">
+        			</div>
+        			<p>阅读设置</p>
+        			<i class="mui-icon mui-icon-arrowright"></i>
+        		</a>
+				<a href="../mine/history.html" class="list_a">
+					<div class="list_a_img">
+						<img src="../../../assets/img/clear_the_cache_icon_001_01.png">
+					</div>
+					<p>清除缓存</p>
+					<i class="mui-icon mui-icon-arrowright"></i>
+				</a>
+				<a href="../mine/history.html" class="list_a">
+					<div class="list_a_img">
+						<img src="../../../assets/img/check_the_update_icon_001_01.png">
+					</div>
+					<p>检查更新</p>
+					<i class="mui-icon mui-icon-arrowright"></i>
+				</a>
+        	</div>
+   		 </div>
   
+    <nav class="mui-bar mui-bar-tab">
+        <a class="tab-item" href="./home.html">
+				<img src="../../../assets/img/Home_icon_001_01的副本.png">
+				<span class="mui-tab-label">首页</span>
+		</a>
+        <a class="tab-item" href="./search.html">
+				<img src="../../../assets/img/search_icon_001_01.png">
+				<span class="mui-tab-label">搜索</span>
+		</a>
+		<a class="tab-item" href="./Recharge.html">
+				<img src="../../../assets/img/top_up_icon_001_01.png">
+				<span class="mui-tab-label">充值</span>
+		</a>
+        <a class="tab-item mui-active" href="./mine.html">
+				<img src="../../../assets/img/personal_center_icon_001_01的副本.png">
+				<span class="mui-tab-label">我的</span>
+		</a>
+    </nav>
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
 		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
-	 $(".back").click(function(){
+
+			$("h3").click(()=>{
+				location.href="../aboutLogin/login.html"
+			})
+			 $(".back").click(function(){
 			window.history.go(-1)
 		})
 
+			// function Selection(self) {
+			// 	if($(self).attr("data-type")=="minebook"){
+			// 		$(".mine_info_a_img img").hide()
+			// 		$(".mine_info_a_img").text("53")
+			// 	}else if($(self).attr("data-type")=="comment"){
+			// 		$(".mine_info_a_img1 img").hide()
+			// 		$(".mine_info_a_img1").text("1234")
+			// 	}else if($(self).attr("data-type")=="qiandao"){
+			// 		$(".mine_info_a_img2 img").hide()
+			// 		$(".mine_info_a_img2").text("已签到")
+			// 	}
+			// }
 		</script>
 	</body>
 </html>

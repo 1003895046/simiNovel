@@ -122,8 +122,8 @@
 				display: none;
 			}
 			.red{
-				border-bottom: 1px solid red !important;
-				color:red;
+				border-bottom: 1px solid #F92A56 !important;
+				color:#F92A56;
 			}
 			input::-webkit-input-placeholder {
 			  color:#fff;
@@ -147,6 +147,23 @@
 			  font-size:24px;
 			  opacity: 0.7;
 			}
+			.free_span{
+				display: none;
+			}
+			.yaoqiang{
+				height: 80px;
+			}
+			.minemonety{
+				font-size: 12px !important;
+				margin-top: 50px !important;
+				display: none;
+			}
+			.yaoqiang h3{
+				text-align: center;
+				color: white;
+				font-size: 20px;
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -164,8 +181,14 @@
 								<img class="free_img" src="../../../assets/img/bannianhuiyuan_icon_001_01.png">
 								<input type="text" class="free_input" placeholder="请输入邀请码">
 							</div>
-			  				<span class="free_num" >A1B2C3</span>
-							<span class="free_span">您的邀请码</span>
+							<div  class="yaoqiang">
+								<span class="free_num" >A1B2C3</span>
+								<span class="free_inv">您的邀请码</span>
+								<h3>恭喜您</h3>
+								<h3>获得书友币20枚</h3>
+							</div>
+							<span class="free_span">确定</span>
+							<span class="minemonety">我的书友币</span>
 						</div>
 					</div>
 					<div class="free_end_ready">
@@ -233,11 +256,22 @@
 					$(".free_end_ready").hide(500)
 					$(".btn_all").hide(500)
 					$(".free_img").hide(500)
-					$(".free_num").hide(500)
 					$(".free_input").show(500)
-					$(".free_span").text("确定")
+					$(".free_span").show(500)
+					$(".free_inv").hide(500)
+					$(".free_num").hide(500)
 				})
-				
+				$(".free_span").click(()=>{
+					$(".free_title").text("邀请成功")
+					$(".minemonety").show(500);
+					$(".free_input").hide(500)
+					$(".free_span").hide(500)
+					$(".yaoqiang h3").show(500);
+					$(".free_img").css({"height":"76px","width":"76px"})
+					$(".free_img").attr("src","../../../assets/img/gold_coins_icon_001_01.png")
+					$(".free_img").show(500)
+					$(".free_end_readymoney").hide(500)
+				})
 		</script>
 	</body>
 </html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<link rel="stylesheet" href="../../../assets/css/mui.dtpicker.css">
+		<link rel="stylesheet" href="../../../assets/css/mui.picker.css">
+		<link rel="stylesheet" href="../../../assets/css/mui.poppicker.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all{
+				padding: 15px;
+				margin-bottom: 50px;
+				margin-top: 44px;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: auto;
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.mui-active{
+				color: #F72204
+			}
+
+			
+			.list_a,.list_a_paw{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 18px;
+				height: 50px;
+				width: 100%
+			}
+			.list_a_img{
+			}
+			.list_a p ,.list_a_paw p{
+				width: 60%;
+				margin-bottom: 0;
+			}
+			.list_a i,.list_a_paw i{
+				width: 30px;
+			    height: 24px;
+			    text-align: right;
+			}
+			.list_a span,.list_a_paw span{
+				color: #ccc;
+				font-size: 14px;
+			}
+			.mui-backdrop{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				bottom: 0;
+			   background: rgba(0,0,0,.6);
+			}
+			.mui-picker-inner{
+				background: #fff;
+				-webkit-mask-box-image:none
+			}
+			.mui-pciker-list li.highlight{
+				color: #F92A56 	;
+			}
+			.mui-poppicker-btn-ok{
+				background-color: #FA6400;
+				 background: #FA6400;
+				color: #fff !important;
+			}
+			.mui-poppicker-header .mui-btn{
+				    font-size: 20px;
+					padding: 0 !important;
+					width: 50%;
+					height: 100%;
+					text-align: center;
+					line-height: 30px;
+					color: #FA6400;
+					border: 1px solid #fff;
+					border-radius: 0;
+			}
+			.mui-poppicker-header{
+				height: 40px;
+				padding: 0 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">我的</h1>
+	　　</header>
+        	
+		<div class="all">
+        	<div class="list_oul">
+        		<div   href="../mine/accout_set.html" class="list_a">
+        			<p>手机</p>
+					<div style="display: flex;">
+						<span id="showUserPicker">51156156144564</span>
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+        		</div>
+        		<div href="../mine/persone.html" class="list_a_paw">
+        			<p>修改密码</p>
+					<span id="showUserPicker1">51156156144564</span>
+        			<i class="mui-icon mui-icon-arrowright"></i>
+        		</div>
+        	</div>
+   		 </div>
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/js/mui.picker.js"></script>
+		<script src="../../../assets/js/mui.poppicker.js"></script>
+		<script src="../../../assets/js/mui.dtpicker.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			$("h3").click(()=>{
+				location.href="../aboutLogin/login.html"
+			})
+			 $(".back").click(function(){
+			window.history.go(-1)
+			})
+			
+			
+			
+			document.querySelector('#showUserPicker').addEventListener("click", function() {
+				var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
+				roadPick.setData([{//设置弹出列表的信息，假如是二联，还需要一个children属性
+							 value: "1",
+							 text: "套餐一"
+				   }, {
+							 value: "2",
+							 text: "套餐二"
+				  }]);
+				  roadPick.show(function(item) {//弹出列表并在里面写业务代码
+						  var itemCallback=roadPick.getSelectedItems(); 
+						  $('#showUserPicker').html(itemCallback[0].text);
+				 });
+			});
+				
+				
+				(function($) {
+                $.init();
+                var result = $('#showUserPicker1')[0];
+                var btns = $('.list_a_paw');
+                btns.each(function(i, btn) {
+                    btn.addEventListener('tap', function() {
+                        var _self = this;
+                        if(_self.picker) {
+                            _self.picker.show(function (rs) {
+                                result.innerText = '选择结果: ' + rs.text;
+                                _self.picker.dispose();
+                                _self.picker = null;
+                            });
+                        } else {
+                            var year=new Date().getFullYear() ;
+                            var  month=new Date().getMonth();
+                            var day=new Date().getDate();
+                            _self.picker = new mui.DtPicker({
+                                type: "date",//设置日历初始视图模式
+                                beginDate: new Date(1960, 01, 01),//设置开始日期
+                                endDate: new Date(year, month, day),//设置结束日期
+                            });
+                            _self.picker.show(function(rs) {
+                              
+                                result.innerText =rs.text;
+                                _self.picker.dispose();
+                                _self.picker = null;
+                            });
+                        }
+                        
+                    }, false);
+                });
+            })(mui);
+			// function Selection(self) {
+			// 	if($(self).attr("data-type")=="minebook"){
+			// 		$(".mine_info_a_img img").hide()
+			// 		$(".mine_info_a_img").text("53")
+			// 	}else if($(self).attr("data-type")=="comment"){
+			// 		$(".mine_info_a_img1 img").hide()
+			// 		$(".mine_info_a_img1").text("1234")
+			// 	}else if($(self).attr("data-type")=="qiandao"){
+			// 		$(".mine_info_a_img2 img").hide()
+			// 		$(".mine_info_a_img2").text("已签到")
+			// 	}
+			// }
+		</script>
+	</body>
+</html>

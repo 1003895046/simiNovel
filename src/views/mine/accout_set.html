@@ -7,6 +7,8 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
 		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<link rel="stylesheet" href="../../../assets/css/mui.picker.css">
+		<link rel="stylesheet" href="../../../assets/css/mui.poppicker.css">
 		<style type="text/css">
 			body{
 				background: #fff;
@@ -63,21 +65,47 @@
 				margin-bottom: 0;
 			}
 			.list_a i{
-				width: 80px;
+				width: 30px;
 			    height: 24px;
 			    text-align: right;
 			}
 			.list_a span{
-				display: inline-block;
-				width:80px;
-				height:26px;
-				border-radius:13px;
-				opacity:0.3;
-				font-size: 16px;
-				border:2px solid rgba(26,37,51,1);
-				color: rgba(26,37,51,1);
-				text-align: center;
-				line-height: 22px;
+				color: #ccc;
+				font-size: 14px;
+			}
+			.mui-backdrop{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				bottom: 0;
+			   background: rgba(0,0,0,.6);
+			}
+			.mui-picker-inner{
+				background: #fff;
+				-webkit-mask-box-image:none
+			}
+			.mui-pciker-list li.highlight{
+				color: #F92A56 	;
+			}
+			.mui-poppicker-btn-ok{
+				background-color: #FA6400;
+				 background: #FA6400;
+				color: #fff !important;
+			}
+			.mui-poppicker-header .mui-btn{
+				    font-size: 20px;
+					padding: 0 !important;
+					width: 50%;
+					height: 100%;
+					text-align: center;
+					line-height: 30px;
+					color: #FA6400;
+					border: 1px solid #fff;
+					border-radius: 0;
+			}
+			.mui-poppicker-header{
+				height: 40px;
+				padding: 0 !important;
 			}
 		</style>
 	</head>
@@ -89,52 +117,23 @@
         	
 		<div class="all">
         	<div class="list_oul">
-        		<a href="../mine/accout_set.html" class="list_a">
-        			<div class="list_a_img">
-        				<img src="../../../assets/img/account_security_icon_001_01.png">
-        			</div>
-        			<p>账户安全</p>
-        			<i class="mui-icon mui-icon-arrowright"></i>
-        		</a>
-        		<a href="../mine/persone.html" class="list_a">
-        			<div class="list_a_img">
-        				<img src="../../../assets/img/personal_data_icon_001_01.png">
-        			</div>
-        			<p>个人资料</p>
-        			<i class="mui-icon mui-icon-arrowright"></i>
-        		</a>
-        		<a href="../mine/noticeSet.html" class="list_a">
-        			<div class="list_a_img">
-        				<img src="../../../assets/img/notification_settings_icon_001_01.png">
-        			</div>
-        			<p>通知设置</p>
-        			<i class="mui-icon mui-icon-arrowright"></i>
-        		</a>
-        		<a href="../mine/readySet.html" class="list_a">
-        			<div class="list_a_img">
-        				<img src="../../../assets/img/reading_set_icon_001_01.png">
-        			</div>
-        			<p>阅读设置</p>
-        			<i class="mui-icon mui-icon-arrowright"></i>
-        		</a>
-				<a href="../mine/history.html" class="list_a">
-					<div class="list_a_img">
-						<img src="../../../assets/img/clear_the_cache_icon_001_01.png">
+        		<div   href="../mine/accout_set.html" class="list_a">
+        			<p>手机</p>
+					<div style="display: flex;">
+						<span id="showUserPicker">51156156144564</span>
+						<i class="mui-icon mui-icon-arrowright"></i>
 					</div>
-					<p>清除缓存</p>
-					<i class="mui-icon mui-icon-arrowright"></i>
-				</a>
-				<a href="../mine/history.html" class="list_a">
-					<div class="list_a_img">
-						<img src="../../../assets/img/check_the_update_icon_001_01.png">
-					</div>
-					<p>检查更新</p>
-					<i class="mui-icon mui-icon-arrowright"></i>
-				</a>
+        		</div>
+        		<div href="../mine/persone.html" class="list_a">
+        			<p>修改密码</p>
+        			<i class="mui-icon mui-icon-arrowright"></i>
+        		</div>
         	</div>
    		 </div>
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/js/mui.picker.js"></script>
+		<script src="../../../assets/js/mui.poppicker.js"></script>
 		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
 
@@ -143,8 +142,25 @@
 			})
 			 $(".back").click(function(){
 			window.history.go(-1)
-		})
-
+			})
+			
+			
+			
+			document.querySelector('#showUserPicker').addEventListener("click", function() {
+				var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
+				roadPick.setData([{//设置弹出列表的信息，假如是二联，还需要一个children属性
+							 value: "1",
+							 text: "套餐一"
+				   }, {
+							 value: "2",
+							 text: "套餐二"
+				  }]);
+				  roadPick.show(function(item) {//弹出列表并在里面写业务代码
+						  var itemCallback=roadPick.getSelectedItems(); 
+						  $('#showUserPicker').html(itemCallback[0].text);
+				 });
+			});
+	
 			// function Selection(self) {
 			// 	if($(self).attr("data-type")=="minebook"){
 			// 		$(".mine_info_a_img img").hide()

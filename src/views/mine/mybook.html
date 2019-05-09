@@ -234,6 +234,15 @@
 				text-align: center;
 				margin-top: 50px;
 			}
+			.bg{
+				display: none;
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;background: #000;
+				opacity: 0.6;
+			}
 		</style>
 	</head>
 	<body>
@@ -282,7 +291,7 @@
 	            </div>
 		</div>
   			
-
+		<div class="bg"></div>
   		<div class="choose">
 			<h2>从选择</h2>
 			<div class="choose_iphone">
@@ -298,6 +307,7 @@
 				</div>
 			</div>
 		</div>
+		
 
 		<div class="nobook">
 			<div class="chooseBook">
@@ -325,12 +335,18 @@
 				}
 
 				function deleteBook(self){
+					$(".bg").show(500);
 					$(".choose").show(500);
 					removeBook = $(self).parent(".paih_content")
 				}
 				// 取消
 				$(".close").click(()=>{
 					$(".choose").hide(500);
+					$(".bg").hide(500);
+				})
+				$(".bg").click(()=>{
+					$(".choose").hide(500);
+					$(".bg").hide(500);
 				})
 				// 删除/
 				$(".del").click(()=>{

@@ -74,6 +74,7 @@
 				color: #ccc;
 				font-size: 14px;
 			}
+			
 			.mui-backdrop{
 				width: 100%;
 				height: 100%;
@@ -94,7 +95,7 @@
 				color: #fff !important;
 			}
 			.mui-poppicker-header .mui-btn{
-				    font-size: 20px;
+				    font-size: 16px;
 					padding: 0 !important;
 					width: 50%;
 					height: 100%;
@@ -108,6 +109,27 @@
 				height: 40px;
 				padding: 0 !important;
 			}
+			.mui-dtpicker-title{
+				display: none;
+			}
+			
+			
+			
+			
+			.mui-dtpicker-header button{
+				    font-size: 16px;
+					width: 50%;
+					height: 40px;
+					color: #FA6400;
+			}
+			.mui-dtpicker-header{
+				padding: 0;
+			}
+			.mui-btn-blue, .mui-btn-primary, input[type=submit]{
+				background-color :#FA6400;
+				border-color:#FA6400 ;
+				color: white !important;
+			}
 		</style>
 	</head>
 	<body>
@@ -118,20 +140,46 @@
         	
 		<div class="all">
         	<div class="list_oul">
-        		<div   href="../mine/accout_set.html" class="list_a">
-        			<p>手机</p>
+        		<div   href="../mine/accout_set.html" class="list_a" id="Gender">
+        			<p>请选择性别</p>
 					<div style="display: flex;">
-						<span id="showUserPicker">51156156144564</span>
+						<span id="chooseGender">请选择</span>
 						<i class="mui-icon mui-icon-arrowright"></i>
 					</div>
         		</div>
         		<div href="../mine/persone.html" class="list_a_paw">
-        			<p>修改密码</p>
-					<span id="showUserPicker1">51156156144564</span>
-        			<i class="mui-icon mui-icon-arrowright"></i>
+        			<p>请选择日期</p>
+					<div style="display: flex;">
+						<span id="showUserPicker1">请选择</span>
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>
         		</div>
+				<div   href="../mine/accout_set.html" class="list_a" id="constellation">
+					<p>请选择星座</p>
+					<div style="display: flex;">
+						<span id="chooseconstellation">请选择</span>
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+				</div>
+				<div   href="../mine/accout_set.html" class="list_a" id="Occupation">
+					<p>请选择职业</p>
+					<div style="display: flex;">
+						<span id="chooseOccupation">请选择</span>
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+				</div>
+				<div href="../mine/persone.html" class="list_a " id='city_id'>
+					<p>请选择地址</p>
+					<div style="display: flex;">
+						<span id="city_text">请选择</span>
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>	
+				</div>
         	</div>
    		 </div>
+		 
+		 
+		<script src="../../../assets/js/city.data-3.js"></script>
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
 		<script src="../../../assets/js/mui.picker.js"></script>
@@ -146,35 +194,75 @@
 			 $(".back").click(function(){
 			window.history.go(-1)
 			})
+			// 地址选择
 			
-			
-			
-			document.querySelector('#showUserPicker').addEventListener("click", function() {
+			// 性别
+			document.querySelector('#Gender').addEventListener("click", function() {
 				var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
 				roadPick.setData([{//设置弹出列表的信息，假如是二联，还需要一个children属性
 							 value: "1",
-							 text: "套餐一"
+							 text: "保密"
 				   }, {
 							 value: "2",
-							 text: "套餐二"
+							 text: "男"
+				  }, {
+							 value: "3",
+							 text: "女"
 				  }]);
 				  roadPick.show(function(item) {//弹出列表并在里面写业务代码
 						  var itemCallback=roadPick.getSelectedItems(); 
-						  $('#showUserPicker').html(itemCallback[0].text);
+						  $('#chooseGender').html(itemCallback[0].text);
+				 });
+			});
+			// 星座
+			document.querySelector('#constellation').addEventListener("click", function() {
+				var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
+				roadPick.setData([{//设置弹出列表的信息，假如是二联，还需要一个children属性
+							 value: "1",
+							 text: "金牛座"
+				   }, {
+							 value: "2",
+							 text: "白羊座"
+				  }, {
+							 value: "3",
+							 text: "水瓶座"
+				  }]);
+				  roadPick.show(function(item) {//弹出列表并在里面写业务代码
+						  var itemCallback=roadPick.getSelectedItems(); 
+						  $('#chooseconstellation').html(itemCallback[0].text);
+				 });
+			});
+			// 职业
+			document.querySelector('#Occupation').addEventListener("click", function() {
+				var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
+				roadPick.setData([{//设置弹出列表的信息，假如是二联，还需要一个children属性
+							 value: "1",
+							 text: "工程师"
+				   }, {
+							 value: "2",
+							 text: "设计师"
+				  }, {
+							 value: "3",
+							 text: "销售员"
+				  }]);
+				  roadPick.show(function(item) {//弹出列表并在里面写业务代码
+						  var itemCallback=roadPick.getSelectedItems(); 
+						  $('#chooseOccupation').html(itemCallback[0].text);
 				 });
 			});
 				
 				
+				// 时间选择
 				(function($) {
-                $.init();
-                var result = $('#showUserPicker1')[0];
-                var btns = $('.list_a_paw');
-                btns.each(function(i, btn) {
+					$.init();
+					var result = $('#showUserPicker1')[0];
+					var btns = $('.list_a_paw');
+					btns.each(function(i, btn) {
                     btn.addEventListener('tap', function() {
                         var _self = this;
                         if(_self.picker) {
                             _self.picker.show(function (rs) {
-                                result.innerText = '选择结果: ' + rs.text;
+                                result.innerText = rs.text;
                                 _self.picker.dispose();
                                 _self.picker = null;
                             });
@@ -194,22 +282,21 @@
                                 _self.picker = null;
                             });
                         }
-                        
                     }, false);
                 });
             })(mui);
-			// function Selection(self) {
-			// 	if($(self).attr("data-type")=="minebook"){
-			// 		$(".mine_info_a_img img").hide()
-			// 		$(".mine_info_a_img").text("53")
-			// 	}else if($(self).attr("data-type")=="comment"){
-			// 		$(".mine_info_a_img1 img").hide()
-			// 		$(".mine_info_a_img1").text("1234")
-			// 	}else if($(self).attr("data-type")=="qiandao"){
-			// 		$(".mine_info_a_img2 img").hide()
-			// 		$(".mine_info_a_img2").text("已签到")
-			// 	}
-			// }
+			
+					
+			var city_picker = new mui.PopPicker({layer:3}); 
+			city_picker.setData(cityData3); 
+			$("#city_text").on("tap", function(){ 
+				setTimeout(function(){ 
+					city_picker.show(function(items){ 
+						$("#city_id").val((items[0] || {}).value + "," + (items[1] || {}).value + "," + (items[2] || {}).value);//该ID为接收城市ID字段 
+						$("#city_text").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text); 
+					}); 
+				},200); 
+			})
 		</script>
 	</body>
 </html>

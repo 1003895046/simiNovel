@@ -107,6 +107,142 @@
 				height: 40px;
 				padding: 0 !important;
 			}
+			
+			.choose{
+				width: 100%;
+				position: fixed;
+				bottom: -1px;
+				height:230px;
+				background:rgba(255,255,255,1);
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px 10px 0px 0px;
+				z-index: 1000;
+				padding: 20px;
+				display: none;
+			}
+			.choosepwd{
+				height: 356px;
+				width: 100%;
+				position: fixed;
+				bottom: -1px;
+				background:rgba(255,255,255,1);
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px 10px 0px 0px;
+				z-index: 1000;
+				padding: 20px;
+				display: none;
+			}
+			.choose_iphone input{
+				color:#F92A56;
+				font-size: 20px;
+				margin-top: 20px;
+				border: none;
+				border-bottom: 1px solid #ccc;
+				border-radius: 0;
+			}
+			.choose_iphone{
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center
+			}
+			h2{
+				font-size: 20px;
+				margin-bottom: 25px;
+				width: 100%;
+				margin-top: 10px;
+			}
+			.choose_bottom{
+				position: fixed;
+				bottom: -1px;
+				right: 0;
+				left: 0;
+				height: 50px;
+				box-shadow:0px 1px 0px 0px rgba(0,0,0,0.1);
+			}
+			.choose_bottom p{
+				margin-bottom: 0;
+			}
+			.choose_bottom .confirm{
+				color: white;
+				background: #FA6400;
+				width: 50%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			.choose_bottom .close{
+				color: #FA6400;
+				width: 50%;
+				text-align: center;
+				line-height: 50px;
+			}
+			.choose_typpe{
+				display: flex;
+			}
+			.bg{
+				display: none;
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;background: #000;
+				opacity: 0.6;
+			}
+			
+			
+			.ready_free{
+				z-index: 110;
+				position: fixed;
+				top: 80px;
+				display: none;
+			}
+			.ready_free .free_end_vip div img{
+				margin-bottom: 50px
+			}
+			.free_end_vip_All{
+				z-index: 110;
+				position: fixed;
+				left: 50%;
+				margin-left: -174px;
+			}
+			.free_end_vip{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				width: 347px;
+				height: 402px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.free_end_vip div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+					
+			.free_end_vip div span{
+				color: #E0153B;
+				margin-top: 5px;
+				font-size: 20px;
+			}
+			.free_end_vip p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -117,19 +253,67 @@
         	
 		<div class="all">
         	<div class="list_oul">
-        		<div   href="../mine/accout_set.html" class="list_a">
+        		<div   href="../mine/accout_set.html" class="list_a" name="ipone" onclick="change(this)">
         			<p>手机</p>
 					<div style="display: flex;">
 						<span id="showUserPicker">51156156144564</span>
 						<i class="mui-icon mui-icon-arrowright"></i>
 					</div>
         		</div>
-        		<div href="../mine/persone.html" class="list_a">
+        		<div href="../mine/persone.html" class="list_a" name="pwd" onclick="change(this)">
         			<p>修改密码</p>
         			<i class="mui-icon mui-icon-arrowright"></i>
         		</div>
         	</div>
    		 </div>
+		 
+		 <div class="bg"></div>
+		 <div class="choose">
+		 	<h2>请输入旧密码</h2>
+		 	<div class="choose_iphone">
+		 		<input type="text" class="input" placeholder="请输入">
+		 	</div>
+		 	<div class="choose_bottom">
+		 		<div class="choose_typpe">
+		 			<p class="close">取消</p>
+		 			<p class="confirm">确认</p>
+		 		</div>
+		 	</div>
+		 </div>
+		 
+		 <div class="choosepwd" name="oldpwd">
+		 	<div class="choose_iphone">
+				<h2>请输入新密码</h2>
+		 		<input type="text" class="input" placeholder="请输入新密码" name="newpwd">
+		 	</div>
+				<div class="choose_iphone">
+				<h2>请输入旧密码</h2>
+				<input type="text" class="input" placeholder="请输入旧密码"  name="oldpwd">
+			</div>
+		 	<div class="choose_bottom">
+		 		<div class="choose_typpe">
+		 			<p class="close">取消</p>
+		 			<p class="confirm">确认</p>
+		 		</div>
+		 	</div>
+		 </div>
+		 
+		 <div class="ready_free">
+		 	<div class="bg"></div>
+		 	<div class="free_end_vip_All">
+		 		<div class="free_end_vip">
+		 			<div>
+		 				<div>
+		 					<img src="../../../assets/img/手机绑定成功.png">
+		 				</div>
+		   				<span>恭喜您 </span>
+		   				<span class="span_ready">手机绑定成功</span>
+		 			</div>
+		 			<p>确定</p>
+		 		</div>
+		 	</div>	
+		 </div>
+		 
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
 		<script src="../../../assets/js/mui.picker.js"></script>
@@ -144,35 +328,58 @@
 			window.history.go(-1)
 			})
 			
+			function change(self){
+				$(".choose").show(500);
+				$(".bg").show(500);
+				if($(self).attr("name")=="ipone"){
+					$("h2").text("更换手机号")
+				}else if($(self).attr("name")=="pwd"){
+					$("h2").text("请输入旧密码")
+				}
+			}
+				// 取消
+			$(".bg").click(()=>{
+				$(".choose").hide(500);
+				$(".bg").hide(500);
+				$(".ready_free").hide(500);
+				$(".choosepwd").hide(500);
+			})
+			$(".close").click(()=>{
+				$(".choose").hide(500);
+				$(".bg").hide(500);
+			})
+			// 确认/
+			$(".choose .confirm").click(()=>{
+				if($(".choose h2").text()=="更换手机号"){
+					$(".choose h2").text("请输入验证码")
+					$(".input").val("")
+				}else if($(".choose h2").text()=="请输入验证码"){
+					$(".choose h2").text("请输入新手机号码")
+					$(".input").val("")
+				}else if($(".choose h2").text()=="请输入新手机号码"){
+					$(".ready_free").show(500);
+					$(".choose").hide(500)
+				}else if($(".choose h2").text()=="请输入旧密码"){
+					$(".choose").hide();
+					$(".choosepwd").show(500);
+				}
+			})
+			
+			$(".choosepwd .confirm").click(()=>{
+					$(".choosepwd").hide(500);
+					$(".ready_free img").attr("src","../../../assets/img/密码修改成功.png")
+					$(".span_ready").text("密码修改成功")
+					$(".ready_free").show(500);
+			})
+				
 			
 			
-			document.querySelector('#showUserPicker').addEventListener("click", function() {
-				var roadPick = new mui.PopPicker();//获取弹出列表组建，假如是二联则在括号里面加入{layer:2}
-				roadPick.setData([{//设置弹出列表的信息，假如是二联，还需要一个children属性
-							 value: "1",
-							 text: "套餐一"
-				   }, {
-							 value: "2",
-							 text: "套餐二"
-				  }]);
-				  roadPick.show(function(item) {//弹出列表并在里面写业务代码
-						  var itemCallback=roadPick.getSelectedItems(); 
-						  $('#showUserPicker').html(itemCallback[0].text);
-				 });
-			});
-	
-			// function Selection(self) {
-			// 	if($(self).attr("data-type")=="minebook"){
-			// 		$(".mine_info_a_img img").hide()
-			// 		$(".mine_info_a_img").text("53")
-			// 	}else if($(self).attr("data-type")=="comment"){
-			// 		$(".mine_info_a_img1 img").hide()
-			// 		$(".mine_info_a_img1").text("1234")
-			// 	}else if($(self).attr("data-type")=="qiandao"){
-			// 		$(".mine_info_a_img2 img").hide()
-			// 		$(".mine_info_a_img2").text("已签到")
-			// 	}
-			// }
+			$(".free_end_vip p").click(()=>{
+				$(".choose").hide(500);
+				$(".choosepwd").hide(500);
+				$(".bg").hide(500);
+				$(".ready_free").hide(500);
+			})
 		</script>
 	</body>
 </html>

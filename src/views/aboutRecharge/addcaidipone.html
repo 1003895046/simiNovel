@@ -17,7 +17,7 @@
 				padding: 15px;
 				padding-bottom: 0;
 				background-size: 100%;
-				margin-top: 100px
+				margin-top: 50px
 			}
 			.login_top{
 			}	
@@ -26,13 +26,11 @@
 				height: 80px;
 			}	
 			h3{
-				width:104px;
-				font-size:26px;
+				font-size:20px;
 				font-family:PingFangSC-Medium;
 				font-weight:500;
 				color:#1A2533;
 				line-height:37px;
-				padding: 35px 0 20px 0  ;
 			}
 			.login_nemePwd{
 				padding: 20px;
@@ -69,8 +67,8 @@
 			.login_name_input,.login_pwd_input{
 				font-size: 16px;
 				border: none !important;
-				border-bottom: 1px solid #ccc;
 				padding: 0 !important;
+				border-bottom: 1px solid #ccc !important;
 				border-radius: 0 !important;
 				height: 50px !important;
 			}
@@ -87,7 +85,7 @@
 				height: 100px;
 				width: 100%;
 			}
-		
+			
 			.login_pwd p{
 				color: #888;
 				font-weight: 600;
@@ -159,22 +157,28 @@
 				height: 22px;
 				position: absolute;
 				right: 5px;
-				top: 37%;
+				top: 33%;
 			}
 			.Verification{
 				display: none
 			}
+			.red{
+				color: #F92A56;
+			}
 		</style>
 	</head>
 	<body>
+			<header class="mui-bar mui-bar-nav" style="color:;">
+				　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+				　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">绑定一行卡</h1>
+		　	　	</header>
 		<div style="height: 100%;" class="login_bg">
-			<h3>用户注册</h3>
-			<div class="login_nemePwd">
+			<h3>请绑定持卡人本人的银行卡</h3>
 				<div class="login_name">
 					<p>手机号</p>
 					<input type="text" placeholder="请输入用户名" class="login_name_input" value="">
 					<div class="login_name_img">
-						<img  src="../../assets/img/shut_down_ss_icon_001_01@2x.png" alt="">
+						<img  src="../../../assets/img/shut_down_ss_icon_001_01.png" alt="">
 					</div>
 				</div>
 				<div class="login_pwd">
@@ -186,7 +190,6 @@
 				<div class="login_btn">
 					<p>下一步</p>
 				</div>
-			</div>
 		</div>
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
@@ -221,8 +224,11 @@
 							clearInterval(timer);
 						}	
 					},1000)
-				
-				
+			})
+			
+			
+			 $(".back").click(function(){
+			window.history.go(-1)
 			})
 			
 		</script>

@@ -171,7 +171,7 @@
 					</div>
 				</div>
 				
-				<div class="btn" onchange="paybtn(this)" >添加银行卡</div>
+				<a href="./addcaid.html" class="btn" onchange="paybtn(this)" >添加银行卡</a>
 				<p class="none">抱歉！您还没有添加银行卡</p>
         	</div>
 			
@@ -194,12 +194,14 @@
 		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
 
-			
+			function chooseband(){
+				location.href="./delbandcard.html"
+			}
 			
 			 $(".back").click(function(){
 			window.history.go(-1)
 			})
-
+			
 		</script>
 	</body>
 </html>

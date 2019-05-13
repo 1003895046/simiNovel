@@ -2,8 +2,178 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.login_bg{
+				width: 100%;
+				height: 100%;
+				padding: 15px;
+				padding-bottom: 0;
+				margin-top: 50px
+			}
+			h3{
+				font-size:20px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:#1A2533;
+				line-height:37px;
+			}
+		
+			.login_name{
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				align-content: space-between;
+				height: 100px;
+				width: 100%;
+				margin-top: 20px;
+			}
+			input::-webkit-input-placeholder {
+				  color: #ccc;
+				}
+				input:-moz-placeholder {
+				  color: #ccc;
+				}
+				input::-moz-placeholder {
+				  color: #ccc;
+				}
+				input::-ms-input-placeholder {
+				  color: #ccc;
+				}
+			.login_name p{
+				    color: #888;
+				font-weight: 600;
+			}
+			.login_pwd{
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				align-content: space-between;
+				height: 100px;
+				width: 100%;
+			}
+			.login_pwd_input,.login_name_input{
+				font-size: 16px;
+				border: none !important;
+				border-bottom: 1px solid #ccc !important;
+				padding: 0 !important;
+				border-radius: 0 !important;
+				 height: 50px !important;
+			}
+			.login_pwd p{
+				color: #888;
+				font-weight: 600;
+			}
+			.login_btn{
+				width: 100%;
+				margin-top: 10px;
+				position: fixed;
+				bottom: 60px;
+			}
+			.login_btn p{
+				width: 350px;
+				height: 50px;
+				background:rgba(250,100,0,1);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				font-size:20px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				line-height:50px;
+				letter-spacing:2px;
+				text-align: center;
+				margin-bottom: 30px;
+				text-align: center;
+			}
+			.login_pwd_img{
+				display: none;
+				width: 22px;
+				height: 22px;
+				position: absolute;
+				right: 5px;
+				top: 50%;
+			}
+			.login_name_img{
+				display: none;
+				width: 22px;
+				height: 22px;
+				position: absolute;
+				right: 5px;
+				top: 50%;
+			}
+			.login_bg .red{
+				color: #F92A56;
+			}
+		</style>
 	</head>
 	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+				　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+				　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">绑定一行卡</h1>
+		　	　	</header>
+		<div style="height: 100%;" class="login_bg">
+			<h3>请绑定持卡人本人的银行卡</h3>
+				<div class="login_name">
+					<p>持卡人</p>
+					<input type="text" placeholder="请输入姓名" class="login_name_input" value="">
+					<div class="login_name_img">
+						<img  src="../../../assets/img/shut_down_ss_icon_001_01.png" alt="">
+					</div>
+				</div>
+				<div class="login_pwd">
+					<p class="red">卡号</p>
+					<input  type="text" placeholder="8888 8888 88888 888" class="login_pwd_input ">
+					<div class="login_pwd_img">
+						<img  src="../../../assets/img/scanning_icon_001_01.png" alt="">
+					</div>
+				</div>
+				<div class="login_btn">
+					<p>下一步</p>
+				</div>
+		</div>
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			$(".login_btn p").click(() => {
+						location.href ="./addcaidipone.html"
+				})
+			$(".login_pwd_input").bind('input propertychange',() => {
+				$(".login_pwd_img").css("display","block")
+				$(".login_pwd_img img").click(() => {
+					
+				})
+				if($(".login_pwd_input").val()==""){
+					$(".login_pwd_img").css("display","none")
+				}
+			});
+
+			$(".login_name_input").bind('input propertychange',() => {
+				$(".login_name_img").css("display","block")
+				$(".login_name_img img").click(() => {
+					$(".login_name_input").val("")
+					$(".login_name_img").css("display","none")
+				})
+				if($(".login_name_input").val()==""){
+					$(".login_name_img").css("display","none")
+				}
+			});
+
+			$(".back").click(function(){
+				window.history.go(-1)
+			})
+
+			
+		</script>
 	</body>
 </html>

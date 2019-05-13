@@ -79,6 +79,104 @@
 				text-align: center;
 				line-height: 22px;
 			}
+			.bg{
+				display: none;
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;background: #000;
+				opacity: 0.6;
+			}
+			
+			.ready_free1{
+				z-index: 110;
+				position: fixed;
+				top: 130px;
+				display: none;
+			}
+			.free_end_vip1{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				width: 347px;
+				height: 280px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.ready_free{
+				z-index: 110;
+				position: fixed;
+				top: 130px;
+				display: none;
+			}
+			.ready_free .free_end_vip div img{
+				margin-bottom: 50px
+			}
+			.free_end_vip_All{
+				z-index: 110;
+				position: fixed;
+				left: 50%;
+				margin-left: -174px;
+			}
+			
+			.free_end_vip{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				width: 347px;
+				height: 402px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.free_end_vip div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+					
+			.free_end_vip div span{
+				color: #E0153B;
+				margin-top: 5px;
+				font-size: 20px;
+			}
+			.free_end_vip p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			.free_end_vip1 p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			.free_end_vip1 h3{
+				font-size: 20px;
+			}
+			.free_end_vip1 span{
+				color: #ccc;
+			}
 		</style>
 	</head>
 	<body>
@@ -110,29 +208,58 @@
         			<p>通知设置</p>
         			<i class="mui-icon mui-icon-arrowright"></i>
         		</a>
-        		<a href="../mine/readySet.html" class="list_a">
+        		<!-- <a href="../mine/readySet.html" class="list_a">
         			<div class="list_a_img">
         				<img src="../../../assets/img/reading_set_icon_001_01.png">
         			</div>
         			<p>阅读设置</p>
         			<i class="mui-icon mui-icon-arrowright"></i>
-        		</a>
-				<a href="../mine/history.html" class="list_a">
+        		</a> -->
+				<div class="list_a" onclick="choose(this)" name="huancun">
 					<div class="list_a_img">
 						<img src="../../../assets/img/clear_the_cache_icon_001_01.png">
 					</div>
 					<p>清除缓存</p>
 					<i class="mui-icon mui-icon-arrowright"></i>
-				</a>
-				<a href="../mine/history.html" class="list_a">
+				</div>
+				<div class="list_a" onclick="choose(this)" name="gengxin">
 					<div class="list_a_img">
 						<img src="../../../assets/img/check_the_update_icon_001_01.png">
 					</div>
 					<p>检查更新</p>
 					<i class="mui-icon mui-icon-arrowright"></i>
-				</a>
+				</div>
         	</div>
    		 </div>
+		 
+		 
+		  <div class="bg"></div>
+		  <!-- 缓存 -->
+		 <div class="ready_free">
+		 	<div class="free_end_vip_All">
+		 		<div class="free_end_vip">
+		 			<div>
+		 				<div>
+		 					<img src="../../../assets/img/清理缓存.png">
+		 				</div>
+		   				<span>清理缓存</span>
+		   				<span class="span_ready">为您节省2.8M内存空间</span>
+		 			</div>
+		 			<p class="confirm">确定</p>
+		 		</div>
+		 	</div>	
+		 </div>
+		 <!-- 更新 -->
+		  <div class="ready_free1">
+		 	<div class="free_end_vip_All">
+		 		<div class="free_end_vip1">
+		 			<h3>检查更新</h3>
+					<span>当前已是最新版本</span>
+		   			<span class="span_ready">版本号V1.0</span>
+		 			<p class="confirm">确定</p>
+		 		</div>
+		 	</div>	
+		 </div>
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
 		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
@@ -144,7 +271,25 @@
 			 $(".back").click(function(){
 			window.history.go(-1)
 		})
-
+			function choose(self){
+				if($(self).attr("name")=="huancun"){
+					$(".ready_free").show(500);
+					$(".bg").show(500)
+				}else{
+					$(".ready_free1").show(500);
+					$(".bg").show(500)
+				}
+			}
+			$(".confirm").click(()=>{
+				$(".ready_free").hide(500);
+				$(".ready_free1").hide(500);
+				$(".bg").hide(500)
+			})
+			$(".bg").click(()=>{
+				$(".ready_free").hide(500);
+				$(".ready_free1").hide(500);
+				$(".bg").hide(500)
+			})
 			// function Selection(self) {
 			// 	if($(self).attr("data-type")=="minebook"){
 			// 		$(".mine_info_a_img img").hide()

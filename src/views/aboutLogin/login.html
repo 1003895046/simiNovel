@@ -203,7 +203,7 @@
 	<body>
 		<div style="height: 100%;" class="login_bg">
 			<div class="login_top">
-				<img src="../....//assets/img/logo.webp" alt="">
+				<img src="../../../assets/img/logo.webp" alt="">
 			</div>
 			<h3>欢迎登陆</h3>
 			<div class="login_nemePwd">
@@ -254,6 +254,11 @@
 				})
 
 			});
+			
+			$(".login_btn").click(()=>{
+				location.href="../aboutHome/home.html"
+			})
+			
 			$(".login_pwd_input").bind('input propertychange',() => {
 				$(".login_pwd_img").css("display","block")
 				$(".login_pwd_img img").click(() => {

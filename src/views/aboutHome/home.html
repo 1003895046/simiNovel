@@ -21,10 +21,6 @@
 			.mui-bar-nav~.mui-content{
 				padding-top: 0
 			}
-			.mui-bar img{
-				width: 24px;
-				height: 24px	
-			}
 			*{touch-action: none;}
 			.tab-item{
 				    display: flex;
@@ -33,6 +29,11 @@
    					 justify-content: center;
    					 width: 25%;
 
+			}
+			.mui-bar{
+				 background-color: #fff;
+				-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+				    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
 			}
 			.mui-bar-tab{
 				display: flex;
@@ -56,6 +57,14 @@
 				color:#666;
 				margin-right: 20px
 			}
+			.mui-bar img {
+				width: auto!important;
+				height: 24px!important;
+			}
+			.mui-bar-tab{
+				height: 60px !important;
+			}
+				
 			.mui-segmented-control .mui-control-item{
 				display: inline-block;
 				width: auto;
@@ -125,7 +134,7 @@
 				display: inline-block;
 				font-size: 12px;
 				text-align: center;
-				line-height: 20px;
+				line-height: 18px;
 				border-radius:2px;
 				margin-right: 10px;
 			}
@@ -133,7 +142,7 @@
 				margin-top: 10px;
 			}
 			.hot_content_tro{
-				height: 36px;
+				height: 38px;
 				 overflow : hidden;
 				  text-overflow: ellipsis;
 				  display: -webkit-box;
@@ -179,6 +188,7 @@
 				height: 134px;
 				position: relative;
 				margin-right: 10px;
+				    margin-bottom: 5px;
 			}
 			.hot_title{
 					position: absolute;
@@ -206,14 +216,14 @@
 			.paih_content{
 				display: flex;
 				flex-direction: column;
-				margin-right: 9px;
-				width: 106px;
+				width: 33.3%;
+				align-items: center;
 			}
 			.free_content{
 				display: flex;
 				flex-direction: column;
-				margin-right: 9px;
-				width: 106px;
+				width: 33.3%;
+				align-items: center;
 			}
 			.paih_content p{
 				font-size: 15px;
@@ -277,7 +287,9 @@
 				width: 109px;
 			}
 			
-			
+			.p{
+				width: 100%;
+			}
 		</style>
 	</head>
 	<body>
@@ -403,44 +415,14 @@
 	               				<!-- vip -->
 		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
 		               			<!-- 免费 -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
+		               		<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png"> -->
 	               		</div>
-	               		<p>等你的星光</p>
-	               		<span>科幻空间</span>
+						<div class="p">
+							<p>等你的星光</p>
+							<span>科幻空间</span>
+						</div>
 	               	</div>
-	               		<div class="paih_content">
-	               		<div class="hot_left">
-	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
-	               				<!-- vip -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
-		               			<!-- 免费 -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
-	               		</div>
-	               		<p>等你的星光</p>
-	               		<span>科幻空间</span>
-	               	</div>
-	               		<div class="paih_content">
-	               		<div class="hot_left">
-	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
-	               				<!-- vip -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
-		               			<!-- 免费 -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
-	               		</div>
-	               		<p>等你的星光</p>
-	               		<span>科幻空间</span>
-	               	</div>
-	               	<div class="paih_content">
-	               		<div class="hot_left">
-	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
-	               				<!-- vip -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
-		               			<!-- 免费 -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
-	               		</div>
-	               		<p>等你的星光</p>
-	               		<span>科幻空间</span>
-	               	</div>
+	             
 	            </div>
 <!-- 限时免费 -->
 	            	<div class="tab">
@@ -460,12 +442,14 @@
 	               		<div class="hot_left">
 	               			<img class="hot_mask" src="../../../assets/img/Mask.png">
 	               				<!-- vip -->
-		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png">
+		               		<!-- <img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01.png"> -->
 		               			<!-- 免费 -->
 		               		<img class="hot_vip" src="../../../assets/img/VIP_look_ivon_001_01复制 2.png">
 	               		</div>
-	               		<p>等你的星光</p>
-	               		<span>科幻空间</span>
+						<div class="p">
+							<p>等你的星光</p>
+							<span>科幻空间</span>
+						</div>
 	               	</div>
 	            </div>   	
             </div>
@@ -672,8 +656,6 @@
 				<span class="mui-tab-label">我的</span>
 		</a>
     </nav>
-
-
 
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>

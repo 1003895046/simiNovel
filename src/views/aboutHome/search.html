@@ -21,10 +21,23 @@
 			.mui-bar-nav~.mui-content{
 				padding-top: 0
 			}
+			.mui-bar{
+				 background-color: #fff;
+				-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+				    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+			}
 			.mui-bar img{
 				width: 24px;
 				height: 24px	
 			}
+			.mui-bar img {
+				width: auto!important;
+				height: 24px!important;
+			}
+			.mui-bar-tab{
+				height: 60px !important;
+			}
+				
 			*{touch-action: none;}
 			.tab-item{
 				    display: flex;
@@ -62,7 +75,7 @@
 				position: relative;
 				height: 60px;
 				background: #fff;
-				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				box-shadow:0px 0px 2px 0px rgba(0,0,0,0.25);
 				display: flex;
 				align-items: center;
 				padding:0 15px
@@ -142,8 +155,11 @@
 			.paih_content{
 				display: flex;
 				flex-direction: column;
-				margin-right: 9px;
-				width: 106px;
+				width: 33.3%;
+				align-items: center;
+			}
+			.p{
+				width: 100%;
 			}
 			.paih_content p{
 				font-size: 15px;
@@ -298,8 +314,10 @@
 		               	<div class="hot_left">
 		               		<img class="hot_mask" src="../../../assets/img/Mask.png">
 		               	</div>
+		               <div class="p">
 		               	<p>等你的星光</p>
 		               	<span>科幻空间</span>
+		               </div>
 		            </div>
 	            </div> 
              </div>

@@ -297,7 +297,21 @@
 				left: 50%;
 				margin-left: -174px;
 			}
-			
+			.fenxiang{
+				width: 347px;
+				height: 50px;
+				background:rgba(255,255,255,0.9);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				border:2px solid rgba(255,255,255,1);
+				font-size:20px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(216,5,45,1);
+				line-height: 48px;
+				text-align: center;
+				margin-top: 20px;
+			}
 			.free_end_vip{
 				z-index: 110;
 				display: flex;
@@ -681,8 +695,41 @@
 				<span>03/21</span>
 			</div>
 		</div>
-		
 	</div>
+	
+	
+		  <div class="bg"></div>
+		 <!-- 升级成功 -->
+		<div class="ready_free">
+			<div class="free_end_vip_All">
+				<div class="free_end_vip">
+					<div>
+						<div>
+							<img src="../../../assets/img/bannianhuiyuan_icon_001_01.png">
+						</div>
+		  				<span>恭喜您！升级成功！</span>
+		  				<span class="span_ready">成为年会员</span>
+					</div>
+					<p class="confirm">去读书</p>
+				</div>
+				<p class="fenxiang">分享领取100元现金</p>
+			</div>	
+		</div>
+			 <!-- 续费成功 -->
+			<div class="ready_free1">
+			<div class="free_end_vip_All">
+				<div class="free_end_vip">
+					<div>
+						<div>
+							<img src="../../../assets/img/bannianhuiyuan_icon_001_01.png">
+						</div>
+		  				<span>恭喜您！续费成功！</span>
+		  				<span class="span_ready">为您节省36元</span>
+					</div>
+					<p class="confirm">去读书</p>
+				</div>
+			</div>	
+		</div>
 	
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
@@ -727,7 +774,6 @@
 				$(self).removeClass("white")
 			}
 		}
-		
 		$(".paih_content").click(()=>{
 			location.href ="../details/details.html"
 		})

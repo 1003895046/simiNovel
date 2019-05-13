@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all{
+				padding: 10px;
+				margin-bottom: 50px;
+			}
+			.mine{
+				width: 100%;
+				height: 168px;
+				margin-top: 44px;
+				box-shadow:0px 0px 6px 0px rgba(48,27,108,0.5);
+				border-radius:0px 0px 10px 10px;
+				background:linear-gradient(36deg,#632056 0%,#2E1B6C 100%);
+				padding:30px 10px;
+				display: flex;
+			    flex-direction: column;
+			    justify-content: space-around;
+				color: white;
+			}
+			.mine_top{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.mine_top a , .mine_bottom a{
+				color: white;
+			}
+			.mine_center{
+				
+			}
+			.mine_bottom{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		
+			.minebandcard h3{
+				padding: 5px 0;
+				font-size: 18px;
+			}
+			
+			.minebandcard{
+				background: url("../../../assets/img/no_card_img_001_01 copy.png") no-repeat;
+				height:190px;
+				display:flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding:15px;
+				margin-top: 10px;
+				color:rgba(163,168,173,1);
+				color: white;
+			}
+			.minebandcard.white{
+				background: url("../../../assets/img/no_card_img_001_01 copy复制.png") no-repeat;
+				color: white;
+			}
+			.minebandMoney {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 10px;
+			}
+			p{
+				margin-bottom: 0;
+			}
+			
+			.minebandcard div span{
+				font-size: 18px;
+			}
+			.none{
+				text-align: center;
+				color: #ccc;
+				margin-top: 20px;
+				display: none;
+			}
+			
+			.btn{
+				position: fixed;
+				bottom: 30px;
+				width: 345px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				background: #FA6400;
+				font-size: 20px;
+				color: white;
+				border-radius:25px;
+			}
+			.Tips{
+				position: fixed;
+				top: 44px;
+				left: 0;
+				right: 0;
+				height: 32px;
+				background: #000;
+				opacity:0.5;
+				z-index: 100;
+			}
+			.Tips_wai{
+				position: fixed;
+				top: 44px;
+				left: 0;
+				right: 0;
+				height: 32px;
+				z-index: 100;
+			}
+			.Tips_content{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 15px;
+				height: 100%;
+			}
+			.Tips_content p{
+				margin-bottom: 0;
+				color: white;
+				font-size: 13px;
+			}
+			.Tips_content img{
+				
+			}
+		</style>
+	</head>
+	<body>
+			<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">我的书友币</h1>
+	　	　	</header>
+			<div class="mine">
+				<div class="mine_top">
+					<h2>你的资产</h2>
+					<a href="./tixianlist.html">提现记录</a>
+				</div>
+				<div>
+					<h2 class="mine_center">1200</h2>
+				</div>
+				<div class="mine_bottom">
+					<span>书友币</span>
+					<a href="./tiqu.html">100读书币=1元</a>
+				</div>
+			</div>
+        	<div class="all">
+				<div class="minebandcard" onclick="chooseband(this)" name="choose">
+					<h3>中国银行</h3>
+					<div class="minebandnum">
+						<div>
+							<span>8888</span>
+							<span>8888</span>
+							<span>8888</span>
+							<span>888</span>
+						</div>
+						<span style="font-size: 14px;">1234</span>
+					</div>	
+					<div class="minebandMoney">
+						<div class="bandmoney">
+							<label>加300元</label>
+							<span > /即可续费一年</span>
+						</div>
+						<span>03/21</span>
+					</div>
+				</div>
+				
+				<div class="btn" onchange="paybtn(this)" >添加银行卡</div>
+				<p class="none">抱歉！您还没有添加银行卡</p>
+        	</div>
+			
+			
+			<div class="Tips">
+			</div>
+			<div class="Tips_wai">
+				<div class="Tips_content">
+					<p>
+						银行卡添加成功
+					</p>
+					<div> 
+						<img class="close" src="../../../assets/img/shut_down_s_icon_001_01.png" alt="">
+					</div>
+				</div>
+			</div>
+	
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			
+			
+			 $(".back").click(function(){
+			window.history.go(-1)
+			})
+
+		</script>
+	</body>
+</html>

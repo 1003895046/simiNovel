@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all ,.xufei , .xufei1{
+				padding: 15px;
+				margin-bottom: 50px;
+			}
+			.mui-grid-view.mui-grid-9{
+				background: white;
+				border: none
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border: none
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top: 0
+			}
+			.mui-bar img{
+				width: 24px;
+				height: 24px	
+			}
+			*{touch-action: none;}
+			.tab-item{
+				    display: flex;
+				    align-items: center;
+				    flex-direction: column;
+   					 justify-content: center;
+   					 width: auto;
+			}
+			.mui-bar-tab{
+				display: flex;
+   				 justify-content: space-around;
+   				 bottom: -1px;
+			}
+			.mui-active{
+				color: #F72204
+			}
+			.mui-bar img {
+				width: auto!important;
+				height: 24px!important;
+			}
+			.mui-bar-tab{
+				height: 60px !important;
+			}
+			.mui-bar{
+				 background-color: #fff;
+				-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+				    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+			}
+			.mine{
+				width: 100%;
+				height: :;;
+				margin-top: 44px;
+				box-shadow:0px 0px 6px 0px rgba(48,27,108,0.5);
+				border-radius:0px 0px 10px 10px;
+				background:linear-gradient(36deg,#632056 0%,#2E1B6C 100%);
+				padding:30px 10px;
+				display: flex;
+			    flex-direction: column;
+			    justify-content: space-around;
+			}
+			.mine_login{
+				display: flex;
+			}
+			.mine_img{
+				border-radius: 50%;
+				/*border:3px solid white;*/
+				width: 88px;
+				height: 88px;
+				margin-right: 10px;
+			}
+			.mine_img img{
+				
+			}
+			.mine_login_info{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				padding: 0 30px;
+				margin-bottom: 20px;
+			}
+			.mine_login_info a{
+				color: white;
+			}
+			.mine_login_info h3{
+				font-size: 25px;
+			}
+			.mine h3{
+				color: white;
+				font-size: 18px
+				margin:0
+			}
+			.mine_login_info p,.mine_login_info p span,.mine_login_info p label{
+				color: #ccc;
+				font-size: 14px;
+			}
+			.mine_login_info p label{
+				margin-right: 5px;
+				margin-left: 5px;
+			}
+			.mine_info{
+				display: flex;
+				justify-content: space-around;
+			}
+			.mine_info_a{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center
+			}
+			.mine_info_a_img,.mine_info_a_img1,.mine_info_a_img2{
+				height: 24px;
+				color: white;
+				font-size: 18px;
+			}
+
+
+			.mine_info_a span{
+				font-size:14px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				line-height:20px;
+				color: #ccc;
+				width: 120px;
+			    text-align: center;
+			    border-right: 1px solid #ccc;
+			}
+			
+			.nologin{
+				display: none;
+			}
+			.nologintop{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 20px 0;
+			}
+			.nologintop h3{
+				font-size: 25px;
+			}
+			.nologintop span{
+				font-size:14px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(249,42,86,1);
+			}
+			
+			.allcheappay{
+				display: flex;
+				color: white;
+				flex-wrap: wrap;
+				margin: 10px 0;
+			}
+			.cheappay{
+				background: url("../../../assets/img/top_up_icon_001_02.png")  no-repeat;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: 15px;
+				width: 168px;
+				height: 120px;
+			}
+			.cheappay p{
+				margin-bottom: 0;
+				color: white;
+			}
+			.top{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.top span{
+				font-size: 20px;
+			}
+			.youhui{
+				font-size: 25px;
+				margin-top: 30px;
+				margin-bottom: 10px;
+			}
+			.btn{
+				width:100%;
+				height:26px;
+				background:linear-gradient(315deg,rgba(249,181,64,1) 0%,rgba(254,201,55,1) 100%);
+				border-radius:13px;
+				font-size:14px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(255,255,255,1);
+				text-align: center;
+				line-height: 26px;
+			}
+			.zhuyi{
+				
+			}
+			.zhuyi h3{
+				font-size:14px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(249,42,86,1);
+			}
+			.xufei h2{
+				font-size: 25px;
+			}
+			.xufei1 h2{
+				font-size: 25px;
+			}
+			.xufei , .xufei1{
+				display: none;
+			}
+			 .mineCaid{
+				padding: 15px;
+				margin-bottom: 50px;
+				margin-top: 60px;
+				display: none;
+			}
+			/* ,.xufei1 */
+			
+			.myVip .Vipcard ,.xufei .Vipcard ,.xufei1 .Vipcard{
+				background: url("../../../assets/img/membership_card_img_001_01%20(1).png") no-repeat;
+				height:174px;
+				display:flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding:15px;
+				margin-top: 10px;
+			}
+			.myHalfVip .Vipcard{
+				background: url("../../../assets/img/membership_card_img_001_01.png") no-repeat;
+				height:174px;
+				display:flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding:15px;
+				margin-top: 10px;
+			}
+			.minebandMoney {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 10px;
+			}
+			p{
+				margin-bottom: 0;
+			}
+			h2{
+				font-size: 25px;
+			}
+			.Vipcard h3{
+				font-size:20px;
+				color: white;
+			}
+			
+			.vipTime{
+				display: flex;
+				justify-content: space-between;
+				align-content: center;
+			}
+			
+			.mineband h3{
+				padding: 5px 0;
+				font-size: 18px;
+			}
+			
+			.vipTime span{
+				font-size: 12px;
+				color: white;
+				opacity: 0.8;
+			}
+			.vipMoney{
+				display: flex;
+				align-content: center;
+			}
+			.vipMoney1{
+				display: flex;
+				align-content: center;
+				flex-direction: column;
+			}
+			.vipMoney span{
+				margin-right: 20px;
+				color: white;
+			}
+			.bottom {
+				margin-top: 30px;
+			}
+			.bottom span{
+				font-size: 12px;
+				color: white;
+			}
+			.bottom label{
+				font-size: 30px;
+				color: white;
+			}
+			.bottom1 p{
+				font-size: 12px;
+				display: inline-block;
+				color: white;
+			}
+			.bottom1 label{
+				font-size: 30px;
+				color: white;
+			}
+			.money{
+				display: flex;
+			}
+			.money span{
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(255,255,255,1);
+			}
+			.money label{
+				font-size:12px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				opacity: 0.8;
+			}
+			.VipBtn{
+				width:60px;
+				height:18px;
+				background:rgba(255,255,255,1);
+				border-radius:9px;
+				font-size:12px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(252,100,3,1);
+				line-height:16px;
+				margin-bottom: 0;
+				text-align: center;
+			}
+			.chajia span{
+				font-size: 25px;
+				color: #E93148;
+			}
+			.pay span{
+				font-size: 25px;
+				color: #E93148;
+			}
+			.pay,.chajia{
+				display: flex;
+				align-items: center;
+				margin-top: 30px;
+			}
+			.list_a{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 18px;
+				height: 50px;
+				width: 100%
+			}
+			.list_a_img{
+			}
+			.list_a p{
+				margin-bottom: 0;
+				color: #E93148;
+			}
+			.list_a i{
+			    height: 24px;
+			    text-align: right;
+				color: #E93148;
+			}
+			.list_a span{
+				display: inline-block;
+				width:80px;
+				height:26px;
+				border-radius:13px;
+				opacity:0.3;
+				font-size: 16px;
+				border:2px solid rgba(26,37,51,1);
+				color: rgba(26,37,51,1);
+				text-align: center;
+				line-height: 22px;
+			}
+			.pi{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			
+			
+			
+			.bg{
+				display: none;
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;background: #000;
+				opacity: 0.6;
+			}
+			.ready_free{
+				z-index: 110;
+				position: fixed;
+				top: 130px;
+				display: none;
+			}
+			.ready_free .free_end_vip div img{
+				margin-bottom: 50px
+			}
+			.free_end_vip_All{
+				z-index: 110;
+				position: fixed;
+				left: 50%;
+				margin-left: -174px;
+			}
+			.fenxiang{
+				width: 347px;
+				height: 50px;
+				background:rgba(255,255,255,0.9);
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				border-radius:25px;
+				border:2px solid rgba(255,255,255,1);
+				font-size:20px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color:rgba(216,5,45,1);
+				line-height: 48px;
+				text-align: center;
+				margin-top: 20px;
+			}
+			.free_end_vip{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				width: 347px;
+				height: 402px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.free_end_vip div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+					
+			.free_end_vip div span{
+				color: #E0153B;
+				margin-top: 5px;
+				font-size: 20px;
+			}
+			.free_end_vip p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			.zhifupay .btn{
+				width: 345px;
+				height: 50px;
+				margin-top: 30px;
+				text-align: center;
+				line-height: 50px;
+				background: #FA6400;
+				font-size: 20px;
+				color: white;
+				border-radius:25px;
+			}
+			.pay h3{
+				font-size:18px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(249,42,86,1);
+				margin: 20px 0;
+			}
+			.vipMoney2 span{
+				color: #C0C0C0;
+				height: 30px;
+				line-height: 30px;
+				font-size: 15px;
+			}
+			.vipMoney2{
+				display: flex;
+				flex-direction: column;
+			}
+			.choose1{
+				width: 100%;
+				position: fixed;
+				bottom: -1px;
+				height:230px;
+				background:rgba(255,255,255,1);
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px 10px 0px 0px;
+				z-index: 1000;
+				padding: 20px;
+				display: none;
+			}
+			.choose_iphone{
+				display: flex;
+				justify-content: space-around;
+				z-index: 100;
+				    margin-top: 40px;
+			}
+			.choose1_img{
+				display: flex;
+				flex-direction: column;
+				width: 60px;
+				height: 100px;
+			}
+			.choose1_img span{
+				text-align: center;
+				color: #ccc
+			}
+			
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px;
+				background: url("../../../assets/img/securities_car_img_001_01 (1).png");
+				width: 100%;
+				height: 114px;
+				margin-top: 10px;
+			}
+			.hot_contentuse{
+				display: flex;
+				margin-bottom: 20px;
+				background: url("../../../assets/img/securities_car_img_001_01.png");
+				width: 100%;
+				height: 114px;
+				margin-top: 10px;
+			}
+			.hot_left{
+				width: 133px;
+				margin-right: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_left span{
+				font-size:12px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color: white;
+				margin-right: 5px;
+			}
+			.hot_left p{
+				font-size: 30px;
+				color: white
+			}
+			.hot_right{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			.hot_content_score{
+				border-bottom: 1px solid #ccc;
+				padding-bottom: 10px;
+			}
+			.hot_content_tro{
+				color: #999
+			}
+			
+			
+			
+			.vipMoney3{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">充值</h1>
+	　　</header>
+        	<div class="mine">
+        		<div class="mine_login">
+        			<div class="mine_login_info">
+        				<h3>点击登录</h3>
+        				<a href="../aboutRecharge/Rechargelist.html">充值记录</a>
+        				<p style="display: none"><span>累计阅读186分钟</span> <label>|</label> <span>今日阅读186分钟</span></p>
+        			</div>
+        		</div>
+        		<div class="mine_info">
+        			<a href="#" class="mine_info_a">
+        				<div class="mine_info_a_img" >
+        					<img src="../../../assets/img/hidden_icon_001_01 copy 2.png">
+        				</div>
+        				<span>读书币</span>
+        			</a>
+        			<a href="#" href="" class="mine_info_a">
+        				<div class="mine_info_a_img1">
+        					<img src="../../../assets/img/hidden_icon_001_01 copy 2.png">
+        				</div>
+        				<span>现金</span>
+        			</a>
+        			<a href="../aboutRecharge/shuyoubi.html" class="mine_info_a">
+        				<div class="mine_info_a_img2">
+        					<!-- <img src="../../../assets/img/hidden_icon_001_01 copy 2.png"> -->
+        					1231
+        				</div>
+        				<span style="border-right: none">书友币</span>
+        			</a>
+        		</div>
+				
+			
+        	</div>
+			<div class="all">
+					<!-- 未登录 -->
+				<div class="nologin">
+					<div class="nologintop">
+						<h3>会员卡</h3>
+						<span>立即购买</span>
+					</div>
+					<img src="../../../assets/img/membership_card_img_001_03.png" alt="">
+				</div>
+				<!-- 登陆半年卡 -->
+			<!-- 	<div class="myHalfVip">
+					<div class="nologintop">
+						<h3>会员卡</h3>
+						<span>立即购买</span>
+					</div>
+					<div class="Vipcard">
+						<div>
+							<h3>半年会员</h3>
+							<div class="vipTime">
+								<span>Half a year member</span>
+								<span>2020-05-16 到期</span>
+							</div>	
+						</div>
+						<div class="vipMoney">
+							<span>• 签到奖励</span>
+							<span>• 充值额外专享</span>
+							<span>• 畅读全部书籍</span>
+						</div>
+					</div>
+				</div> -->
+				
+				<!-- 登陆年卡 -->
+		<!-- 	<div class="myVip">	
+				<div class="Vipcard">
+					<div>
+						<h3>年会员</h3>
+						<div class="vipTime">
+							<span>Half a year member</span>
+							<span>2020-05-16 到期</span>
+						</div>	
+					</div>
+					<div class="vipMoney">
+						<span>• 畅读全部书籍</span>
+						<span>• 书友币体现</span>
+						<span>• 100元现金提成</span>
+					</div>
+				</div>
+			</div>	 -->
+				
+				<!-- 未充值 -->
+				<div class="myHalfVip">
+					<div class="nologintop">
+						<h3>会员卡</h3>
+						<span>立即购买</span>
+					</div>
+					<div class="Vipcard">
+						<div>
+							<h3>半年会员</h3>
+							<div class="vipTime">
+								<span>Half a year member</span>
+								<div class="vipMoney1">
+									<span>• 签到奖励</span>
+									<span>• 充值额外专享</span>
+									<span>• 畅读全部书籍</span>
+								</div>
+							</div>	
+							<div class="bottom">
+								<span>￥</span><label>198</label><span>/半年</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<h2 class="youhui">特惠充值</h2>
+				<div class="allcheappay">
+					<div class="cheappay">
+						<div class="top">
+							<span>49元</span>
+							<div>
+								<img src="../../../assets/img/hot_icon_001_01.png" alt="">
+							</div>
+						</div>
+						<p class="center">490读书币</p>
+						<p class="btn">多送3100读书币</p>
+					</div>	
+				</div>
+				
+				<div class="zhuyi">
+					<h3>注意事项:</h3>
+					<div>
+						<p>1、1元=100书币，书币属于虚拟商品，一经购买，不得退换，充值后书币到账可能会延迟，1小时内未到账请联系客服扣费</p>
+					</div>
+				</div>
+				
+				<div class="home_bottom_img">
+					<img src="../../../assets/img/customer_service_img_icon_001_01.png">
+				</div>
+			</div>
+			
+			<!-- 无卡券 -->
+			<div class="xufei">
+				<h2>升级为年会员</h2>
+					<div class="Vipcard">
+						<div>
+							<h3>半年会员</h3>
+							<div class="vipTime">
+								<span>Half a year member</span>
+								<div class="vipMoney1">
+									<span>• 签到奖励</span>
+									<span>• 充值额外专享</span>
+									<span>• 畅读全部书籍</span>
+								</div>
+							</div>	
+							<div class="bottom">
+								<span>￥</span><label>198</label><span>/半年</span>
+							</div>
+						</div>
+					</div>
+				<div class="zhifupay">
+					<div class="pay">
+						<h3>VIP半年会员：198元半年</h3>
+					</div>
+					<div class="vipMoney2">
+						<span>• 签到奖励</span>
+						<span>• 充值额外专享</span>
+						<span>• 畅读全部书籍</span>
+					</div>
+					<div class="btn" onchange="paybtn(this)"  name="shengji">立即支付</div>
+				</div>
+			</div>
+			<!-- 有卡券 -->
+			<div class="xufei1">
+				<h2>升级为年会员</h2>
+				<div class="Vipcard">
+					<div>
+						<div class="vipTime">
+							<div>
+								<h3>499元</h3>
+								<span>Cash top-up</span>
+							</div>
+							<div>
+								<img src="../../../assets/img/hot_icon_001_02.png" alt="">
+							</div>
+						</div>	
+					</div>
+					<div class="vipMoney3">
+						<div class="money">
+							<label>赠送49000读书币</label>
+						</div>
+						<div class="bottom1">
+							<p>￥</p><label>198</label><p>/半年</p>
+						</div>
+					</div>
+				</div>
+				<div class="zhifupay">
+					<div class="chajia">
+						<h2>补差价:</h2><span>176元</span>
+					</div>
+					<div class="minecard">
+						<div class="list_a">
+							<div>我的卡券</div>
+							<!-- <p>不使用卡券</p> -->
+							<div class="pi">
+								<p>162元</p>
+								<i class="mui-icon mui-icon-arrowright"></i>
+							</div>
+						</div>
+					</div>
+					<div class="btn" onchange="paybtn(this)"  name="shengji">立即支付</div>
+				</div>
+			</div>
+			
+			
+			
+			<!-- 成功 -->
+			<div class="bg"></div>
+			<div class="ready_free">
+				<div class="free_end_vip_All">
+					<div class="free_end_vip">
+						<div>
+							<div>
+								<img src="../../../assets/img/bannianhuiyuan_icon_001_01.png">
+							</div>
+			  				<span>恭喜您！升级成功！</span>
+			  				<span class="span_ready">成为年会员</span>
+						</div>
+						<p class="confirm">去读书</p>
+					</div>
+					<p class="fenxiang">分享领取100元现金</p>
+				</div>	
+			</div>
+			
+				<!-- 选择卡券 -->
+				<div class="mineCaid">
+					<div class="hot_content_All">
+						<h2>我的卡券</h2>
+						<div class="hot_content">
+							<div class="hot_left">
+								<span>¥</span>
+								<p>9.9</p>
+							</div>
+							<div class="hot_right">
+								<div class="hot_content_title">
+									<h5>分享红包</h5>
+								</div>
+								<div class="hot_content_score">
+									<span class="name">充值专用（仅限年会员）</span>
+								</div>
+								<div class="hot_content_tro">
+									有效期：2019-03-03—2019-05-05
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			
+			<!-- 分享之 -->
+			<div class="choose1">
+				<h2>分享至</h2>
+				<div class="choose_iphone">
+					<div class="choose1_img">
+						<div>
+							
+						</div>
+						<img src="../../../assets/img/wechat_logo_001_01复制.png" alt="">	
+						<span>QQ</span>
+					</div>
+					<div class="choose1_img">
+						<img src="../../../assets/img/wechat_logo_001_01.png" alt="">
+						<span>微信</span>
+					</div>
+					<div class="choose1_img">
+						<img src="../../../assets/img/wechat_logo_001_01复制%202.png" alt="">
+						<span>朋友圈</span>
+					</div>
+					<div class="choose1_img">
+						<img src="../../../assets/img/circle_of_friends_logo_001_01.png" alt="">
+						<span>微博</span>
+					</div>
+				</div>
+			</div>
+
+    <nav class="mui-bar mui-bar-tab">
+        <a class="tab-item" href="./home.html">
+				<img src="../../../assets/img/Home_icon_001_01的副本.png">
+				<span class="mui-tab-label">首页</span>
+		</a>
+        <a class="tab-item" href="./search.html">
+				<img src="../../../assets/img/search_icon_001_01.png">
+				<span class="mui-tab-label">搜索</span>
+		</a>
+		<a class="tab-item mui-active" href="./Recharge.html">
+				<img src="../../../assets/img/top_up_icon_001_011.png">
+				<span class="mui-tab-label">充值</span>
+		</a>
+        <a class="tab-item" href="./mine.html">
+				<img src="../../../assets/img/personal_center_icon_001_01的副本.png">
+				<span class="mui-tab-label">我的</span>
+		</a>
+    </nav>
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			$("h3").click(()=>{
+				location.href="../aboutLogin/login.html"
+			})
+			
+			 $(".back").click(function(){
+			window.history.go(-1)
+			})
+			$(".nologintop span").click(()=>{
+				$(".xufei").show(500)
+				$(".mine").hide(500)
+				$(".all").hide(500)
+			})
+			
+			// function Selection(self) {
+			// 	if($(self).attr("data-type")=="minebook"){
+			// 		$(".mine_info_a_img img").hide()
+			// 		$(".mine_info_a_img").text("53")
+			// 	}else if($(self).attr("data-type")=="comment"){
+			// 		$(".mine_info_a_img1 img").hide()
+			// 		$(".mine_info_a_img1").text("1234")
+			// 	}else if($(self).attr("data-type")=="qiandao"){
+			// 		$(".mine_info_a_img2 img").hide()
+			// 		$(".mine_info_a_img2").text("已签到")
+			// 	}
+			// }
+		</script>
+	</body>
+</html>

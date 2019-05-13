@@ -17,9 +17,10 @@
 				margin-top: 60px;
 			}
 			.mineband{
-					padding: 10px;
+				padding: 10px;
 				margin-bottom: 50px;
 				margin-top: 60px;
+				display: none;
 			}
 			.xufei , .mineCaid{
 				padding: 15px;
@@ -38,9 +39,8 @@
 			.mui-bar-nav~.mui-content{
 				padding-top: 0
 			}
-			.myVip{
-				display: none;
-			}
+			
+			
 			
 			.mineband .minebandcard{
 				background: url("../../../assets/img/no_card_img_001_01 copy复制.png") no-repeat;
@@ -58,6 +58,10 @@
 			}
 			.minebandcard div span{
 				font-size: 18px;
+			}
+			
+			.myVip{
+				display: none;
 			}
 			.myVip .Vipcard, .xufei .Vipcard{
 				background: url("../../../assets/img/membership_card_img_001_01%20(1).png") no-repeat;
@@ -253,6 +257,8 @@
 				text-align: center;
 				line-height: 22px;
 			}
+			
+			
 			.bg{
 				display: none;
 				position: fixed;
@@ -601,9 +607,7 @@
 		   </div> 
 		</div>
 	</div>
-	
-	
-		<div class="xufei">
+	<div class="xufei">
 		<h2>升级为年会员</h2>
 		<div class="Vipcard">
 			<div>
@@ -635,9 +639,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="pay">
-				<h2>请支付:</h2><span>176元</span>
-			</div>
 			<div class="btn" onchange="paybtn(this)"  name="shengji">立即支付</div>
 		</div>
 		<div class="xufeipay">
@@ -646,59 +647,57 @@
 			</div>
 			<div class="btn" name="xufei">立即支付</div>
 		</div>
-		
-		
 	</div>
-	
-	<div class="mineCaid">
-		<div class="hot_content_All">
-			<h2>我的卡券</h2>
-		   	<div class="hot_content">
-		   		<div class="hot_left">
-		   			<span>¥</span>
-		   			<p>9.9</p>
-		   		</div>
-		   		<div class="hot_right">
-		   			<div class="hot_content_title">
-		   				<h5>分享红包</h5>
-		   			</div>
-		   			<div class="hot_content_score">
-		   				<span class="name">充值专用（仅限年会员）</span>
-		   			</div>
-		   			<div class="hot_content_tro">
-		   				有效期：2019-03-03—2019-05-05
-		   			</div>
-		   		</div>
-		   	</div>	
-		</div>
-	</div>
-	
-	
-	<div class="mineband">
-		<h2>选择银行卡</h2>	
-		<div class="minebandcard" onclick="chooseband(this)" name="choose">
-			<h3>中国银行</h3>
-			<div class="minebandnum">
-				<div>
-					<span>8888</span>
-					<span>8888</span>
-					<span>8888</span>
-					<span>888</span>
-				</div>
-				<span style="font-size: 14px;">1234</span>
-			</div>	
-			<div class="minebandMoney">
-				<div class="bandmoney">
-					<label>加300元</label>
-					<span > /即可续费一年</span>
-				</div>
-				<span>03/21</span>
+	<!-- 选择卡券 -->
+		<div class="mineCaid">
+			<div class="hot_content_All">
+				<h2>我的卡券</h2>
+				<div class="hot_content">
+					<div class="hot_left">
+						<span>¥</span>
+						<p>9.9</p>
+					</div>
+					<div class="hot_right">
+						<div class="hot_content_title">
+							<h5>分享红包</h5>
+						</div>
+						<div class="hot_content_score">
+							<span class="name">充值专用（仅限年会员）</span>
+						</div>
+						<div class="hot_content_tro">
+							有效期：2019-03-03—2019-05-05
+						</div>
+					</div>
+				</div>	
 			</div>
 		</div>
-	</div>
+	
+		<!-- 选择银行卡 -->
+		<div class="mineband">
+			<h2>选择银行卡</h2>	
+			<div class="minebandcard" onclick="chooseband(this)" name="choose">
+				<h3>中国银行</h3>
+				<div class="minebandnum">
+					<div>
+						<span>8888</span>
+						<span>8888</span>
+						<span>8888</span>
+						<span>888</span>
+					</div>
+					<span style="font-size: 14px;">1234</span>
+				</div>	
+				<div class="minebandMoney">
+					<div class="bandmoney">
+						<label>加300元</label>
+						<span > /即可续费一年</span>
+					</div>
+					<span>03/21</span>
+				</div>
+			</div>
+		</div>
 	
 	
-		  <div class="bg"></div>
+		<div class="bg"></div>
 		 <!-- 升级成功 -->
 		<div class="ready_free">
 			<div class="free_end_vip_All">
@@ -716,7 +715,7 @@
 			</div>	
 		</div>
 			 <!-- 续费成功 -->
-			<div class="ready_free1">
+		<div class="ready_free1">
 			<div class="free_end_vip_All">
 				<div class="free_end_vip">
 					<div>

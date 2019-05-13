@@ -53,50 +53,62 @@
 				width: 100%;
 				display: flex;
 				justify-content: space-between;
-				height: 30px;
+				margin-top: 20px;
 			}
 			.log_num{
 				width: 20%;
-				line-height: 30px;
-				font-size: 14px
+				font-size: 14px;
+				display: flex;
+				flex-direction: column;
+			}
+			.log_num span{
+				font-size: 15px;
+				font-weight: 500;
+			}
+			.log_num label{
+				font-size: 12px;
+				color: #ccc;
 			}
 			.log_content{
 				width: 60%;
 				color:#ccc;
-				line-height: 30px;
-				font-size: 14px
+				font-size: 15px
 			}
 			.log_type{
 				width: 20%;
-				font-size: 14px;
-				line-height: 30px;
-				color: #F9712A;
-				text-align: right;
 			}
 		</style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav" style="color:;">
 			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
-			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">目录</h1>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">我的书友币</h1>
 	　　</header>
 	<div class="all">
 		<div class="tab">
 	               		<div class="tab_left">
-	               			<span>目录</span>
+	               			<span>充值记录</span>
 	               		</div>
               	 	</div>
 					<div class="log_all">
               	 			<div class="log_list">
-              	 				<span class="log_num">第一章</span>
-              	 				<span class="log_content">我自己的白日梦</span>
-              	 				<span class="log_type">免费</span>
+              	 				<div class="log_num">
+									<span>现金</span><label>微信充值</label>
+								</div>
+              	 				<span class="log_content">2019-04-13 18：15</span>
+								<div>
+									<img src="../../../assets/img/gold_record_icon_001_01.png" alt="">
+								</div>
               	 			</div>
-              	 			<div class="log_list">
-              	 				<span class="log_num">第二章</span>
-              	 				<span class="log_content">我自己的白日梦</span>
-              	 				<span class="log_type">免费</span>
-              	 			</div>
+							<div class="log_list">
+								<div class="log_num">
+									<span>现金</span><label>微信充值</label>
+								</div>
+								<span class="log_content">2019-04-13 18：15</span>
+								<div>
+									<img src="../../../assets/img/gold_record_icon_001_01.png" alt="">
+								</div>
+							</div>
               	 	</div>
 	</div>
 					        

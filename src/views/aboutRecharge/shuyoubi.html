@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../assets/css/mui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/public.css">
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+			.all{
+				padding: 15px;
+				margin-bottom: 50px;
+				margin-top: 70px;
+			}
+		
+			.top{
+				display: flex;
+			}
+			.mine_login{
+				background: url("../../../assets/img/shuyoubi_bg_img_001_01.png");
+				width: 347px;
+				height: 193px;
+				padding: 20px 10px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.mine_img{
+				border-radius: 50%;
+				/*border:3px solid white;*/
+				width: 88px;
+				height: 88px;
+				margin-right: 10px;
+			}
+			.mine_img img{
+				
+			}
+			.mine_login_info{
+				margin-top: 10px;
+			}
+
+			h3{
+				margin-bottom: 15px;
+				color: white;
+				font-size: 18px
+			}
+			.mine_login_info p,.mine_login_info p span,.mine_login_info p label{
+				color: white;
+				font-size: 14px;
+			}
+			.mine_login_info p label{
+				margin-right: 5px;
+				margin-left: 5px;
+			}
+			.mine_info{
+				display: flex;
+				justify-content: space-around;
+				padding-bottom: 30px;
+				border-bottom: 1px solid rgba(26,37,51,0.1);
+			}
+			.mine_info_a{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center
+			}
+			.mine_info_a_img,.mine_info_a_img1,.mine_info_a_img2{
+				height: 24px;
+				color: #000;
+				font-size: 18px;
+			}
+
+
+			.mine_info_a span{
+				font-size:14px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				line-height:20px;
+				width: 120px;
+			    text-align: center;
+			    border-right: 1px solid #ccc;
+			}
+
+			.center{
+				text-align: center;
+				margin-top: 30px;
+				margin-bottom: 20px;
+			}
+			.tixian{
+				margin: 30px 0;
+			}
+			.tixiancontent{
+				color: #000000;font-size: 13px;
+			}
+			.tixian{
+				font-size:16px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(26,37,51,1);
+				
+			}
+			.mine_login .right{
+				display: flex;
+				margin-top: 10px;
+				margin-right: 20px;
+			}
+			.mine_login .right a{
+				font-size:16px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+				color:rgba(255,255,255,1);
+				line-height:20px;
+				background:linear-gradient(180deg, rgba(255,248,228,1) 0%, rgba(255,215,102,1) 100%);
+				-webkit-background-clip:text;
+				-webkit-text-fill-color:transparent;
+			}
+			img{
+				width: auto;
+			}
+			.mine_login .top{
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+			}
+			.minebottom{
+				display: flex;
+				padding:0 15px;
+				justify-content: space-between;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="color:;">
+			　　　　<a href="#offCanvasSide" class="back mui-icon mui-action-menu  mui-pull-left  mui-icon-back"></a>
+			　　　　<h1 id="title" class="mui-title" style="color:black;background-color:;">书友币</h1>
+	　　</header>
+        <div class="all">
+			<div class="mine_login">
+				<div class="top">
+					<div style="display: flex;">
+						<a href="../mine/ifyname.html" class="mine_img">
+							<img src="../../../assets/img/head_portrait_icon_001_01.png">
+						</a>
+						<div class="mine_login_info">
+							<h3>青春不抱歉</h3>
+							<p >累计邀请12人</p>
+						</div>
+					</div>
+					<div class="right">
+						<div><img src="../../../assets/img/gold_coins_icon_001_02.png" alt=""></div>
+						<a href="./mineshuyoubi.html" style="margin-left: 5px;">1234</a>
+					</div>
+				</div>
+				<div class="minebottom">
+					<span>升级年会员随时提现书友币</span><span>100书友币=1元</span>
+				</div>
+			</div>
+			
+			<div style="margin-top: 15px;">
+				<img style="width: 100%;" src="../../../assets/img/the_invitation_icon_001_01.png" alt="">
+			</div>
+			<h2 class="center">我的邀请战绩</h2>
+			<div class="mine_info">
+				<a href="#" class="mine_info_a">
+					<div class="mine_info_a_img" onclick="Selection(this)" data-type="minebook">
+						<!-- <img src="../../../assets/img/hidden_icon_001_01 copy 2.png"> -->
+						12
+					</div>
+					<span>共邀请书友</span>
+				</a>
+				<a href="#" href="" class="mine_info_a">
+					<div class="mine_info_a_img1" onclick="Selection(this)" data-type="comment">
+						<!-- <img src="../../../assets/img/hidden_icon_001_01 copy 2.png"> -->
+						+999
+					</div>
+					<span>战绩排名</span>
+				</a>
+				<a href="#" class="mine_info_a">
+					<div class="mine_info_a_img2" onclick="Selection(this)" data-type="qiandao">
+						<!-- <img src="../../../assets/img/hidden_icon_001_01 copy 2.png"> -->
+						92
+					</div>
+					<span style="border-right: none">共提现(元)</span>
+				</a>
+			</div>
+			<h3 class="tixian">提现说明</h3>
+			<div><p class="tixiancontent">此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项，此处是一段提现说明及注意事项。</p></div>
+		</div>
+		<script src="../../../assets/js/public.js"></script>
+		<script src="../../../assets/js/mui.min.js"></script>
+		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+
+			
+			
+			 $(".back").click(function(){
+			window.history.go(-1)
+			})
+
+		</script>
+	</body>
+</html>

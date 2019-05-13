@@ -16,6 +16,18 @@
 				margin-bottom: 50px;
 				margin-top: 60px;
 			}
+			.mineband{
+					padding: 10px;
+				margin-bottom: 50px;
+				margin-top: 60px;
+			}
+			.xufei , .mineCaid{
+				padding: 15px;
+				margin-bottom: 50px;
+				margin-top: 60px;
+				display: none;
+			}
+			
 			.mui-grid-view.mui-grid-9{
 				background: white;
 				border: none
@@ -29,7 +41,25 @@
 			.myVip{
 				display: none;
 			}
-			.myVip .Vipcard{
+			
+			.mineband .minebandcard{
+				background: url("../../../assets/img/no_card_img_001_01 copy复制.png") no-repeat;
+				height:190px;
+				display:flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding:15px;
+				margin-top: 10px;
+				color:rgba(163,168,173,1);
+			}
+			.mineband .minebandcard.white{
+				background: url("../../../assets/img/no_card_img_001_01 copy.png") no-repeat;
+				color: white;
+			}
+			.minebandcard div span{
+				font-size: 18px;
+			}
+			.myVip .Vipcard, .xufei .Vipcard{
 				background: url("../../../assets/img/membership_card_img_001_01%20(1).png") no-repeat;
 				height:174px;
 				display:flex;
@@ -47,18 +77,34 @@
 				padding:15px;
 				margin-top: 10px;
 			}
-			.myVip h2{
+			.minebandMoney {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 10px;
+			}
+			p{
+				margin-bottom: 0;
+			}
+			h2{
 				font-size: 25px;
 			}
 			.Vipcard h3{
 				font-size:20px;
 				color: white;
 			}
+			
 			.vipTime{
 				display: flex;
 				justify-content: space-between;
 				align-content: center;
 			}
+			
+			.mineband h3{
+				padding: 5px 0;
+				font-size: 18px;
+			}
+			
 			.vipTime span{
 				font-size: 12px;
 				color: white;
@@ -94,7 +140,7 @@
 				font-family:PingFangSC-Medium;
 				font-weight:500;
 				color:rgba(252,100,3,1);
-				line-height:18px;
+				line-height:16px;
 				margin-bottom: 0;
 				text-align: center;
 			}
@@ -176,6 +222,229 @@
 				margin-bottom: 10px;
 			}
 			
+			.list_a{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 18px;
+				height: 50px;
+				width: 100%
+			}
+			.list_a_img{
+			}
+			.list_a p{
+				margin-bottom: 0;
+				color: #E93148;
+			}
+			.list_a i{
+			    height: 24px;
+			    text-align: right;
+				color: #E93148;
+			}
+			.list_a span{
+				display: inline-block;
+				width:80px;
+				height:26px;
+				border-radius:13px;
+				opacity:0.3;
+				font-size: 16px;
+				border:2px solid rgba(26,37,51,1);
+				color: rgba(26,37,51,1);
+				text-align: center;
+				line-height: 22px;
+			}
+			.bg{
+				display: none;
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;background: #000;
+				opacity: 0.6;
+			}
+			
+			.ready_free1{
+				z-index: 110;
+				position: fixed;
+				top: 130px;
+				display: none;
+			}
+			.free_end_vip1{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				width: 347px;
+				height: 280px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.ready_free{
+				z-index: 110;
+				position: fixed;
+				top: 130px;
+				display: none;
+			}
+			.ready_free .free_end_vip div img{
+				margin-bottom: 50px
+			}
+			.free_end_vip_All{
+				z-index: 110;
+				position: fixed;
+				left: 50%;
+				margin-left: -174px;
+			}
+			
+			.free_end_vip{
+				z-index: 110;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				width: 347px;
+				height: 402px;
+				padding: 20px;
+				background: white;
+				box-shadow:0px 0px 10px 0px rgba(0,0,0,0.25);
+				border-radius:10px;
+			}
+			.free_end_vip div{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+					
+			.free_end_vip div span{
+				color: #E0153B;
+				margin-top: 5px;
+				font-size: 20px;
+			}
+			.free_end_vip p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			.free_end_vip1 p{
+				width: 307px;
+				height: 50px;
+				background: #FA6400;
+				color: white;
+				border-radius: 24px;
+				box-shadow:0px 0px 10px 0px rgba(130,52,0,0.2);
+				text-align: center;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			.free_end_vip1 h3{
+				font-size: 20px;
+			}
+			.free_end_vip1 span{
+				color: #ccc;
+			}
+			.pi{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.chajia span{
+				font-size: 25px;
+				color: #E93148;
+			}
+			.pay span{
+				font-size: 25px;
+				color: #E93148;
+			}
+			.pay,.chajia{
+				display: flex;
+				align-items: center;
+				margin-top: 30px;
+			}
+			.minecard{
+				margin-top: 30px;
+				margin-bottom: 10px;
+			}
+			.xufei .btn{
+				position: fixed;
+				bottom: 30px;
+				width: 345px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				background: #FA6400;
+				font-size: 20px;
+				color: white;
+				border-radius:25px;
+			}
+			.hot_content_state{
+				margin-top: 10px;
+			}
+			.hot_content_title h5{
+				color: #000;
+				font-size:15px;
+				font-family:PingFangSC-Medium;
+				font-weight:500;
+			}
+			.hot_content{
+				display: flex;
+				margin-bottom: 20px;
+				background: url("../../../assets/img/securities_car_img_001_01 (1).png");
+				width: 100%;
+				height: 114px;
+				margin-top: 10px;
+			}
+			.hot_contentuse{
+				display: flex;
+				margin-bottom: 20px;
+				background: url("../../../assets/img/securities_car_img_001_01.png");
+				width: 100%;
+				height: 114px;
+				margin-top: 10px;
+			}
+			.hot_left{
+				width: 133px;
+				margin-right: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.hot_title{
+					position: absolute;
+					width: 37px;
+					height: 37px;
+			}
+			.hot_left span{
+				font-size:12px;
+				font-family:PingFangSC-Regular;
+				font-weight:400;
+				color: white;
+				margin-right: 5px;
+			}
+			.hot_left p{
+				font-size: 30px;
+				color: white
+			}
+			.hot_right{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			.hot_content_score{
+				border-bottom: 1px solid #ccc;
+				padding-bottom: 10px;
+			}
+			.hot_content_tro{
+				color: #999
+			}
 		</style>
 	</head>
 	<body>
@@ -200,7 +469,7 @@
 							<label>加300元</label>
 							<span>/即可续费一年</span>
 						</div>
-						<p class="VipBtn" name="xufei">去续费</p>
+						<p class="VipBtn" onclick="Vipbtn(this)" name="xufei">去续费</p>
 					</div>
 				</div>
 				<div class="minezhuanshu">
@@ -259,7 +528,7 @@
 							<label>加176元</label>
 							<span>/升级为年会员</span>
 						</div>
-						<p class="VipBtn" name="shengji">去升级</p>
+						<p class="VipBtn" name="shengji" onclick="Vipbtn(this)">去升级</p>
 					</div>
 				</div>
 			<div class="minezhuanshu">
@@ -302,6 +571,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- 会员抢先看 -->
 		<div class="history_search">
 			<h3>会员抢先看</h3>
 			<div class="paih_content_all">
@@ -317,20 +587,149 @@
 		   </div> 
 		</div>
 	</div>
+	
+	
+		<div class="xufei">
+		<h2>升级为年会员</h2>
+		<div class="Vipcard">
+			<div>
+				<h3>年会员</h3>
+				<div class="vipTime">
+					<span>Half a year member</span>
+					<span>2020-05-16 到期</span>
+				</div>	
+			</div>
+			<div class="vipMoney">
+				<div class="money">
+					<label>加300元</label>
+					<span>/即可续费一年</span>
+				</div>
+				<p class="VipBtn" name="xufei" onclick="Vipbtn(this)">去续费</p>
+			</div>
+		</div>
+		<div class="zhifupay">
+			<div class="chajia">
+				<h2>补差价:</h2><span>176元</span>
+			</div>
+			<div class="minecard">
+				<div class="list_a">
+					<div>我的卡券</div>
+					<!-- <p>不使用卡券</p> -->
+					<div class="pi">
+						<p>162元</p>
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+				</div>
+			</div>
+			<div class="pay">
+				<h2>请支付:</h2><span>176元</span>
+			</div>
+			<div class="btn" onchange="paybtn(this)"  name="shengji">立即支付</div>
+		</div>
+		<div class="xufeipay">
+			<div class="chajia">
+				<h2>仅需续费:</h2><span>176元</span>
+			</div>
+			<div class="btn" name="xufei">立即支付</div>
+		</div>
+		
+		
+	</div>
+	
+	<div class="mineCaid">
+		<div class="hot_content_All">
+			<h2>我的卡券</h2>
+		   	<div class="hot_content">
+		   		<div class="hot_left">
+		   			<span>¥</span>
+		   			<p>9.9</p>
+		   		</div>
+		   		<div class="hot_right">
+		   			<div class="hot_content_title">
+		   				<h5>分享红包</h5>
+		   			</div>
+		   			<div class="hot_content_score">
+		   				<span class="name">充值专用（仅限年会员）</span>
+		   			</div>
+		   			<div class="hot_content_tro">
+		   				有效期：2019-03-03—2019-05-05
+		   			</div>
+		   		</div>
+		   	</div>	
+		</div>
+	</div>
+	
+	
+	<div class="mineband">
+		<h2>选择银行卡</h2>	
+		<div class="minebandcard" onclick="chooseband(this)" name="choose">
+			<h3>中国银行</h3>
+			<div class="minebandnum">
+				<div>
+					<span>8888</span>
+					<span>8888</span>
+					<span>8888</span>
+					<span>888</span>
+				</div>
+				<span style="font-size: 14px;">1234</span>
+			</div>	
+			<div class="minebandMoney">
+				<div class="bandmoney">
+					<label>加300元</label>
+					<span > /即可续费一年</span>
+				</div>
+				<span>03/21</span>
+			</div>
+		</div>
+		
+	</div>
+	
 		<script src="../../../assets/js/public.js"></script>
 		<script src="../../../assets/js/mui.min.js"></script>
 		<script src="../../../assets/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
-	 $(".back").click(function(){
+		$(".back").click(function(){
 			window.history.go(-1)
 		})
-		
-		$(".VipBtn").click(()=>{
-			if($(".VipBtn").attr("name")=="shengji"){
-				$(".minezhuanshu").hide(500);
-				$(".history_search").hide(500);
+		function Vipbtn(self){
+			if($(self).attr("name")=="xufei"){
+				$(".all").hide(500);
+				$(".xufeipay").show()
+				$(".zhifupay").hide()
+				$(".xufei").show(500)
+			}else{
+				$(".all").hide(500);
+				$(".xufeipay").hide()
+				$(".zhifupay").show()
+				$(".xufei").show(500)
 			}
-			
+		}
+		$(".minecard").click(()=>{
+			$(".xufei").hide(500)
+			$(".mineCaid").show(500)
+		})
+		$(".hot_content").click(()=>{
+			$(".xufei").show(500)
+			$(".mineCaid").hide(500)
+		})
+		
+		function paybtn(self){
+			$(".xufei").hide(500)
+			$(".mineband").show(500);
+		}
+		
+		function chooseband(self){
+			if($(self).attr("name")=="choose"){
+				$(self).attr("name","okchoose")
+				$(self).addClass("white")
+			}else{
+				$(self).attr("name","choose")
+				$(self).removeClass("white")
+			}
+		}
+		
+		$(".paih_content").click(()=>{
+			location.href ="../details/details.html"
 		})
 		</script>
 	</body>
